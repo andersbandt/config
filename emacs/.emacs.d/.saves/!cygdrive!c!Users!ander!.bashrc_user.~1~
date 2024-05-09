@@ -1,0 +1,95 @@
+
+
+
+alias rn='cd ~/Documents/CCS/workspace_WWD/WWD_prog/Debug/'
+
+
+echo "Anders' (.bashrc_user)"
+
+
+## CLI ALIAS
+alias home='cd'
+alias h='history'
+alias hg='history | grep'
+
+alias ls='ls --color=auto'
+alias la='ls -la | more'
+alias ll='ls -la --color=auto'
+alias lt='ls -la'
+alias lrt='ls -lrt'
+
+alias rm='rm -i'
+
+
+### grep
+alias grep="grep -i --color='auto'"
+alias egrep="egrep -i --color='auto'"
+alias fgrep="fgrep -i --color='auto'"
+
+
+### emacs mispellings
+alias emasc="emacs"
+alias emac="emacs"
+alias eamsc="emacs"
+alias emacss="emacs"
+
+### NAVIGATION ALLIAS
+#### GENERAL
+
+alias c='cd /cygdrive/c'
+alias ti='cd /cygdrive/c/ti'
+
+alias tmp='cd ~/tmp'
+
+alias documents='cd /cygdrive/c/Users/ander/Documents'
+alias downloads='cd /cygdrive/c/Users/ander/Downloads'
+alias desktop='cd /cygdrive/c/Users/ander/Desktop'
+alias obsidian='cd /cygdrive/c/Users/ander/Documents/Obsidian'
+alias engineeringdocuments='cd "/cygdrive/c/Users/ander/OneDrive/Documents/Engineering Documents"'
+alias onedrive='cd /cygdrive/c/Users/ander/OneDrive'
+
+alias ccs='cd /cygdrive/c/Users/ander/Documents/CCS/'
+alias altium='cd /cygdrive/c/Users/ander/Documents/Altium/'
+alias projects='cd /cygdrive/c/Users/ander/OneDrive/Projects'
+alias code='cd /cygdrive/c/Users/ander/OneDrive/Code'
+alias arduino='cd /cygdrive/c/Users/ander/OneDrive/Code/Arduino'
+alias financials='cd /cygdrive/c/Users/ander/OneDrive/Documents/Financials'
+
+
+### specific projects
+# WWD
+alias wwd='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD"'
+alias wwddatasheet='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/electrical/datasheets"'
+alias wwdccs='cd /cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
+wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
+
+
+# Hidden-Hydroponics
+alias hydroponics='cd "/cygdrive/c/Users/ander/OneDrive/Projects/hidden_hydroponic"'
+
+
+### NAV VARIABLES
+onedrive_t='/cygdrive/c/Users/ander/OneDrive/'
+projects_t='/cygdrive/c/Users/ander/OneDrive/Projects'
+documents_t='/cygdrive/c/Users/ander/Documents/'
+
+
+
+### MISC ALIAS
+alias editprof='emacs ~/.bashrc_user'
+alias reload='source ~/.bashrc'
+alias start='cygstart'
+alias apt-get='apt-cyg'
+alias installer="start '/cygdrive/c/Users/ander/Documents/Shell Scripts/setup-x86_64.exe'"
+
+
+
+
+### SSH / sftp ALIAS
+
+alias ssh@breeze="ssh observe@breeze"
+alias ssh@grow="ssh pi@grow"
+alias ssh@ubuntu="ssh anders@anders-ubuntu"
+
+echo "... done sourcing .bashrc_user"
+

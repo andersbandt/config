@@ -1,0 +1,172 @@
+
+# @author   Anders Bandt
+version="1.00"
+rev="B"
+title="Ders' Bash Settings"
+
+
+if [ $system = "Windows" ]
+then
+    BASEPATH="/cygdrive/c/Users/ander/"
+    source ~/OneDrive/.bashrc_windows
+elif [ $system = "Linux" ]
+then
+    BASEPATH="/home/anders/"  
+end
+
+
+alias loadti='/cygdrive/c/ti/ccs1200/ccs/ccs_base/scripting/examples/loadti/loadti.bat'
+
+
+##############################
+### INITIALIZATION         ###
+##############################
+echo $title " (.bashrc_user)"
+echo "    version=" $version
+echo "    rev="     $rev
+echo "    system="  $system
+
+
+export EDITOR=emacs
+export GIT_EDITOR=emacs
+
+
+##############################
+### CLI ALLIAS             ###
+##############################
+alias home='cd'
+alias h='history'
+alias hg='history | grep'
+
+
+### ls ###
+alias ls='ls --color=auto'
+alias la='ls -la --color=auto'
+alias ll='ls -l --color=auto'
+alias lt='ls -lt'
+alias lrt='ls -lrt'
+
+alias mv='mv -i'
+alias cp='cp -irp'
+alias rm='rm -i'
+alias rn='echo "FUCK YOU ANDERS"'
+
+
+### grep ###
+alias grep="grep -i --color='auto'"
+alias egrep="egrep -i --color='auto'"
+alias fgrep="fgrep -i --color='auto'"
+
+
+# MISPELL
+alias sl='ls'
+alias ccd="cd"
+alias cdd="cd"
+alias gerp="grep"
+alias grpe="grep"
+
+
+##############################
+### EMACS ALLIAS           ###
+##############################
+alias editemacs="emacs ~/.emacs"
+alias emacs="emacs -q --load ~/.emacs.d/base.el"
+
+
+# mispell
+alias emasc="emacs"
+alias emac="emacs"
+alias eamsc="emacs"
+alias emacss="emacs"
+
+
+##############################
+### NAVIGATION ALLIAS      ###
+##############################
+#### GENERAL ###
+alias c='cd /cygdrive/c'
+alias d='cd /cygdrive/d'
+alias ti='cd /cygdrive/c/ti'
+alias tmp='cd ~/tmp'
+alias ander='cd /cygdrive/c/Users/ander'
+
+### EASY NATIVE WINDOWS ###
+alias downloads='cd $BASEPATH/Downloads'
+alias desktop='cd $BASEPATH/Desktop'
+alias documents='cd $BASEPATH/Documents'
+alias obsidian='cd /cygdrive/c/Users/ander/Documents/Obsidian'
+alias ccs='cd /cygdrive/c/Users/ander/Documents/CCS/'
+alias altium='cd /cygdrive/c/Users/ander/Documents/Altium/'
+
+
+### ONE DRIVE ###
+alias onedrive='cd /cygdrive/c/Users/ander/OneDrive'
+alias filetransfer='cd /cygdrive/c/Users/ander/OneDrive/FileTransfer'
+
+alias engineering='cd "/cygdrive/c/Users/ander/OneDrive/Documents/engineering"'
+alias financials='cd /cygdrive/c/Users/ander/OneDrive/Documents/financials'
+alias monthlystatements='cd /cygdrive/c/Users/ander/OneDrive/Documents/financials/2023/monthly_statements'
+
+
+alias code='cd /cygdrive/c/Users/ander/OneDrive/Code'
+alias arduino='cd /cygdrive/c/Users/ander/OneDrive/Code/Arduino'
+alias embedded='cd /cygdrive/c/Users/ander/OneDrive/Code/embedded'
+alias gopython='cd /cygdrive/c/Users/ander/OneDrive/Code/python'
+alias matlab='cd /cygdrive/c/Users/ander/OneDrive/Code/MATLAB'
+    
+alias projects='cd /cygdrive/c/Users/ander/OneDrive/Projects'
+
+
+### specific projects
+# WWD
+alias wwd='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD"'
+alias wwddatasheet='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/electrical/datasheets"'
+alias wwddocumentation='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/documentation"'
+alias wwdfirmware='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/firmware"'
+alias wwdccs='cd "$BASEPATH/Documents/CCS/workspace_WWD/WWD_prog"'
+alias wwdcode='cd "/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/"'
+wwd_t='/cygdrive/c/Users/ander/OneDrive/Projects/WWD'
+wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
+
+alias wwdapi='python /Users/ander/Documents/GitHub/wwd_gui_api/main.py'
+
+# Hidden-Hydroponics
+alias hydroponics='cd "/cygdrive/c/Users/ander/OneDrive/Projects/hidden_hydroponic"'
+
+# Financial-Analyzer
+alias financeanalyzer='python /Users/ander/Documents/GitHub/Financial-Analyzer/src/main.py'
+
+
+##############################
+### NAV VARIABLES          ###
+##############################
+onedrive_t='/cygdrive/c/Users/ander/OneDrive/'
+projects_t='/cygdrive/c/Users/ander/OneDrive/Projects'
+code_t='/cygdrive/c/Users/ander/OneDrive/Code'
+documents_t='/cygdrive/c/Users/ander/Documents/'
+financials_t='/cygdrive/c/Users/ander/OneDrive/Documents/Financials/'
+filetransfer_t='/cygdrive/c/Users/ander/OneDrive/FileTransfer'
+
+
+##############################
+### MISC ALIAS             ###
+##############################
+alias editprof='emacs ~/OneDrive/.bashrc_user'
+alias editprofwindows='emacs ~/OneDrive/.bashrc_windows'
+alias reload='source ~/.bashrc'
+alias start='cygstart'
+alias apt-get='apt-cyg'
+alias installer="start '/cygdrive/c/Users/ander/OneDrive/Code/shell_scripts/setup-x86_64.exe'"
+alias github='cd ~/Documents/GitHub'
+
+
+##############################
+### SSH / SFTP ALIAS      ####
+##############################
+alias ssh@breeze="ssh observe@breeze"
+alias ssh@grow="ssh pi@grow"
+alias ssh@ubuntu="ssh anders@anders-ubuntu"
+alias sftp@ubuntu="sftp anders@anders-ubuntu"
+
+
+
