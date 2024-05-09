@@ -1,0 +1,255 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("c:/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/" . "examples/")
+ ("c:/Users/ander/OneDrive/Code/embedded/" . "arduino.ICM42670P/")
+ ("c:/Users/ander/" . "OneDrive/")
+ ("c:/Users/" . "ander/")
+ ("C:/Users/ander/OneDrive/Code/" . "python/")
+ ("C:/Users/ander/OneDrive/" . "Code/")
+ ("c:/Users/ander/OneDrive/Code/python/WWD/" . "wwd_gui_api/")
+ ("c:/Users/ander/OneDrive/Code/python/" . "WWD/")
+ ("c:/Users/ander/OneDrive/Code/" . "embedded/")
+ ("c:/Users/ander/OneDrive/" . "Code/")
+ ("c:/Users/ander/Documents/GitHub/wwd_gui_api/log/" . "text/")
+ ("c:/Users/ander/Documents/GitHub/wwd_gui_api/" . "log/")
+ ("c:/Users/ander/Documents/GitHub/" . "wwd_gui_api/")
+ ("c:/Users/ander/Documents/" . "GitHub/")
+ ("C:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/" . "src/")
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/" . "WWD_prog/")
+ ("C:/Users/ander/Documents/CCS/workspace_WWD/" . "WWD_prog/")
+ ("C:/Users/ander/Documents/CCS/" . "workspace_WWD/")
+ ("C:/Users/ander/Documents/" . "CCS/")
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/" . "imu/")
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/" . "src/")
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/" . "hardware/")
+ ("/cygdrive/c/Users/ander/AppData/" . "Roaming/")
+ ("/cygdrive/c/Users/ander/" . ".emacs.d/")
+ ("/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/" . "afe_analysis/")
+ ("/cygdrive/c/Users/ander/OneDrive/Code/python/" . "WWD/")
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/" . "src/")
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/" . "imu/")
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/" . "ic/")
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/" . "src/")
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/" . "WWD_prog/")
+ ("/cygdrive/c/Users/ander/Documents/CCS/" . "workspace_WWD/")
+ ("/cygdrive/c/Users/ander/Documents/" . "CCS/")
+ ("/cygdrive/c/Users/" . "ander/")
+ ("/cygdrive/c/" . "Users/")
+ ("/cygdrive/" . "c/")
+ ("/cygdrive/c/Users/ander/OneDrive/" . "Projects/")
+ ("/home/ander/.emacs.d/" . "auto-save-list/")
+ ("/home/ander/" . ".emacs.d/")
+ ("/home/" . "ander/")
+ ("/" . "cygdrive/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/memory/"
+ "/cygdrive/c/Users/ander/.emacs.d/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/comm/"
+ "C:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/"
+ "c:/Users/ander/OneDrive/Code/MATLAB/dyn_cal/"
+ "c:/Users/ander/OneDrive/Code/MATLAB/"
+ "/cygdrive/c/Users/ander/OneDrive/Code/MATLAB/dyn_cal/"
+ "c:/Users/ander/OneDrive/Code/python/WWD/wwd_gui_api/"
+ "c:/Users/ander/tmp/"
+ "c:/Users/ander/Documents/GitHub/wwd_gui_api/log/text/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/data/"
+ "c:/Users/ander/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/test/"
+ "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/Debug/"
+ "/cygdrive/c/Users/ander/AppData/Roaming/"
+ "/cygdrive/c/Users/ander/"
+ "/cygdrive/c/Users/ander/tmp/"
+ "/cygdrive/c/Users/ander/OneDrive/Documents/Financials/2024/monthly_statements/01-January/save/"
+ "/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/afe_analysis/"
+ "/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/src/"
+ "/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "inv_imu_apex.c"
+ "inv_imu_apex.h"
+ "inv_imu_driver.c"
+ "inv_imu_driver.h"
+ "imu.h"
+ "circular_buffer.h"
+ "led.h"
+ "led.c"
+ "imu.c"
+ "ICM_42670.c"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/Debug/" (26165 39845 0 0) "WWD_prog.out" "WWD_prog.map" "wwd.o" "wwd.d" "test/" "syscfg/" "subdir_vars.mk" "subdir_rules.mk" "src/" "sources.mk" "objects.mk" "makefile" "main_nortos.o" "main_nortos.d" "ccsObjs.opt" "../" "./")
+
+ ("c:/Users/ander/" (26168 59389 0 0) "workspace/" "Videos/" "Tracing/" "tmp/" "ti/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "Favorites/" "eclipse/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "bin/" "apt-cyg" "Application Data/" "AppData/" "ansel/" "3D Objects/" ".wget-hsts" ".wdm/" ".vscode/" ".TI-trace/" ".templateengine/" ".ssh/" ".QtWebEngineProcess/" ".p2/" ".Origin/" ".old_emacs_saves/" ".ms-ad/" ".minttyrc" ".matplotlib/" ".lesshst" ".jupyter/" ".julia/" ".ipython/" ".gnupg/" ".gitconfig" ".gEDA/" ".emacs.d/" ".emacs" ".eclipse/" ".dotnet/" ".config/" ".conda/" ".cache/" ".bash_profile" ".bash_history" ".bashrc_wsl" ".bashrc" ".atom/" ".arduinoIDE/" "../" "./")
+
+ ("c:/Users/ander/Documents/GitHub/wwd_gui_api/log/text/" (26169 40248 0 0) "_20240506_.log" "_20240503_.log" "_20240501_.log" "_20240430_.log" "_20240418_.log" "_20240417_.log" "_20240416_.log" "_20240415_.log" "_20240414_.log" "_20240413_.log" "_20240412_.log" "_20240411_.log" "_20240409_.log" "_20240408_.log" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/python/WWD/wwd_gui_api/" (26165 23946 0 0) "system_paths.py" "serial/" "main.py" "log/" "imu/" "gui/" "data/" "common/" "analysis/" ".idea/" "../" "./")
+
+ ("C:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/" (26169 40572 0 0) "wwd.syscfg" "wwd.c" "test/" "targetConfigs/" "src/" "README.md" "main_nortos.c" "Debug/" "compile_commands.json" "cc13x2_cc26x2_nortos.lds" ".settings/" ".project" ".launches/" ".gitignore" ".git/" ".cproject" ".ccsproject" ".#wwd.c" "#wwd.c#" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/" (26165 23724 0 0) "led.h" "led.c" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/" (26169 40572 0 0) "wwd.syscfg" "wwd.c" "test/" "targetConfigs/" "src/" "README.md" "main_nortos.c" "Debug/" "compile_commands.json" "cc13x2_cc26x2_nortos.lds" ".settings/" ".project" ".launches/" ".gitignore" ".git/" ".cproject" ".ccsproject" ".#wwd.c" "#wwd.c#" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/" (26164 22490 0 0) "inv_time.h" "inv_time.c" "inv_imu_transport.h" "inv_imu_transport.c" "inv_imu_regmap_rev_a.h" "inv_imu_driver.h" "inv_imu_driver.c" "inv_imu_defs.h" "inv_imu_apex.h" "inv_imu_apex.c" "Invn/" "imu_process.h" "imu_process.c" "imu.h" "imu.c" "ICM_42670.h" "ICM_42670.c" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/MATLAB/" (26164 19703 0 0) "WWD/" "testing.m" "Polarization.m" "plotGaussBeam.m" "PCB Manufacturing/" "Image Processing/" "Graph Digitizer/" "eq_ind_v4/" "Equivalent Inductors/" "dyn_cal/" "digitizer/" "DigiScope_V3.3/" "college_class/" "binary_image.m" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/examples/" (25926 63226 0 0) "Polling_SPI/" "Polling_I2C/" "FIFO_Interrupt_SPI/" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/" (25926 63226 0 0) "UpdateInvnDrivers.bat" "src/" "README.md" "LICENSE" "library.properties" "keywords.txt" "examples/" "doc/" ".git/" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/embedded/" (25926 63222 0 0) "workspace_v10/" "workspace_353_FreeRTOS/" "workspace_353/" "arduino.ICM42670P/" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/" (26159 60348 0 0) "web_dev/" "ti_CCS_workspaces" "shell_scripts/" "raspberry_pi/" "python/" "Processing/" "multisim/" "MATLAB/" "Julia/" "Java/" "EX_Offline/" "embedded/" "Eclipse/" "C_sharp/" "C/" "Arduino/" "../" "./")
+
+ ("c:/Users/ander/OneDrive/" (26161 1195 0 0) "Websites and Servers/" "Videos/" "Projects/" "Program Documents/" "Pictures/" "Personal Vault.lnk" "PCB Library/" "Music/" "FileTransfer/" "Documents/" "desktop.ini" "Code/" "citi_dummy.csv" "Audio/" "Attachments/" ".bashrc_windows~" ".bashrc_windows" ".bashrc_user~" ".bashrc_user" ".849C9593-D756-4E56-8D6E-42412F2A707B" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/memory/" (26159 62719 0 0) "nvs.h" "nvs.c" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/" (26159 62718 0 0) "imu/" "bms/" "afe/" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/test/" (26159 62719 0 0) "test_serial.h" "test_serial.c" "test.h" "test.c" "../" "./")
+
+ ("c:/Users/ander/tmp/" (26159 61441 0 0) "xds110_bin_path.txt" "WWD_prog/" "wwd.syscfg" "uart.c" "tmp.txt" "tests.c" "Segger J-Link Adapter Interface.~(3).PrjPcb.Zip" "Segger J-Link Adapter Interface.~(3).PrjPcb" "path.txt" "makefile" "gmake.sh" "financial_analyzer_CLI/" "financials.db" "compile_commands.json" "clock_temp.log" "ccfg.c" "afe_read_v2_unrolled.txt" "afe_read_v1_forloop.txt.bak" "afe_read_v1_forloop.txt" "afe_fifo_data.txt" "#path.txt#" "#nothing.txt#" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/" (26159 62719 0 0) "power/" "memory/" "interrupts.h" "interrupts.c" "ic/" "helper.h" "helper.c" "hardware/" "comm/" "clock.h" "clock.c" "circular_buffer.h" "circular_buffer.c" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/comm/" (26159 62719 0 0) "uart.h" "uart.c" "spi.h" "spi.c" "radio.c" "i2c_addr.h" "i2c.h" "i2c.c" "comm.h" "comm.c" "bluetooth/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/.emacs.d/" (26160 8654 248952 400000) "snippets/" "recentf" "init.el" "ido.last" "elpa/" "code.el" "base.el" "auto-save-list/" ".saves/" ".lsp-session-v1" ".emacs.desktop" ".dap-breakpoints" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/MATLAB/dyn_cal/" (26137 55836 0 0) "parsePythonFile.m" "mateCoefficients.m" "LeastSquaresVerify.m" "LeastSquaresRunner.m" "LeastSquares.m" "interpolateMensor.m" "initial_temp_exploration.txt" "GeneticAlgorithmRunner.m" "generateResidual.m" "../" "./")
+
+ ("/cygdrive/c/Users/ander/" (26138 11588 402567 700000) "workspace/" "Videos/" "Tracing/" "tmp/" "ti/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive - UW-Madison/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "Favorites/" "eclipse/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "bin/" "apt-cyg" "Application Data/" "AppData/" "ansel/" "3D Objects/" ".wget-hsts" ".wdm/" ".vscode/" ".viminfo" ".TI-trace/" ".templateengine/" ".ssh/" ".QtWebEngineProcess/" ".python_history" ".p2/" ".Origin/" ".old_emacs_saves/" ".ms-ad/" ".minttyrc" ".matplotlib/" ".lesshst" ".julia/" ".ipython/" ".gtk-bookmarks" ".gnupg/" ".gitconfig" ".gEDA/" ".emacs~" ".emacs.d/" ".emacs" ".eclipse/" ".dotnet/" ".config/" ".conda/" ".cache/" ".bash_profile" ".bash_history" ".bashrc_wsl" ".bashrc" ".atom/" ".arduinoIDE/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/MATLAB/dyn_cal/" (26137 55836 429422 400000) "parsePythonFile.m" "mateCoefficients.m" "LeastSquaresVerify.m" "LeastSquaresRunner.m" "LeastSquares.m" "interpolateMensor.m" "initial_temp_exploration.txt" "GeneticAlgorithmRunner.m" "generateResidual.m" "../" "./")
+
+ ("c:/Users/ander/.vscode/" (25760 18347 0 0) "extensions/" "cli/" "argv.json" "../" "./")
+
+ ("C:/Users/ander/OneDrive/Code/python/" (26039 49698 0 0) "xxx_Testing/" "WWD/" "USB_comm_to_MCU/" "Time_Allocation/" "spotify_scraping/" "Recipe Manager/" "Receipt Digitizer/" "python_playground/" "NickOccupancy/" "Kitesurfing Scraper/" "Internet-Market-Scraper/" "ice_calculator.py" "grow/" "groupme_bot.py" "Fitbit-Scraper/" "financial_analyzer_Tkinter/" "Cryptography Scripts/" "BOM Manager/" "../" "./")
+
+ ("C:/Users/ander/OneDrive/Code/" (26031 54547 0 0) "web_dev/" "ti_CCS_workspaces" "shell_scripts/" "raspberry_pi/" "python/" "Processing/" "multisim/" "MATLAB/" "Julia/" "Java/" "EX_Offline/" "embedded/" "Eclipse/" "C_languages/" "Arduino/" "../" "./")
+
+ ("C:/Users/ander/OneDrive/" (26137 54418 0 0) "Websites and Servers/" "Videos/" "Projects/" "Program Documents/" "Pictures/" "Personal Vault.lnk" "PCB Library/" "Music/" "FileTransfer/" "Documents/" "desktop.ini" "Code/" "Audio/" "Attachments/" ".bashrc_user" ".849C9593-D756-4E56-8D6E-42412F2A707B" "../" "./")
+
+ ("C:/Users/ander/" (26137 54533 0 0) "workspace/" "Videos/" "Tracing/" "tmp/" "ti/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive - UW-Madison/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "Favorites/" "eclipse/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "bin/" "apt-cyg" "Application Data/" "AppData/" "ansel/" "3D Objects/" ".wget-hsts" ".wdm/" ".vscode/" ".viminfo" ".TI-trace/" ".templateengine/" ".ssh/" ".QtWebEngineProcess/" ".python_history" ".p2/" ".Origin/" ".old_emacs_saves/" ".ms-ad/" ".minttyrc" ".matplotlib/" ".lesshst" ".julia/" ".ipython/" ".gtk-bookmarks" ".gnupg/" ".gitconfig" ".gEDA/" ".emacs~" ".emacs.d/" ".emacs" ".eclipse/" ".dotnet/" ".config/" ".conda/" ".cache/" ".bash_profile" ".bash_history" ".bashrc_wsl" ".bashrc" ".atom/" ".arduinoIDE/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/" (26133 39399 16852 400000) "inv_time.h" "inv_time.c" "inv_imu_transport.h" "inv_imu_transport.c" "inv_imu_regmap_rev_a.h" "inv_imu_driver.h" "inv_imu_driver.c" "inv_imu_defs.h" "Invn/" "imu_process.h" "imu_process.c" "imu.h" "imu.c" "ICM_42670.h" "ICM_42670.c" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/afe_analysis/" (26089 15518 824096 0) "__pycache__/" "requirements.txt" "processor.py" "plotter.py" "main.py" "gui/" "data/" "analysis.py" ".idea/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/tmp/" (26133 59762 635107 900000) "xds110_bin_path.txt" "WWD_prog/" "wwd.syscfg" "uart.c" "tmp.txt" "Segger J-Link Adapter Interface.~(3).PrjPcb.Zip" "Segger J-Link Adapter Interface.~(3).PrjPcb" "path.txt" "makefile" "gmake.sh" "financial_analyzer_CLI/" "financials.db" "compile_commands.json" "ccfg.c" "afe_read_v2_unrolled.txt" "afe_read_v1_forloop.txt.bak" "afe_read_v1_forloop.txt" "afe_fifo_data.txt" "#path.txt#" "#nothing.txt#" "../" "./")
+
+ ("/cygdrive/c/Users/ander/AppData/Roaming/" (26126 57084 442570 900000) "Zoom/" "Wireshark/" "vnc/" "Visual Studio Setup/" "Typora/" "TortoiseSVN/" "Teams/" "Subversion/" "Spotify/" "SEGGER/" "RealVNC/" "Processing/" "OpenOffice/" "octave/" "obsidian/" "obs-studio/" "NVIDIA/" "NuGet/" "Notepad++/" "MiKTeX/" "Microsoft/" "Mathematica/" "LTspiceXVII.ini" "LibreOffice/" "kleopatra/" "jupyter/" "JetBrains/" "iep/" "HueSync/" "gnupg/" "Glorious Core/" "GitHub Desktop/" "GIMP/" "FreeFileSync/" "FreeCAD/" "fltk.org/" "EQATEC Analytics/" "Electrum/" "EasyAntiCheat/" "Eagle/" "discord/" "com.adobe.dunamis/" "Code/" "Canon/" "calibre/" "CadSoft/" "beekeeper-studio/" "Battle.net/" "balena-etcher/" "arduino-ide/" "Arduino IDE/" "Apple Computer/" "Altium/" "Adobe/" "ADI/" ".minecraft/" ".gr_fftw_wisdom.lock" ".gr_fftw_wisdom" ".gnuradio/" ".emacs~" ".emacs.d/" ".emacs" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/python/WWD/" (26127 33142 0 0) "wwd_gui_api/" "power_analysis/" "afe_analysis_backup/" "afe_analysis/" "../" "./")
+
+ ("c:/Users/ander/OneDrive/Code/python/" (26039 49698 0 0) "xxx_Testing/" "WWD/" "USB_comm_to_MCU/" "Time_Allocation/" "spotify_scraping/" "Recipe Manager/" "Receipt Digitizer/" "python_playground/" "NickOccupancy/" "Kitesurfing Scraper/" "Internet-Market-Scraper/" "ice_calculator.py" "grow/" "groupme_bot.py" "Fitbit-Scraper/" "financial_analyzer_Tkinter/" "Cryptography Scripts/" "BOM Manager/" "../" "./")
+
+ ("c:/Users/ander/Documents/GitHub/wwd_gui_api/log/" (26133 51816 0 0) "text/" "../" "./")
+
+ ("c:/Users/ander/Documents/GitHub/wwd_gui_api/" (26133 51816 0 0) "serial_testing.py" "README.md" "main.py" "log/" "LICENSE" "imu_data/" "imu/" "gui/" "common/" "afe_data/" "afe/" ".gitignore" ".git/" "../" "./")
+
+ ("c:/Users/ander/Documents/GitHub/" (26127 33113 0 0) "wwd_gui_api/" "NickOccupancy/" "HiddenHydroponics - Shortcut.lnk" "Financial-Analyzer/" "Commute-Tracker/" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/data/" (26133 36628 0 0) "nvs.h" "nvs.c" "../" "./")
+
+ ("c:/Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/ucrt/" (25761 53608 0 0) "wctype.h" "wchar.h" "uchar.h" "time.h" "tgmath.h" "tchar.h" "sys/" "string.h" "stdnoreturn.h" "stdlib.h" "stdio.h" "stddef.h" "stdalign.h" "signal.h" "share.h" "search.h" "safeint_internal.h" "safeint.h" "process.h" "new.h" "minmax.h" "memory.h" "mbstring.h" "mbctype.h" "math.h" "malloc.h" "locale.h" "io.h" "inttypes.h" "fpieee.h" "float.h" "fenv.h" "fcntl.h" "errno.h" "dos.h" "direct.h" "ctype.h" "crtdbg.h" "corecrt_wtime.h" "corecrt_wstring.h" "corecrt_wstdlib.h" "corecrt_wstdio.h" "corecrt_wprocess.h" "corecrt_wio.h" "corecrt_wdirect.h" "corecrt_wctype.h" "corecrt_wconio.h" "corecrt_terminate.h" "corecrt_stdio_config.h" "corecrt_startup.h" "corecrt_share.h" "corecrt_search.h" "corecrt_memory.h" "corecrt_memcpy_s.h" "corecrt_math_defines.h" "corecrt_math.h" "corecrt_malloc.h" "corecrt_io.h" "corecrt.h" "conio.h" "complex.h" "assert.h" "../" "./")
+
+ ("C:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/" (26099 46166 0 0) "power/" "interrupts.h" "interrupts.c" "ic/" "hardware/" "data/" "comm/" "circular_buffer.h" "circular_buffer.c" "../" "./")
+
+ ("c:/Users/" (25343 46292 0 0) "Public/" "desktop.ini" "Default User/" "Default/" "ander/" "All Users/" "../" "./")
+
+ ("c:/Users/ander/Documents/" (26128 42896 0 0) "Zoom/" "Wolfram Mathematica/" "WindowsPowerShell/" "Visual Studio 2022/" "Universe Sandbox/" "Ubuntu.rdp" "Texas Instruments/" "svn_dev/" "Scanned Documents/" "Rockstar Games/" "RealmOfTheMadGod/" "Outlook Files/" "Obsidian/" "My Web Sites/" "My Games/" "My Data Sources/" "Microsoft Hardware/" "LTspiceXVII/" "IISExpress/" "GMMK_Keyboard/" "GitHub/" "Game Documents/" "Fax/" "Electronic Arts/" "eclipse/" "Default.rdp" "Custom Office Templates/" "CCS/" "Call Of Duty Black Ops Cold War/" "Anders-Laptop.rdp" "Altium/" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/" (26080 44564 0 0) "workspace_WWD/" "workspace12/" "user_dictionary.txt" "old_project_saves/" "../" "./")
+
+ ("c:/Users/ander/Documents/CCS/workspace_WWD/" (26084 59672 0 0) "xxx_wwd_nortos_gcc/" "WWD_prog.gitignore.bak" "WWD_prog/" "watchdog_CC26X2R1_LAUNCHXL_nortos_gcc/" "uart2echo_CC26X2R1_LAUNCHXL_nortos_gcc/" "spicontroller_CC26X2R1_LAUNCHXL_freertos_gcc/" "simple_peripheral_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "simple_broadcaster_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "rfPacketTx_CC26X2R1_LAUNCHXL_nortos_gcc/" "RemoteSystemsTempFiles/" "pwmled2_CC26X2R1_LAUNCHXL_nortos_ticlang/" "project_zero_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "nvsinternal_CC26X2R1_LAUNCHXL_nortos_gcc/" "i2ctmp_CC26X2R1_LAUNCHXL_nortos_gcc/" "Hello-World-CC2642R1F/" "gpiostandby_CC26X2R1_LAUNCHXL_nortos_ticlang/" "gpiostandby_CC26X2R1_LAUNCHXL_nortos_gcc/" "dvt/" "bim_onchip_CC26X2R1_LAUNCHXL_nortos_ticlang/" "bim_offchip_CC26X2R1_LAUNCHXL_nortos_ticlang/" ".metadata/" ".jxbrowser.userdata/" "../" "./")
+
+ ("C:/Users/ander/Documents/CCS/workspace_WWD/" (26084 59672 0 0) "xxx_wwd_nortos_gcc/" "WWD_prog.gitignore.bak" "WWD_prog/" "watchdog_CC26X2R1_LAUNCHXL_nortos_gcc/" "uart2echo_CC26X2R1_LAUNCHXL_nortos_gcc/" "spicontroller_CC26X2R1_LAUNCHXL_freertos_gcc/" "simple_peripheral_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "simple_broadcaster_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "rfPacketTx_CC26X2R1_LAUNCHXL_nortos_gcc/" "RemoteSystemsTempFiles/" "pwmled2_CC26X2R1_LAUNCHXL_nortos_ticlang/" "project_zero_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "nvsinternal_CC26X2R1_LAUNCHXL_nortos_gcc/" "i2ctmp_CC26X2R1_LAUNCHXL_nortos_gcc/" "Hello-World-CC2642R1F/" "gpiostandby_CC26X2R1_LAUNCHXL_nortos_ticlang/" "gpiostandby_CC26X2R1_LAUNCHXL_nortos_gcc/" "dvt/" "bim_onchip_CC26X2R1_LAUNCHXL_nortos_ticlang/" "bim_offchip_CC26X2R1_LAUNCHXL_nortos_ticlang/" ".metadata/" ".jxbrowser.userdata/" "../" "./")
+
+ ("C:/Users/ander/Documents/CCS/" (26080 44564 0 0) "workspace_WWD/" "workspace12/" "user_dictionary.txt" "old_project_saves/" "../" "./")
+
+ ("C:/Users/ander/Documents/" (26128 42896 0 0) "Zoom/" "Wolfram Mathematica/" "WindowsPowerShell/" "Visual Studio 2022/" "Universe Sandbox/" "Ubuntu.rdp" "Texas Instruments/" "svn_dev/" "Scanned Documents/" "Rockstar Games/" "RealmOfTheMadGod/" "Outlook Files/" "Obsidian/" "My Web Sites/" "My Games/" "My Data Sources/" "Microsoft Hardware/" "LTspiceXVII/" "IISExpress/" "GMMK_Keyboard/" "GitHub/" "Game Documents/" "Fax/" "Electronic Arts/" "eclipse/" "Default.rdp" "Custom Office Templates/" "CCS/" "Call Of Duty Black Ops Cold War/" "Anders-Laptop.rdp" "Altium/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/AppData/" (25343 46212 825839 500000) "Roaming/" "LocalLow/" "Local/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/" (26115 24490 210688 300000) "Websites and Servers/" "Videos/" "Projects/" "Program Documents/" "Pictures/" "Personal Vault.lnk" "PCB Library/" "Music/" "FileTransfer/" "Documents/" "desktop.ini" "Code/" "Audio/" "Attachments/" ".bashrc_user" ".849C9593-D756-4E56-8D6E-42412F2A707B" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/src/" (25935 49470 787723 600000) "inv_time.c" "Invn/" "imu/" "ICM42670P.h" "ICM42670P.cpp" "#ICM42670P.cpp#" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Documents/Financials/2024/monthly_statements/01-January/save/" (26075 29864 397495 500000) "transaction_history.csv" "T. Rowe Price Account Statement.pdf" "Savings2.csv" "CreditCard4.csv" "Checking1.csv" "Chase5785_Activity20240101_20240131_20240212.CSV" "bilt.csv" "Apple Card Transactions - January 2024.csv" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Documents/Financials/2024/monthly_statements/01-January/" (26075 29650 590695 200000) "transaction_history.csv" "T. Rowe Price Account Statement.pdf" "Savings2.csv" "save/" "CreditCard4.csv" "Checking1.csv" "Chase5785_Activity20240101_20240131_20240212.CSV" "bilt.csv" "Apple Card Transactions - January 2024.csv" "../" "./")
+
+ ("/cygdrive/" (26066 52760 0 0) "../" "./" "e/" "d/" "c/")
+
+ ("/home/ander/tmp/" (25843 32943 191887 300000) "../" "./")
+
+ ("/cygdrive/c/" (26066 11622 148260 900000) "../" "./" "XboxGames/" "Windows.old/" "Windows/" "Users/" "ti/" "System Volume Information/" "SYSTAG.BIN" "swapfile.sys" "Recovery/" "ProgramData/" "Program Files (x86)/" "Program Files/" "PerfLogs/" "pagefile.sys" "OneDriveTemp/" "MSI/" "MinGW/" "Microsoft/" "hiberfil.sys" "found.007/" "found.006/" "found.005/" "found.004/" "found.003/" "found.002/" "found.001/" "found.000/" "DumpStack.log.tmp" "DumpStack.log" "Documents and Settings/" "cygwin64/" "bootTel.dat" "BOOTNXT" "bootmgr" "AVScanner.ini" ".GamingRoot" "$WinREAgent/" "$Recycle.Bin/")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/python/" (26039 49698 152831 100000) "xxx_Testing/" "WWD/" "USB_comm_to_MCU/" "Time_Allocation/" "spotify_scraping/" "Recipe Manager/" "Receipt Digitizer/" "python_playground/" "NickOccupancy/" "Kitesurfing Scraper/" "Internet-Market-Scraper/" "ice_calculator.py" "grow/" "groupme_bot.py" "Fitbit-Scraper/" "financial_analyzer_Tkinter/" "Cryptography Scripts/" "BOM Manager/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/" (26032 28206 963743 700000) "imu_analysis/" "afe_analysis/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/imu_analysis/" (26032 28602 232171 500000) "main.py" "live_imu_graph.py" "butter_lowpass.py" ".idea/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/" (26035 59391 743956 900000) "wwd.syscfg" "wwd.c" "targetConfigs/" "src/" "README.md" "README.html" "main_nortos.c" "Debug/" "cc13x2_cc26x2_nortos.lds" ".settings/" ".project" ".launches/" ".gitignore" ".git/" ".cproject" ".ccsproject" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/examples/Polling_SPI/" (25926 63226 927819 700000) "Polling_SPI.ino" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/" (25926 65515 594830 200000) "imu/" "BQ25120A.h" "BQ25120A.c" "afe/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/" (25926 56778 164323 900000) "power/" "interrupts.h" "interrupts.c" "ic/" "hardware/" "comm/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/" (25928 22115 922118 0) "xxx_wwd_nortos_gcc/" "WWD_prog/" "watchdog_CC26X2R1_LAUNCHXL_nortos_gcc/" "uart2echo_CC26X2R1_LAUNCHXL_nortos_gcc/" "rfPacketTx_CC26X2R1_LAUNCHXL_nortos_gcc/" "RemoteSystemsTempFiles/" "pwmled2_CC26X2R1_LAUNCHXL_nortos_ticlang/" "project_zero_CC26X2R1_LAUNCHXL_tirtos7_ticlang/" "i2ctmp_CC26X2R1_LAUNCHXL_nortos_gcc/" "Hello-World-CC2642R1F/" "gpiostandby_CC26X2R1_LAUNCHXL_nortos_ticlang/" "gpiostandby_CC26X2R1_LAUNCHXL_nortos_gcc/" "dvt/" "bim_onchip_CC26X2R1_LAUNCHXL_nortos_ticlang/" "bim_offchip_CC26X2R1_LAUNCHXL_nortos_ticlang/" ".metadata/" ".jxbrowser.userdata/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/CCS/" (25926 56717 15596 600000) "workspace_WWD/" "workspace12/" "old_project_saves/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/" (25908 25094 485089 300000) "Zoom/" "Wolfram Mathematica/" "WindowsPowerShell/" "Visual Studio 2022/" "Universe Sandbox/" "svn_dev/" "Scanned Documents/" "Rockstar Games/" "RealmOfTheMadGod/" "Python Scripts/" "Outlook Files/" "Ogre/" "Obsidian/" "My Web Sites/" "My Videos/" "My Pictures/" "My Music/" "My Games/" "Microsoft Hardware/" "LTspiceXVII/" "IISExpress/" "GMMK_Keyboard/" "GitHub/" "Game Documents/" "Fax/" "Electronic Arts/" "eclipse/" "desktop.ini" "Default.rdp" "Custom Office Templates/" "CCS/" "Call Of Duty Black Ops Cold War/" "Altium/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Projects/" (25891 17318 134644 100000) "WWD/" "Van_LIFE/" "Pomodoro Timer + Time Allocation Tracker/" "Personal Server/" "Nanoleaf Clone/" "Mom, Reasons I Love You/" "Homeade Laser Cut Wallet/" "Home Cooking Manager/" "hidden_hydroponics/" "Electric Skateboard/" "CNC Map/" "Blindz/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/" (25935 1497 100984 600000) "Web Development/" "ti_CCS_workspaces" "shell_scripts/" "Raspberry_Pi/" "Python/" "Processing/" "multisim/" "MATLAB/" "Julia/" "Java/" "EX_Offline/" "embedded/" "Eclipse/" "C_languages/" "Arduino/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/" (25926 63222 44103 400000) "workspace_v10/" "workspace_353_FreeRTOS/" "workspace_353/" "arduino.ICM42670P/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/" (25926 63226 928818 800000) "UpdateInvnDrivers.bat" "src/" "README.md" "LICENSE" "library.properties" "keywords.txt" "examples/" "doc/" ".git/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/examples/" (25926 63226 926820 200000) "Polling_SPI/" "Polling_I2C/" "FIFO_Interrupt_SPI/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/embedded/arduino.ICM42670P/examples/FIFO_Interrupt_SPI/" (25926 63226 925819 700000) "FIFO_Interrupt_SPI.ino" "../" "./")
+
+ ("/home/ander/.emacs.d/auto-save-list/" (25843 41655 358867 800000) "../" "./")
+
+ ("/home/ander/.emacs.d/" (25843 41543 369970 300000) "auto-save-list/" "../" "./")
+
+ ("/home/ander/" (25843 34707 58116 100000) "tmp/" ".profile" ".inputrc" ".emacs.d/" ".bash_profile" ".bash_history" ".bashrc" "../" "./")
+
+ ("/home/" (25843 32913 774772 300000) "ander/" "../" "./")
+
+ ("/cygdrive/c/Users/" (25343 46292 344114 800000) "Public/" "desktop.ini" "Default User/" "Default/" "ander/" "All Users/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/Embedded/" (25926 63222 44103 400000) "workspace_v10/" "workspace_353_FreeRTOS/" "workspace_353/" "arduino.ICM42670P/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/Embedded/arduino.ICM42670P/" (25926 63226 928818 800000) "UpdateInvnDrivers.bat" "src/" "README.md" "LICENSE" "library.properties" "keywords.txt" "examples/" "doc/" ".git/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/OneDrive/Code/Embedded/arduino.ICM42670P/src/" (25926 63226 940819 700000) "inv_time.c" "Invn/" "imu/" "ICM42670P.h" "ICM42670P.cpp" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

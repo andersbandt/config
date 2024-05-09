@@ -1,0 +1,61 @@
+
+import os
+import pandas as pd
+import numpy as np
+
+from common import subprocessor
+from common import plotter
+
+# basefilepath = "C:/Users/ander/Downloads/"
+# filename = "test2.csv"
+
+basefilepath = os.getcwd()
+filename = "/data/" + "_20240409__220025_clock_test_.csv"
+filepath = basefilepath + filename
+
+pd_frame = subprocessor.load_csv(filepath, columns=['timestamp', 'ms'])
+time_series = subprocessor.create_datetime(pd_frame["timestamp"])
+
+
+offset = -1*(pd_frame['ms'][0]/1000) + time_series[0].timestamp()
+print(f"Time offset is: {offset}")
+
+
+i = 0
+time_diff = []
+for mcu_time in pd_frame['ms']:
+    time_diff.append(mcu_time/1000 - time_series[i].timestamp() + offset)
+    i += 1
+
+
+# plotter.time_plot(time_series, time_diff)
+
+
+# convert to a numpy array
+time_diff = np.array(time_diff)
+z_arr = np.abs((time_diff - np.mean(time_diff)) / np.std(time_diff)) # Calculate z-scores
+r_arr = np.abs((time_diff - np.mean(time_diff))) # Calculate z-scores
+
+
+val = z_arr
+# plotter.time_plot(time_series, val)
+
+
+threshold = 0.5
+filtered_time_diff = time_diff[val < threshold]
+filtered_pd_frame = pd_frame[val < threshold]
+
+
+
+plotter.time_plot(
+    subprocessor.create_datetime(filtered_pd_frame["timestamp"]),
+    filtered_time_diff.tolist(),
+    "Datetime",
+    "Offset (seconds)"
+    )
+
+
+print("I'm fucking done!!!")
+
+
+

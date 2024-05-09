@@ -1,0 +1,114 @@
+//*****************************************************************************
+//!
+//! @file tests.c
+//! @author Anders Bandt
+//! @brief This file contains main function for WWD device
+//! @version 0.9
+//! @date April 2024
+//!
+//*****************************************************************************
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//! -----------------------------------------------------------------------------------------------------------------------//
+//! HEADER FILES ----------------------------------------------------------------------------------------------------------//
+//! -----------------------------------------------------------------------------------------------------------------------//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Standard C99 stuff */
+#include <stdint.h>
+#include <string.h>
+#include <unistd.h>
+
+
+/* My header files  */
+#include <src/helper.h>
+#include <src/clock.h>
+#include <src/comm/comm.h>
+#include <src/comm/i2c.h>
+#include <src/comm/spi.h>
+#include <src/comm/uart.h>
+#include <src/power/power.h>
+#include <src/hardware/led.h>
+#include <src/ic/BQ25120A.h>
+#include <src/ic/afe/AFE_HostControl.h>
+#include <src/ic/imu/imu.h>
+#include <src/data/nvs.h>
+
+
+
+void test_actions(uart_comm_t * read_packet, Display_Handle display) {
+    uart_write(read_packet->buffer, read_packet->bytes_read, display);
+    uart_write("\n", 1, display);
+    usleep(10000);
+
+    
+    /* flash-read */
+    if (compareByteArrays(read_packet->buffer, (const uint8_t * )"FR91", 4)) {
+        uart_write("FLASH-READ!\n", 12, display);
+        uint8_t flash_read[1];
+        char *flash_dump = (char *)malloc(10); // Allocate memory for 4 characters plus the null terminator
+        for(int i = 0; i < 0x2000; i++) {
+            nvs_read(flash_read, i, 1); // read 1 byte at a time
+            /* sprintf(flash_dump, "%02X:%02X\n", i, flash_read[0]); */
+            
+            // print out flash bytes
+            sprintf(flash_dump, "%X:%X\n", i, flash_read[0]);
+            uart_write(flash_dump, strlen(flash_dump), display);
+            
+            // add some delay to server-side processing delay
+            usleep(600);// 600 seems just perfect
+        }
+    }
+    /* end function */
+
+    
+    /* flash-read-all */
+    if (compareByteArrays(read_packet->buffer, (const uint8_t * )"FR01", 4)) {
+        uart_write("FLASH-READ-ALL!\n", 16, display);
+        uint8_t flash_read[1];
+        char *flash_dump = (char *)malloc(10); // Allocate memory for 4 characters plus the null terminator
+        size_t nvs_size = nvs_get_region_size();
+        for(int i = 0; i < nvs_size; i++) {
+            nvs_read(flash_read, i, 1); // read 1 byte at a time
+            sprintf(flash_dump, "%X:%X\n", i, flash_read[0]);
+            uart_write(flash_dump, strlen(flash_dump), display);
+            usleep(1*1200);// need a longer delay here because the byte indices will get larger
+        }
+    }
+    /* end function */
+
+
+    
+    /* flash-erase */
+    if (compareByteArrays(read_packet->buffer, (const uint8_t * )"FE42", 4)) {
+        uart_write("FLASH-ERASE!\n", 13, display);
+        nvs_erase_region(display);
+        uart_write("ERASE COMPLETE!\n", 16, display);
+    }
+    /* end function */
+
+
+    /* imu_graph */
+    if (compareByteArrays(read_packet->buffer, (const uint8_t * )"IG83", 4)) {
+        uart_write("IMU-GRAPH!\n", 2, display);
+    }
+    /* end function */
+
+
+    /* clock-test */
+    if (compareByteArrays(read_packet->buffer, (const uint8_t * )"CR81", 4)) {
+        char exec_ms[20];
+        while (1) {
+            uint32_t ms = get_ms();
+            sprintf(exec_ms, "%u", ms);
+            uart_write(exec_ms, strlen(exec_ms), display);
+            usleep(500*1000);
+        }
+    }
+    /* end function */
+
+
+
+
+}

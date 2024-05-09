@@ -1,0 +1,5 @@
+
+
+echo "Bash init"
+echo "... sourcing Anders' .bashrc_user"
+source ~/.bashrc_user
