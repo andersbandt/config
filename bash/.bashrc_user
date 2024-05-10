@@ -1,7 +1,8 @@
 
 # @author   Anders Bandt
-version="1.00"
-rev="B"
+version="2.00"
+rev="C"
+date="2024-05-09"
 title="Ders' Bash Settings"
 
 
@@ -9,9 +10,12 @@ if [ $system = "Windows" ]
 then
     BASEPATH="/cygdrive/c/Users/ander/"
     source ~/OneDrive/.bashrc_windows
+    ONEDRIVE="~/OneDrive"
 elif [ $system = "Linux" ]
 then
-    BASEPATH="/home/anders/"  
+    BASEPATH="/home/anders/"
+    ONEDRIVE="~"
+    echo "Using onedrive: '$ONEDRIVE'"
 fi
 
 
@@ -70,7 +74,7 @@ alias grpe="grep"
 ### EMACS ALLIAS           ###
 ##############################
 alias editemacs="emacs ~/.emacs"
-alias emacs="emacs -q --load ~/.emacs.d/base.el"
+
 
 
 # mispell
@@ -151,7 +155,16 @@ filetransfer_t='/cygdrive/c/Users/ander/OneDrive/FileTransfer'
 ##############################
 ### MISC ALIAS             ###
 ##############################
-alias editprof='emacs ~/OneDrive/.bashrc_user'
+
+if [ $system = "Windows" ]
+then
+	echo "I'm windows"
+elif [ $system = "Linux" ]
+then
+	echo "I'm Linux"
+fi
+
+alias editprof='emacs $ONEDRIVE/.bashrc_user'		
 alias editprofwindows='emacs ~/OneDrive/.bashrc_windows'
 alias reload='source ~/.bashrc'
 alias start='cygstart'
