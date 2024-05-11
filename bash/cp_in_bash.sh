@@ -5,6 +5,7 @@ system="Linux"
 echo "using system $system"
 
 cp -iv ~/.bashrc .
+cp -iv ~/.bashrc_color .
 
 
 echo "using onedrive '$ONEDRIVE'"
