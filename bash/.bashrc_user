@@ -1,7 +1,7 @@
 
 # @author   Anders Bandt
 version="2.00"
-rev="C"
+rev="A"
 date="2024-05-09"
 title="Ders' Bash Settings"
 
@@ -13,13 +13,12 @@ then
     ONEDRIVE="~/OneDrive"
 elif [ $system = "Linux" ]
 then
-    BASEPATH="/home/anders/"
+    BASEPATH="/home/anders"
     ONEDRIVE="~"
-    echo "Using onedrive: '$ONEDRIVE'"
 fi
 
 
-alias loadti='/cygdrive/c/ti/ccs1200/ccs/ccs_base/scripting/examples/loadti/loadti.bat'
+alias loadti='$BASEPATH/ti/ccs1200/ccs/ccs_base/scripting/examples/loadti/loadti.bat'
 
 
 ##############################
@@ -45,8 +44,9 @@ alias hg='history | grep'
 
 ### ls ###
 alias ls='ls --color=auto'
-alias la='ls -la --color=auto'
-alias ll='ls -l --color=auto'
+alias la='ls -la'
+alias ll='ls -lF'
+alias l='ls -CF'
 alias lt='ls -lt'
 alias lrt='ls -lrt'
 
@@ -90,7 +90,7 @@ alias emacss="emacs"
 #### GENERAL ###
 alias c='cd /cygdrive/c'
 alias d='cd /cygdrive/d'
-alias ti='cd /cygdrive/c/ti'
+alias ti='cd $BASEPATH/ti'
 alias tmp='cd ~/tmp'
 alias ander='cd /cygdrive/c/Users/ander'
 
@@ -98,9 +98,9 @@ alias ander='cd /cygdrive/c/Users/ander'
 alias downloads='cd $BASEPATH/Downloads'
 alias desktop='cd $BASEPATH/Desktop'
 alias documents='cd $BASEPATH/Documents'
-alias obsidian='cd /cygdrive/c/Users/ander/Documents/Obsidian'
-alias ccs='cd /cygdrive/c/Users/ander/Documents/CCS/'
-alias altium='cd /cygdrive/c/Users/ander/Documents/Altium/'
+alias obsidian='cd $BASEPATH/Documents/Obsidian'
+alias ccs='cd $BASEPATH/Documents/CCS/'
+alias altium='cd $BASEPATH/Documents/Altium/'
 
 
 ### ONE DRIVE ###
@@ -112,7 +112,7 @@ alias financials='cd /cygdrive/c/Users/ander/OneDrive/Documents/financials'
 alias monthlystatements='cd /cygdrive/c/Users/ander/OneDrive/Documents/financials/2023/monthly_statements'
 
 
-alias code='cd /cygdrive/c/Users/ander/OneDrive/Code'
+alias code='cd $ONEDRIVE/Code'
 alias arduino='cd /cygdrive/c/Users/ander/OneDrive/Code/Arduino'
 alias embedded='cd /cygdrive/c/Users/ander/OneDrive/Code/embedded'
 alias gopython='cd /cygdrive/c/Users/ander/OneDrive/Code/python'
@@ -132,7 +132,7 @@ alias wwdcode='cd "/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/"'
 wwd_t='/cygdrive/c/Users/ander/OneDrive/Projects/WWD'
 wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
 
-alias wwdapi='python /Users/ander/Documents/GitHub/wwd_gui_api/main.py'
+alias wwdapi='python ~/Documents/GitHub/wwd_gui_api/main.py'
 
 # Hidden-Hydroponics
 alias hydroponics='cd "/cygdrive/c/Users/ander/OneDrive/Projects/hidden_hydroponic"'
@@ -156,21 +156,24 @@ filetransfer_t='/cygdrive/c/Users/ander/OneDrive/FileTransfer'
 ### MISC ALIAS             ###
 ##############################
 
-if [ $system = "Windows" ]
-then
-	echo "I'm windows"
-elif [ $system = "Linux" ]
-then
-	echo "I'm Linux"
-fi
-
 alias editprof='emacs $ONEDRIVE/.bashrc_user'		
 alias editprofwindows='emacs ~/OneDrive/.bashrc_windows'
 alias reload='source ~/.bashrc'
-alias start='cygstart'
-alias apt-get='apt-cyg'
-alias installer="start '/cygdrive/c/Users/ander/OneDrive/Code/shell_scripts/setup-x86_64.exe'"
 alias github='cd ~/Documents/GitHub'
+
+
+
+
+
+if [ $system = "Windows" ]
+then
+	alias start='cygstart'
+      	alias apt-get='apt-cyg'
+      	alias installer="start '/cygdrive/c/Users/ander/OneDrive/Code/shell_scripts/setup-x86_64.exe'"	
+elif [ $system = "Linux" ]
+then
+	alias start='xdg-open'
+fi
 
 
 ##############################
