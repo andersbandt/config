@@ -6,15 +6,17 @@ date="2024-05-09"
 title="Ders' Bash Settings"
 
 
+
+
 if [ $system = "Windows" ]
 then
-    BASEPATH="/cygdrive/c/Users/ander/"
+    BASEPATH="/cygdrive/c/Users/ander"
     source ~/OneDrive/.bashrc_windows
-    ONEDRIVE="~/OneDrive"
+    ONEDRIVE="$HOME/OneDrive"
 elif [ $system = "Linux" ]
 then
     BASEPATH="/home/anders"
-    ONEDRIVE="~"
+    ONEDRIVE="$HOME"
 fi
 
 
@@ -104,7 +106,7 @@ alias altium='cd $BASEPATH/Documents/Altium/'
 
 
 ### ONE DRIVE ###
-alias onedrive='cd /cygdrive/c/Users/ander/OneDrive'
+alias onedrive='cd $ONEDRIVE/'
 alias filetransfer='cd /cygdrive/c/Users/ander/OneDrive/FileTransfer'
 
 alias engineering='cd "/cygdrive/c/Users/ander/OneDrive/Documents/engineering"'
@@ -112,7 +114,7 @@ alias financials='cd /cygdrive/c/Users/ander/OneDrive/Documents/financials'
 alias monthlystatements='cd /cygdrive/c/Users/ander/OneDrive/Documents/financials/2023/monthly_statements'
 
 
-alias code='cd $ONEDRIVE/Code'
+alias code='cd $ONEDRIVE/Code/'
 alias arduino='cd /cygdrive/c/Users/ander/OneDrive/Code/Arduino'
 alias embedded='cd /cygdrive/c/Users/ander/OneDrive/Code/embedded'
 alias gopython='cd /cygdrive/c/Users/ander/OneDrive/Code/python'
@@ -181,8 +183,8 @@ fi
 ##############################
 alias ssh@breeze="ssh observe@breeze"
 alias ssh@grow="ssh pi@grow"
-alias ssh@ubuntu="ssh anders@anders-ubuntu"
-alias sftp@ubuntu="sftp anders@anders-ubuntu"
+alias ssh@ubuntu="ssh anders@anders-MS-7A70"
+alias sftp@ubuntu="sftp anders@anders-MS-7A70"
 
 
 
