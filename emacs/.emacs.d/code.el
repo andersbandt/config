@@ -12,6 +12,8 @@
 ;; turn on syntax highlighting
 ;; (global-font-lock-mode 1)
 (global-font-lock-mode t) ;; enable syntax highlighting for all modes
+(add-to-list 'auto-mode-alist '("\\.bash\\'" . shell-script-mode))
+
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4) ;; set tabs to be 4 spaces wide
 (setq c-basic-offset 4) ; this line is critical for C based modes like .c and .php I guess
@@ -80,3 +82,7 @@
 ;; (advice-remove 'c-indent-new-comment-line #'my-prettify-c-block-comment)
 
 
+
+;; STARTUP ECHO MESSAGE
+(defun display-startup-echo-area-message ()
+    (message "Sourced code.el...."))
