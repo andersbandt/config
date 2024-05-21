@@ -25,6 +25,14 @@
 ;;(load-theme 'misterioso t)n
 
 
+;; turn on syntax highlighting
+;; (global-font-lock-mode 1)
+(global-font-lock-mode t) ;; enable syntax highlighting for all modes
+(dolist (pattern '("\\.bashrc\\'" "\\.bashrc_user\\'" "\\.sh\\'"))
+  (add-to-list 'auto-mode-alist `(,pattern . shell-script-mode)))
+
+
+
 ;; BACKUPS
 (setq backup-directory-alist '(("." . "~/.emacs.d/.saves"))) ; don't litter fs tree
 (setq backup-by-copying t) ; don't clobber symlinks
