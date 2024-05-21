@@ -1,5 +1,8 @@
 
 
+echo "executing COPY to OUT"
+echo "Files in Github will be overwritten by local computer files"
+
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     system="Linux"

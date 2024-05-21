@@ -80,6 +80,7 @@ alias editemacs="emacs ~/.emacs"
 
 
 # mispell
+alias emas="emacs"
 alias emasc="emacs"
 alias emac="emacs"
 alias eamsc="emacs"
