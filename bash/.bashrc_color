@@ -47,6 +47,21 @@ PS1="${blue}\u@${magenta2}\h:\w\$ \[\e[0m\]"
 #### OUTPUT COLORIZATION ####
 #############################
 
+
+# Black: 30
+# Red: 31
+# Green: 32
+# Yellow: 33
+# Blue: 34
+# Magenta: 35
+# Cyan: 36
+# White: 37
+
+# bold colors with 01 prefix
+BLACK_TB="01;30"
+GREEN_TB="01;32"
+
+
 # di: directory
 # ex: executable
 # fi: regular file
@@ -56,6 +71,11 @@ PS1="${blue}\u@${magenta2}\h:\w\$ \[\e[0m\]"
 # su: SUID special permission file
 # *.ext: file with extension .ext
 
-#LS_COLORS=$LS_COLORS'di=34:ex=32:fi-1;37:*.jpg=32:*.png=32:*.zip=31:*.tar.gz=31:'
-LS_COLORS=$LS_COLORS':fi=00;33:'
 
+LS_COLORS=$LS_COLORS"di=$GREEN_TB:"
+LS_COLORS=$LS_COLORS"ex=01;31:"
+LS_COLORS=$LS_COLORS"*.sh=01;31:" # CAN'T GET THIS TO WORK as ex rule overrules it
+LS_COLORS=$LS_COLORS"*.txt=01;37:"
+
+
+export LS_COLORS
