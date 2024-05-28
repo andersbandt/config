@@ -27,7 +27,6 @@ fi
 echo "using system $system"
 echo "using onedrive '$ONEDRIVE'"
 
-   
 
 # Function to compare and move files
 move_with_diff() {
@@ -55,7 +54,7 @@ move_with_diff() {
 
 
 # Specify the files to be moved
-src_files=("$HOME/.bashrc" "$HOME/bashrc_color")
+src_files=("$HOME/.bashrc" "$HOME/.bashrc_color")
 dest_dir="."
 
 # Perform the move operation with diff check
@@ -78,7 +77,7 @@ then
 fi
 
 
-src_file="$dest_dir/$(basename "$src_file_name")"
+src_file="$src_dir/$(basename "$src_file_name")"
 dest_file="$dest_dir/$(basename "$src_file_name")"
 
 move_with_diff "$src_file" "$dest_file"
