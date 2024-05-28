@@ -34,7 +34,8 @@ move_with_diff() {
     local dest_file=$2
 
     if [[ -e "$dest_file" ]]; then
-        echo -e "\n\nDifferences between $src_file and $dest_file:"
+        echo -e "\n\nDifferences between $src_file and $dest_file"
+	echo "No red lines should be below if you want to preserve local changes!!!"
         if diff --color "$dest_file" "$src_file"; then
             echo "No differences found between $src_file and $dest_file. Skipping copy."
         else

@@ -132,6 +132,7 @@ alias wwddocumentation='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/docume
 alias wwdfirmware='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/firmware"'
 alias wwdccs='cd "$BASEPATH/Documents/CCS/workspace_WWD/WWD_prog"'
 alias wwdcode='cd "/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/"'
+alias wwdlog='cd "$BASEPATH/Documents/GitHub/wwd_gui_api/log/"'
 wwd_t='/cygdrive/c/Users/ander/OneDrive/Projects/WWD'
 wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
 
