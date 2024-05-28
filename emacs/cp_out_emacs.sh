@@ -1,4 +1,7 @@
 
 
+echo "Copying GitHub files to LOCAL system"
+
+
 \cp -vi .emacs ~/
-\cp -vri .emacs.d ~/
+\cp -vrf .emacs.d ~/

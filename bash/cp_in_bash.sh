@@ -27,22 +27,6 @@ fi
 echo "using system $system"
 echo "using onedrive '$ONEDRIVE'"
 
-
-cp -iv ~/.bashrc .
-cp -iv ~/.bashrc_color .
-
-
-
-
-
-if [ $system = "Windows" ]
-then
-    cp -iv $ONEDRIVE/.bashrc_user .
-elif [ $system = "Linux" ]
-then
-    cp -iv ~/.bashrc_user .
-fi
-
    
 
 # Function to compare and move files
