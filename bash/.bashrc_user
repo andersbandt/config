@@ -11,12 +11,13 @@ title="Ders' Bash Settings"
 if [ $system = "Windows" ]
 then
     BASEPATH="/cygdrive/c/Users/ander"
-    source ~/OneDrive/.bashrc_windows
     ONEDRIVE="$HOME/OneDrive"
+    source ~/OneDrive/.bashrc_windows
 elif [ $system = "Linux" ]
 then
     BASEPATH="/home/anders"
     ONEDRIVE="$HOME"
+    source ~/.bashrc_linux
 fi
 
 
@@ -124,6 +125,18 @@ alias matlab='cd /cygdrive/c/Users/ander/OneDrive/Code/MATLAB'
 alias projects='cd /cygdrive/c/Users/ander/OneDrive/Projects'
 
 
+##############################
+### NAV VARIABLES          ###
+##############################
+onedrive_t='/cygdrive/c/Users/ander/OneDrive/'
+projects_t='/cygdrive/c/Users/ander/OneDrive/Projects'
+code_t='$ONEDRIVE/Code'
+documents_t='/cygdrive/c/Users/ander/Documents/'
+financials_t='/cygdrive/c/Users/ander/OneDrive/Documents/Financials/'
+filetransfer_t='/cygdrive/c/Users/ander/OneDrive/FileTransfer'
+
+
+
 ### specific projects
 # WWD
 alias wwd='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD"'
@@ -132,7 +145,8 @@ alias wwddocumentation='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/docume
 alias wwdfirmware='cd "/cygdrive/c/Users/ander/OneDrive/Projects/WWD/firmware"'
 alias wwdccs='cd "$BASEPATH/Documents/CCS/workspace_WWD/WWD_prog"'
 alias wwdcode='cd "/cygdrive/c/Users/ander/OneDrive/Code/python/WWD/"'
-alias wwdlog='cd "$BASEPATH/Documents/GitHub/wwd_gui_api/log/"'
+#alias wwdlog='cd "$BASEPATH/Documents/GitHub/wwd_gui_api/log/"'
+alias wwdlog='/home/anders/Code/bash/tail_recent.sh'
 wwd_t='/cygdrive/c/Users/ander/OneDrive/Projects/WWD'
 wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
 
@@ -145,15 +159,7 @@ alias hydroponics='cd "/cygdrive/c/Users/ander/OneDrive/Projects/hidden_hydropon
 alias financeanalyzer='python /Users/ander/Documents/GitHub/Financial-Analyzer/src/main.py'
 
 
-##############################
-### NAV VARIABLES          ###
-##############################
-onedrive_t='/cygdrive/c/Users/ander/OneDrive/'
-projects_t='/cygdrive/c/Users/ander/OneDrive/Projects'
-code_t='/cygdrive/c/Users/ander/OneDrive/Code'
-documents_t='/cygdrive/c/Users/ander/Documents/'
-financials_t='/cygdrive/c/Users/ander/OneDrive/Documents/Financials/'
-filetransfer_t='/cygdrive/c/Users/ander/OneDrive/FileTransfer'
+
 
 
 ##############################
