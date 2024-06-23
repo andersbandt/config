@@ -40,7 +40,7 @@ magenta_bg='\e[48;5;176m'
 
 # sets the prompt to custom colors
 # the "\e[0m" at the end is used for reset I believe.
-PS1="${blue}\u@${magenta2}\h:\w\$ \[\e[0m\]"
+PS1="${blue}\u@${magenta2}\h:\w\\n$ \[\e[0m\]"
 
 
 #############################
