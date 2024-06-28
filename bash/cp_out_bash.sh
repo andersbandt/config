@@ -1,6 +1,6 @@
 
 
-echo "executing COPY to OUT"
+echo "eggecuting COPY to OUT"
 echo "Files on local machine will be overwritten by GitHub files"
 
 
