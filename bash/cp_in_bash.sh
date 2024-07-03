@@ -2,7 +2,17 @@
 
 source ~/.bash_color
 
-echo "executing COPY to IN"
+# RED='\033[00;31m'
+# GREEN='\033[00;32'
+# YELLOW='\033[00;33'
+# BLUE='\033[00;34'
+# PURPLE='\033[00;35'
+# CYAN='\033[00;36'
+# WHITE='\033[00;37'
+
+# ENDC='\033[0m'
+
+echo -e "${REDm}Executing COPY to IN${ENDC}"
 echo "Files in Github will be overwritten by local computer files"
 
 echo "using system $system"
