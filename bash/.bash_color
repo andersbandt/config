@@ -37,10 +37,14 @@ BG_WHITE='\033[48;5;37'
 
 
 ### 256 color escape code
-blue='\e[38;5;39m'
-magenta='\e[38;5;176m'
-magenta2='\e[38;5;206m'
-magenta_bg='\e[48;5;176m'
+blue1='\033[38;5;39m'
+blue2='\033[38;5;39m'
+magenta1='\033[38;5;176m'
+magenta2='\033[38;5;206m'
+yellow3='\033[38;5;48m'
+
+
+magenta_bg='\033[48;5;176m'
 
 
 #############################
@@ -48,8 +52,7 @@ magenta_bg='\e[48;5;176m'
 #############################
 
 # sets the prompt to custom colors
-# the "\e[0m" at the end is used for reset I believe.
-PS1="${blue}\u@${magenta2}\h:\w\\n$ $RESTORE"
+PS1="${blue1}\u@${magenta2}\h:\w\\n$ $RESTORE"
 
 
 #############################
@@ -65,11 +68,14 @@ PS1="${blue}\u@${magenta2}\h:\w\\n$ $RESTORE"
 # *.ext: file with extension .ext
 
 
-LS_COLORS=$LS_COLORS"di=$BG_BLUE:"
-LS_COLORS=$LS_COLORS"ex=$RED:"
+LS_COLORS=$LS_COLORS"di=$RED:"
+LS_COLORS=$LS_COLORS"ex=$L_GREEN:"
 LS_COLORS=$LS_COLORS"fi=$L_PURPLE:"
-LS_COLORS=$LS_COLORS"*.sh=01;31:" # CAN'T GET THIS TO WORK as ex rule overrules it
+#LS_COLORS=$LS_COLORS"*.sh=$L_RED:" # CAN'T GET THIS TO WORK as ex rule overrules it
+
 LS_COLORS=$LS_COLORS"*.txt=$WHITE:"
-LS_COLORS=$LS_COLORS"*.txt=RESTORE"
+LS_COLORS=$LS_COLORS"*.md=$YELLOW:" # does this one not work too ...?
+
 
 export LS_COLORS
+
