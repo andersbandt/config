@@ -1,5 +1,7 @@
 
 
+source ~/.bash_color
+
 echo "executing COPY to IN"
 echo "Files in Github will be overwritten by local computer files"
 
@@ -34,7 +36,7 @@ move_with_diff() {
 
 
 # Specify the files to be moved
-src_files=("$HOME/.bashrc" "$HOME/.bash_user" "$HOME/.bash_alias" "$HOME/.bash_os" "$HOME/.bash_color" )
+src_files=("$HOME/.bashrc" "$HOME/.bash_user" "$HOME/.bash_aliases" "$HOME/.bash_os" "$HOME/.bash_color" )
 dest_dir="."
 
 
