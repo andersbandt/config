@@ -9,7 +9,7 @@ export TERM=xterm-color
 #############################
 #### COLOR VARIABLES  #######
 #############################
-RESTORE='\033[0m'
+ENDC='\033[0m'
 
 RED='\033[00;31'
 GREEN='\033[00;32'
@@ -18,6 +18,17 @@ BLUE='\033[00;34'
 PURPLE='\033[00;35'
 CYAN='\033[00;36'
 WHITE='\033[00;37'
+
+
+REDm='\033[00;31m'
+GREENm='\033[00;32m'
+YELLOWm='\033[00;33m'
+BLUEm='\033[00;34m'
+PURPLEm='\033[00;35m'
+CYANm='\033[00;36m'
+WHITEm='\033[00;37m'
+
+#export RED GREEN YELLOW BLUE PURPLE CYAN WHITE
 
 L_RED='\033[01;31'
 L_GREEN='\033[01;32'
@@ -35,7 +46,6 @@ BG_PURPLE='\033[48;5;35'
 BG_CYAN='\033[48;5;36'
 BG_WHITE='\033[48;5;37'
 
-
 ### 256 color escape code
 blue1='\033[38;5;39m'
 blue2='\033[38;5;39m'
@@ -52,7 +62,7 @@ magenta_bg='\033[48;5;176m'
 #############################
 
 # sets the prompt to custom colors
-PS1="${blue1}\u@${magenta2}\h:\w\\n$ $RESTORE"
+PS1="${blue1}\u@${magenta2}\h:\w\\n$ $ENDC"
 
 
 #############################
