@@ -11,23 +11,32 @@ export TERM=xterm-color
 #############################
 RESTORE='\033[0m'
 
-RED='\033[00;31m'
-GREEN='\033[00;32m'
-YELLOW='\033[00;33m'
-BLUE='\033[00;34m'
-PURPLE='\033[00;35m'
-CYAN='\033[00;36m'
-LIGHTGRAY='\033[00;37m'
+RED='\033[00;31'
+GREEN='\033[00;32'
+YELLOW='\033[00;33'
+BLUE='\033[00;34'
+PURPLE='\033[00;35'
+CYAN='\033[00;36'
+WHITE='\033[00;37'
 
-LRED='\033[01;31m'
-LGREEN='\033[01;32m'
-LYELLOW='\033[01;33m'
-LBLUE='\033[01;34m'
-LPURPLE='\033[01;35m'
-LCYAN='\033[01;36m'
-WHITE='\033[01;37m'
+L_RED='\033[01;31'
+L_GREEN='\033[01;32'
+L_YELLOW='\033[01;33'
+L_BLUE='\033[01;34'
+L_PURPLE='\033[01;35'
+L_CYAN='\033[01;36'
+L_WHITE='\033[01;37'
+
+BG_RED='\033[48;5;31'
+BG_GREEN='\033[48;5;32'
+BG_YELLOW='\033[48;5;33'
+BG_BLUE='\033[48;5;34'
+BG_PURPLE='\033[48;5;35'
+BG_CYAN='\033[48;5;36'
+BG_WHITE='\033[48;5;37'
 
 
+### 256 color escape code
 blue='\e[38;5;39m'
 magenta='\e[38;5;176m'
 magenta2='\e[38;5;206m'
@@ -40,28 +49,12 @@ magenta_bg='\e[48;5;176m'
 
 # sets the prompt to custom colors
 # the "\e[0m" at the end is used for reset I believe.
-PS1="${blue}\u@${magenta2}\h:\w\\n$ \[\e[0m\]"
+PS1="${blue}\u@${magenta2}\h:\w\\n$ $RESTORE"
 
 
 #############################
 #### OUTPUT COLORIZATION ####
 #############################
-
-
-# Black: 30
-# Red: 31
-# Green: 32
-# Yellow: 33
-# Blue: 34
-# Magenta: 35
-# Cyan: 36
-# White: 37
-
-# bold colors with 01 prefix
-BLACK_TB="01;30"
-GREEN_TB="01;32"
-
-
 # di: directory
 # ex: executable
 # fi: regular file
@@ -72,10 +65,11 @@ GREEN_TB="01;32"
 # *.ext: file with extension .ext
 
 
-LS_COLORS=$LS_COLORS"di=$GREEN_TB:"
-LS_COLORS=$LS_COLORS"ex=01;31:"
+LS_COLORS=$LS_COLORS"di=$BG_BLUE:"
+LS_COLORS=$LS_COLORS"ex=$RED:"
+LS_COLORS=$LS_COLORS"fi=$L_PURPLE:"
 LS_COLORS=$LS_COLORS"*.sh=01;31:" # CAN'T GET THIS TO WORK as ex rule overrules it
-LS_COLORS=$LS_COLORS"*.txt=01;37:"
-
+LS_COLORS=$LS_COLORS"*.txt=$WHITE:"
+LS_COLORS=$LS_COLORS"*.txt=RESTORE"
 
 export LS_COLORS

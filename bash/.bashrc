@@ -123,7 +123,7 @@ fi
 ### SOURCE OTHER FILES  ####
 ############################
 
-if [ -f ~/.bashrc_os ]; then
+if [ -f ~/.bash_os ]; then
     alias editos="emacs ~/.bash_os"
     . ~/.bash_os
 fi
