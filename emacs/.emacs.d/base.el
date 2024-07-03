@@ -33,6 +33,18 @@
 
 
 
+;; SSH
+(setq tramp-default-method "sshx")
+(setq tramp-verbose 10)
+
+(defun connect-remote()
+  "Connect to a remote server via SSH and open a file"
+  (interactive)
+  (find-file "/ssh:anders@anders-ms-7a70:/home/anders/Documents/CCS/workspace_WWD/WWD_prog/wwd.c")
+  (load "~/.emacs.d/code.el")
+  (load "~/.emacs.d/lsp.el"))
+
+
 ;; BACKUPS
 (setq backup-directory-alist '(("." . "~/.emacs.d/.saves"))) ; don't litter fs tree
 (setq backup-by-copying t) ; don't clobber symlinks

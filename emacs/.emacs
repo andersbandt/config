@@ -9,6 +9,10 @@
 (load "~/.emacs.d/base.el")
 
 
+;; LOAD Obsidian (Markdown) settings
+(load "~/.emacs.d/obsidian.el")
+
+
 ;; LOAD CODE SETTINGS
 (load "~/.emacs.d/code.el")
 
