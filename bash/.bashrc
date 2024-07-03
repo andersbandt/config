@@ -1,3 +1,10 @@
+
+
+
+alias reload='source ~/.bashrc'
+alias editprof='emacs ~/.bashrc'
+
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -72,11 +79,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-if [ -f ~/.bashrc_color ]; then
-    . ~/.bashrc_color
-fi
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 
 
@@ -94,14 +97,6 @@ fi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -114,34 +109,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-
-
 ######################################################
 ####        ANDERS CONTRIBUTIONS BELOW            ####
 ######################################################
-
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    system="Linux"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # Mac OSX
-    system="max"
-elif [[ "$OSTYPE" == "cygwin" ]]; then
-    # POSIX compatibility layer and Linux environment emulation for Windows
-    system="Windows"
-elif [[ "$OSTYPE" == "msys" ]]; then
-    system="msys"
-    # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-elif [[ "$OSTYPE" == "freebsd"* ]]; then
-    # ...
-    system="freebsd"
-else
-    # Unknown.
-    system=0
-fi
-
-
 
 # add stuff to PATH
 if [ -x /home/anders/.local/bin ]; then
@@ -149,33 +119,26 @@ if [ -x /home/anders/.local/bin ]; then
 fi
 
 
-# change environment executables
-if [ $system = "Windows" ]
-then
-    alias python='/cygdrive/c/Users/ander/AppData/Local/Programs/Python/Python310/python'
-    alias emacs="emacs -q --load ~/.emacs.d/base.el"
-elif [ $system = "Linux" ]
-then
-    alias python="python3"
-    alias emacs="emacs -q -nw --load ~/.emacs.d/base.el"
+############################
+### SOURCE OTHER FILES  ####
+############################
+
+if [ -f ~/.bashrc_os ]; then
+    alias editos="emacs ~/.bash_os"
+    . ~/.bash_os
 fi
-
-
-# source user init file
-if [ $system = "Windows" ]
-then
-    source ~/OneDrive/.bashrc_user
-elif [ $system = "Linux" ]
-then
-    source ~/.bashrc_user
+if [ -f ~/.bash_alias ]; then
+    alias editalias="emacs ~/.bash_alias"
+    . ~/.bash_alias
 fi
-
-
-
-
-
-
-
+if [ -f ~/.bash_user ]; then
+    alias edituser="emacs ~/.bash_user"
+    . ~/.bash_user
+fi
+if [ -f ~/.bash_color ]; then
+    alias editcolor="emacs ~/.bash_color"
+    . ~/.bash_color
+fi
 
 
 
