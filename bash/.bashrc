@@ -127,9 +127,9 @@ if [ -f ~/.bash_os ]; then
     alias editos="emacs ~/.bash_os"
     . ~/.bash_os
 fi
-if [ -f ~/.bash_alias ]; then
-    alias editalias="emacs ~/.bash_alias"
-    . ~/.bash_alias
+if [ -f ~/.bash_aliases ]; then
+    alias editalias="emacs ~/.bash_aliases"
+    . ~/.bash_aliases
 fi
 if [ -f ~/.bash_user ]; then
     alias edituser="emacs ~/.bash_user"
