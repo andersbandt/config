@@ -12,7 +12,7 @@
 ;; turn on syntax highlighting
 ;; (global-font-lock-mode 1)
 (global-font-lock-mode t) ;; enable syntax highlighting for all modes
-(add-to-list 'auto-mode-alist '("\\.bash\\'" . shell-script-mode))
+
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4) ;; set tabs to be 4 spaces wide
@@ -24,7 +24,6 @@
 
 ;; file templates
 (add-hook 'find-file-hook 'auto-insert)
-
 (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
 
 ;; Customize font-lock mode for c++-mode (following stuff is for Arduino files I think)

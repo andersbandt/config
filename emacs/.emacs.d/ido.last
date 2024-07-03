@@ -54,11 +54,11 @@
 (
  "/cygdrive/c/Users/ander/"
  "/cygdrive/c/Users/ander/.emacs.d/"
+ "/cygdrive/c/Users/ander/Documents/GitHub/config/bash/"
  "/cygdrive/c/Users/ander/OneDrive/Documents/engineering/equipment/SIGLENT_SPD3303X/PyVisaSPD-2/"
  "/cygdrive/c/Users/ander/OneDrive/Documents/engineering/equipment/SIGLENT_SPD3303X/SPD3303X-Python-API/"
  "/cygdrive/c/Users/ander/OneDrive/Code/python/EEequipment_testing/EEequipment/xdm1041/"
  "/ssh:anders@"
- "/cygdrive/c/Users/ander/Documents/GitHub/config/bash/"
  "/cygdrive/c/Users/ander/OneDrive/"
  "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/"
  "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/"
@@ -87,31 +87,39 @@
 
 ;; ----- ido-work-file-list -----
 (
+ ".bash_color"
+ ".emacs"
+ "obsidian.el"
+ "code.el"
  ".bashrc"
  ".bashrc_alias"
  ".bashrc_user"
  ".bashrc_os"
- "obsidian.el"
  "pyvisa_SPD_ders.py"
  "SPD3303X.py"
- "xdm1041helper.py"
- "xdm1041defs.py"
- "config.ini"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/cygdrive/c/Users/ander/" (26244 49329 981883 700000) "workspace/" "Videos/" "Tracing/" "tmp/" "ti/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "Favorites/" "eclipse/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "bin/" "apt-cyg" "Application Data/" "AppData/" "ansel/" "3D Objects/" ".wget-hsts" ".wdm/" ".vscode/" ".TI-trace/" ".templateengine/" ".ssh/" ".QtWebEngineProcess/" ".p2/" ".Origin/" ".ms-ad/" ".minttyrc" ".matplotlib/" ".lesshst" ".jupyter/" ".ipython/" ".gnupg/" ".gitconfig" ".gEDA/" ".emacs.d/" ".emacs" ".eclipse/" ".dotnet/" ".config/" ".conda/" ".cache/" ".bash_profile" ".bash_history" ".bashrc_wsl" ".bashrc_user" ".bashrc_os" ".bashrc_color" ".bashrc_alias" ".bashrc" ".authinfo" ".atom/" ".arduinoIDE/" ".android/" "../" "./")
+ ("/cygdrive/c/Users/ander/.emacs.d/" (26245 27864 636643 700000) "tramp" "snippets/" "recentf" "obsidian.el" "lsp.el" "ido.last" "elpa/" "elgrep-data.el" "code.el" "base.el" "auto-save-list/" ".saves/" ".lsp-session-v1" ".emacs.desktop" ".dap-breakpoints" "../" "./")
+
+ ("/cygdrive/c/" (26243 3567 649365 600000) "../" "./" "XboxGames/" "Windows.old/" "Windows/" "Users/" "ti/" "System Volume Information/" "SYSTAG.BIN" "swapfile.sys/" "Recovery/" "ProgramData/" "Program Files (x86)/" "Program Files/" "PerfLogs/" "pagefile.sys/" "OneDriveTemp/" "MSI/" "MinGW/" "Microsoft/" "log.txt" "hiberfil.sys/" "found.007/" "found.006/" "found.005/" "found.004/" "found.003/" "found.002/" "found.001/" "found.000/" "DumpStack.log.tmp/" "DumpStack.log/" "Documents and Settings/" "cygwin64/" "bootTel.dat" "BOOTNXT" "bootmgr" "AVScanner.ini" ".GamingRoot" "$WinREAgent/" "$Recycle.Bin/")
+
+ ("/cygdrive/c/Users/ander/" (26245 27863 801738 200000) "workspace/" "Videos/" "Tracing/" "tmp/" "ti/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "Favorites/" "eclipse/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "bin/" "apt-cyg" "Application Data/" "AppData/" "ansel/" "3D Objects/" ".wget-hsts" ".wdm/" ".vscode/" ".TI-trace/" ".templateengine/" ".ssh/" ".QtWebEngineProcess/" ".p2/" ".Origin/" ".ms-ad/" ".minttyrc" ".matplotlib/" ".lesshst" ".jupyter/" ".ipython/" ".gnupg/" ".gitconfig" ".gEDA/" ".emacs.d/" ".emacs" ".eclipse/" ".dotnet/" ".config/" ".conda/" ".cache/" ".bash_user" ".bash_profile" ".bash_os" ".bash_history" ".bash_color" ".bash_aliases" ".bashrc" ".authinfo" ".atom/" ".arduinoIDE/" ".android/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/" (26207 33893 825526 600000) "Zoom/" "Wolfram Mathematica/" "WindowsPowerShell/" "Visual Studio 2022/" "Universe Sandbox/" "Texas Instruments/" "svn_dev/" "Scanned Documents/" "Rockstar Games/" "RealmOfTheMadGod/" "Outlook Files/" "Ogre/" "Obsidian/" "My Web Sites/" "My Games/" "My Data Sources/" "Microsoft Hardware/" "LTspiceXVII/" "IISExpress/" "GMMK_Keyboard/" "GitHub/" "Game Documents/" "FLIR/" "Fax/" "Electronic Arts/" "eclipse/" "Default.rdp" "Custom Office Templates/" "CCS/" "Call Of Duty Black Ops Cold War/" "Altium/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/GitHub/" (26235 9530 428339 200000) "xxx_notmine/" "wwd_gui_api/" "NickOccupancy/" "HiddenHydroponics - Shortcut.lnk" "Financial-Analyzer/" "config/" "Commute-Tracker/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/GitHub/config/" (26244 51675 276590 200000) "README.md" "emacs/" "bash/" ".gitignore" ".git/" "../" "./")
+
+ ("/cygdrive/c/Users/ander/Documents/GitHub/config/bash/" (26245 27901 643688 300000) "cp_out_bash.sh" "cp_in_bash.sh" ".bash_user" ".bash_os" ".bash_color" ".bash_aliases" ".bashrc" ".#cp_in_bash.sh" "../" "./")
 
  ("/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/" (26232 39793 808865 0) "inv_time.h" "inv_time.c" "inv_imu_transport.h" "inv_imu_transport.c" "inv_imu_regmap_rev_a.h" "inv_imu_driver.h" "inv_imu_driver.c" "inv_imu_defs.h" "inv_imu_apex.h" "inv_imu_apex.c" "Invn/" "imu_process.h" "imu_process.c" "imu.h" "imu.c" "ICM_42670.h" "ICM_42670.c" "../" "./")
 
  ("/cygdrive/c/Users/ander/OneDrive/" (26244 43300 200821 800000) "Websites and Servers/" "Videos/" "Projects/" "Program Documents/" "Pictures/" "Personal Vault.lnk" "PCB Library/" "Music/" "FileTransfer/" "Documents/" "desktop.ini" "Code/" "Audio/" "Attachments/" ".849C9593-D756-4E56-8D6E-42412F2A707B" "../" "./")
 
- ("/cygdrive/c/Users/ander/Documents/GitHub/config/bash/" (26232 33415 481187 600000) "cp_out_bash.sh" "cp_in_bash.sh" ".bashrc_windows" ".bashrc_user" ".bashrc_color" ".bashrc" "../" "./")
-
  ("/cygdrive/c/Users/ander/OneDrive/Code/python/EEequipment_testing/EEequipment/xdm1041/" (26196 41464 666914 200000) "__init__.py" "xdm1041main.py" "xdm1041helper.py" "xdm1041defs.py" "test_general.py" "config.ini" ".gitkeep" "../" "./")
-
- ("/cygdrive/c/Users/ander/.emacs.d/" (26244 44407 987661 400000) "tramp" "snippets/" "recentf" "obsidian.el" "lsp.el" "ido.last" "elpa/" "code.el" "base.el" "auto-save-list/" ".saves/" ".lsp-session-v1" ".emacs.desktop" ".dap-breakpoints" "../" "./")
 
  ("/cygdrive/c/Users/ander/OneDrive/Documents/engineering/equipment/" (26187 22378 235191 800000) "USB_RELAY/" "TI_XDS110/" "SIGLENT_SPD3303X/" "OWON_XDM1041/" "Instrument Control and Automation with Python.pdf" "HAAKO_FR802/" "../" "./")
 
@@ -152,14 +160,6 @@
  ("C:/Users/ander/" (26191 35375 0 0) "workspace/" "Videos/" "Tracing/" "tmp/" "ti/" "Templates/" "Start Menu/" "source/" "SendTo/" "Searches/" "Saved Games/" "Recent/" "PrintHood/" "Pictures/" "OneDrive/" "ntuser.ini" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000002.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TMContainer00000000000000000001.regtrans-ms" "NTUSER.DAT{92862caa-1fd7-11ed-b89f-d480a6cb6efc}.TM.blf" "ntuser.dat.LOG2" "ntuser.dat.LOG1" "NTUSER.DAT" "NetHood/" "My Documents/" "Music/" "Local Settings/" "Links/" "Favorites/" "eclipse/" "Downloads/" "Documents/" "Desktop/" "Cookies/" "Contacts/" "bin/" "apt-cyg" "Application Data/" "AppData/" "ansel/" "3D Objects/" ".wget-hsts" ".wdm/" ".vscode/" ".TI-trace/" ".templateengine/" ".ssh/" ".QtWebEngineProcess/" ".p2/" ".Origin/" ".old_emacs_saves/" ".ms-ad/" ".minttyrc" ".matplotlib/" ".lesshst" ".jupyter/" ".julia/" ".ipython/" ".gnupg/" ".gitconfig" ".gEDA/" ".emacs.d/" ".emacs" ".eclipse/" ".dotnet/" ".config/" ".conda/" ".cache/" ".bash_profile" ".bash_history" ".bashrc_wsl" ".bashrc_color" ".bashrc" ".atom/" ".arduinoIDE/" ".android/" "../" "./")
 
  ("/cygdrive/" (26177 23196 0 0) "../" "./" "g/" "e/" "d/" "c/")
-
- ("/cygdrive/c/" (26174 10391 934585 800000) "../" "./" "XboxGames/" "Windows.old/" "Windows/" "Users/" "ti/" "System Volume Information/" "SYSTAG.BIN" "swapfile.sys/" "Recovery/" "ProgramData/" "Program Files (x86)/" "Program Files/" "PerfLogs/" "pagefile.sys/" "OneDriveTemp/" "MSI/" "MinGW/" "Microsoft/" "hiberfil.sys/" "found.007/" "found.006/" "found.005/" "found.004/" "found.003/" "found.002/" "found.001/" "found.000/" "DumpStack.log.tmp/" "DumpStack.log/" "Documents and Settings/" "cygwin64/" "bootTel.dat" "BOOTNXT" "bootmgr" "AVScanner.ini" ".GamingRoot" "$WinREAgent/" "$Recycle.Bin/")
-
- ("/cygdrive/c/Users/ander/Documents/" (26174 7804 58489 0) "Zoom/" "Wolfram Mathematica/" "WindowsPowerShell/" "Visual Studio 2022/" "Universe Sandbox/" "Texas Instruments/" "svn_dev/" "Scanned Documents/" "Rockstar Games/" "RealmOfTheMadGod/" "Outlook Files/" "Obsidian/" "My Web Sites/" "My Games/" "My Data Sources/" "Microsoft Hardware/" "LTspiceXVII/" "IISExpress/" "GMMK_Keyboard/" "GitHub/" "Game Documents/" "Fax/" "Electronic Arts/" "eclipse/" "Default.rdp" "Custom Office Templates/" "CCS/" "Call Of Duty Black Ops Cold War/" "Altium/" "../" "./")
-
- ("/cygdrive/c/Users/ander/Documents/GitHub/" (26173 23070 902375 500000) "wwd_gui_api/" "NickOccupancy/" "HiddenHydroponics - Shortcut.lnk" "Financial-Analyzer/" "config/" "Commute-Tracker/" "../" "./")
-
- ("/cygdrive/c/Users/ander/Documents/GitHub/config/" (26177 6510 129108 200000) "README.md" "emacs/" "bash/" ".git/" "../" "./")
 
  ("/cygdrive/c/Users/ander/.conda/" (24609 37781 303792 900000) "environments.txt" "../" "./")
 
