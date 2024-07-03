@@ -1,6 +1,5 @@
 
 
-
 # sets the value of TERM to a terminal that supports colorization
 #      not sure if this is needed with all the color config stuff I have in ~/.bashrc
 export TERM=xterm-color
@@ -11,14 +10,16 @@ export TERM=xterm-color
 #############################
 ENDC='\033[0m'
 
-RED='\033[00;31'
-GREEN='\033[00;32'
-YELLOW='\033[00;33'
-BLUE='\033[00;34'
-PURPLE='\033[00;35'
-CYAN='\033[00;36'
-WHITE='\033[00;37'
 
+### foreground colors (30-37)
+BLACK='\033[0;30'
+RED='\033[0;31'
+GREEN='\033[0;32'
+YELLOW='\033[0;33'
+BLUE='\033[0;34'
+PURPLE='\033[0;35'
+CYAN='\033[0;36'
+WHITE='\033[0;37'
 
 REDm='\033[00;31m'
 GREENm='\033[00;32m'
@@ -28,33 +29,48 @@ PURPLEm='\033[00;35m'
 CYANm='\033[00;36m'
 WHITEm='\033[00;37m'
 
-#export RED GREEN YELLOW BLUE PURPLE CYAN WHITE
+export RED GREEN YELLOW BLUE PURPLE CYAN WHITE
 
-L_RED='\033[01;31'
-L_GREEN='\033[01;32'
-L_YELLOW='\033[01;33'
-L_BLUE='\033[01;34'
-L_PURPLE='\033[01;35'
-L_CYAN='\033[01;36'
-L_WHITE='\033[01;37'
+### bold colors (with 01)
+B_BLACK='\033[01;30'
+B_RED='\033[01;31'
+B_GREEN='\033[01;32'
+B_YELLOW='\033[01;33'
+B_BLUE='\033[01;34'
+B_PURPLE='\033[01;35'
+B_CYAN='\033[01;36'
+B_WHITE='\033[01;37'
 
-BG_RED='\033[48;5;31'
-BG_GREEN='\033[48;5;32'
-BG_YELLOW='\033[48;5;33'
-BG_BLUE='\033[48;5;34'
-BG_PURPLE='\033[48;5;35'
-BG_CYAN='\033[48;5;36'
-BG_WHITE='\033[48;5;37'
 
-### 256 color escape code
+### background colors (40-47)
+BG_BLACK='\033[48;40'
+BG_RED='\033[48;41'
+BG_GREEN='\033[48;42'
+BG_YELLOW='\033[48;43'
+BG_BLUE='\033[48;44'
+BG_PURPLE='\033[48;5;45'
+BG_CYAN='\033[48;5;46'
+BG_WHITE='\033[48;5;47'
+
+### bold background colors (100-107)
+BBG_BLACK='\033[48;100'
+BBG_RED='\033[48;101'
+BBG_GREEN='\033[48;102'
+BBG_YELLOW='\033[48;103'
+BBG_BLUE='\033[48;104'
+BBG_PURPLE='\033[48;5;105'
+BBG_CYAN='\033[48;5;106'
+BBG_WHITE='\033[48;5;107'
+
+### 256 color escape code (select with 38)
 blue1='\033[38;5;39m'
-blue2='\033[38;5;39m'
+blue2='\033[38;5;57m'
 magenta1='\033[38;5;176m'
 magenta2='\033[38;5;206m'
 yellow3='\033[38;5;48m'
 
 
-magenta_bg='\033[48;5;176m'
+BG_magenta1='\033[48;5;176m'
 
 
 #############################
@@ -78,13 +94,15 @@ PS1="${blue1}\u@${magenta2}\h:\w\\n$ $ENDC"
 # *.ext: file with extension .ext
 
 
-LS_COLORS=$LS_COLORS"di=$RED:"
-LS_COLORS=$LS_COLORS"ex=$L_GREEN:"
-LS_COLORS=$LS_COLORS"fi=$L_PURPLE:"
+LS_COLORS=$LS_COLORS"di=$WHITE$BG_RED:"
+LS_COLORS=$LS_COLORS"ex=$B_GREEN:"
+LS_COLORS=$LS_COLORS"fi=$B_PURPLE:"
+LS_COLORS=$LS_COLORS"ln=$B_CYAN:"
 #LS_COLORS=$LS_COLORS"*.sh=$L_RED:" # CAN'T GET THIS TO WORK as ex rule overrules it
 
+LS_COLORS=$LS_COLORS"*.md=$WHITE:" # for some reason Cygwin thinks most of the ones in Obsidian are executables
 LS_COLORS=$LS_COLORS"*.txt=$WHITE:"
-LS_COLORS=$LS_COLORS"*.md=$YELLOW:" # does this one not work too ...?
+
 
 
 export LS_COLORS

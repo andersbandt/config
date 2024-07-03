@@ -25,7 +25,6 @@ export system
 if [ $system = "Windows" ]
 then
     alias python='/cygdrive/c/Users/ander/AppData/Local/Programs/Python/Python310/python'
-    alias emacs="emacs -q --load ~/.emacs.d/base.el"
 elif [ $system = "Linux" ]
 then
     alias python="python3"
