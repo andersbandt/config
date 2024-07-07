@@ -1,0 +1,81 @@
+
+# @author   Anders Bandt
+version="3.00"
+rev="A"
+date="2024-07-02"
+title="Ders' Bash Settings"
+
+
+##############################
+### INITIALIZATION         ###
+##############################
+echo $title " (.bashrc_user)"
+echo "    version=" $version
+echo "    rev="     $rev
+echo "    system="  $system
+
+
+export EDITOR=emacs
+export GIT_EDITOR=emacs
+
+##############################
+### EMACS ALLIAS           ###
+##############################
+alias editemacs="emacs ~/.emacs"
+
+# MISPELL
+alias emas="emacs"
+alias emasc="emacs"
+alias emac="emacs"
+alias eamsc="emacs"
+alias emacss="emacs"
+
+
+##############################
+### CLI ALLIAS             ###
+##############################
+alias home='cd'
+alias h='history'
+alias hg='history | grep'
+
+
+### ls ###
+alias ls='ls --color=auto'
+alias la='ls -la'
+alias ll='ls -lF'
+alias l='ls -CF'
+alias lt='ls -lt'
+alias lrt='ls -lrt'
+
+
+### mv, cp, rm ###
+alias mv='mv -i'
+alias cp='cp -irp'
+alias rm='rm -i'
+
+
+##############################
+### GREP ALLIAS            ###
+##############################
+alias grep="grep -i --color='auto'"
+alias egrep="egrep -i --color='auto'"
+alias fgrep="fgrep -i --color='auto'"
+alias zgrep="zgrep -i --color='auto'"
+
+
+# MISPELL
+alias sl='ls'
+alias ccd="cd"
+alias cdd="cd"
+alias gerp="grep"
+alias grpe="grep"
+
+
+
+
+
+
+
+
+
+
