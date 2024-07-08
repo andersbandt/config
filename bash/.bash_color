@@ -43,14 +43,15 @@ B_WHITE='\033[01;37'
 
 
 ### background colors (40-47)
-BG_BLACK='\033[48;40'
-BG_RED='\033[48;41'
-BG_GREEN='\033[48;42'
-BG_YELLOW='\033[48;43'
-BG_BLUE='\033[48;44'
-BG_PURPLE='\033[48;5;45'
-BG_CYAN='\033[48;5;46'
-BG_WHITE='\033[48;5;47'
+BG_BLACK='\033[;40'
+#BG_RED='\033[48;41'
+BG_RED='\033[;41'
+BG_GREEN='\033[;42'
+BG_YELLOW='\033[;43'
+BG_BLUE='\033[;44'
+BG_PURPLE='\033[;5;45'
+BG_CYAN='\033[;5;46'
+BG_WHITE='\033[;5;47'
 
 ### bold background colors (100-107)
 BBG_BLACK='\033[48;100'
@@ -78,7 +79,12 @@ BG_magenta1='\033[48;5;176m'
 #############################
 
 # sets the prompt to custom colors
-PS1="${blue1}\u@${magenta2}\h:\w\\n$ $ENDC"
+
+if [ "$IS_SSH" == 1 ]; then
+   PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ $ENDC"
+else
+  PS1="${blue1}\u@${magenta2}\h:\w\\n$ $ENDC"
+fi
 
 
 #############################

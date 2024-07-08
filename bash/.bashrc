@@ -1,4 +1,17 @@
 
+# @author   Anders Bandt
+version="3.00"
+rev="A"
+date="2024-07-02"
+title="Ders' Bash RC"
+
+
+##############################
+### INITIALIZATION         ###
+##############################
+echo $title " (.bashrc)"
+echo "    version=" $version
+echo "    rev="     $rev
 
 
 alias reload='source ~/.bashrc'
@@ -14,6 +27,20 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
+# Detect if we are over an SSH session
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    SESSION_TYPE=remote/ssh
+    IS_SSH=1
+# many other tests omitted
+else
+    # commented out below case code cuz I don't understand it
+#  case $(ps -o comm= -p "$PPID") in
+#    sshd|*/sshd) SESSION_TYPE=remote/ssh;;
+    #  esac
+    IS_SSH=0
+fi
+export IS_SSH
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -126,6 +153,7 @@ fi
 if [ -f ~/.bash_os ]; then
     alias editos="emacs ~/.bash_os"
     . ~/.bash_os
+    echo "    system="  $system
 fi
 if [ -f ~/.bash_aliases ]; then
     alias editalias="emacs ~/.bash_aliases"
