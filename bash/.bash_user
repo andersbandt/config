@@ -1,19 +1,4 @@
 
-# @author   Anders Bandt
-version="3.00"
-rev="A"
-date="2024-07-02"
-title="Ders' Bash Settings"
-
-
-##############################
-### INITIALIZATION         ###
-##############################
-echo $title " (.bashrc_user)"
-echo "    version=" $version
-echo "    rev="     $rev
-echo "    system="  $system
-
 
 export EDITOR=emacs
 export GIT_EDITOR=emacs
