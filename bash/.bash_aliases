@@ -1,18 +1,4 @@
 
-# @author   Anders Bandt
-version="3.00"
-rev="A"
-date="2024-07-02"
-title="Ders' Bash Navigation"
-
-
-##############################
-### INITIALIZATION         ###
-##############################
-echo $title " (.bashrc_alias)"
-echo "    version=" $version
-echo "    rev="     $rev
-echo "    system="  $system
 
 
 if [ $system = "Windows" ]
