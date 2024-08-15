@@ -103,7 +103,7 @@ fi
 LS_COLORS=$LS_COLORS"di=$WHITE$BG_RED:"
 LS_COLORS=$LS_COLORS"ex=$B_GREEN:"
 LS_COLORS=$LS_COLORS"fi=$B_PURPLE:"
-LS_COLORS=$LS_COLORS"ln=$B_CYAN:"
+LS_COLORS=$LS_COLORS"ln=$YELLOW:"
 #LS_COLORS=$LS_COLORS"*.sh=$L_RED:" # CAN'T GET THIS TO WORK as ex rule overrules it
 
 LS_COLORS=$LS_COLORS"*.md=$WHITE:" # for some reason Cygwin thinks most of the ones in Obsidian are executables

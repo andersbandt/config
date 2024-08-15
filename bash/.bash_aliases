@@ -71,12 +71,10 @@ alias wwdcode='cd $ONEDRIVE/Code/python/WWD/'
 alias wwdlog='/home/anders/Code/bash/tail_recent.sh'
 wwd_t='$ONEDRIVE/Projects/WWD'
 wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
-
 alias wwdapi='python ~/Documents/GitHub/wwd_gui_api/main.py'
 
-# Hidden-Hydroponics
-alias hydroponics='cd $ONEDRIVE/Projects/hidden_hydroponic'
 
-# Financial-Analyzer
+alias vanlife='cd $ONEDRIVE/Projects/Van_Life'
+alias hydroponics='cd $ONEDRIVE/Projects/hidden_hydroponic'
 alias financeanalyzer='python $HOME/Documents/GitHub/Financial-Analyzer/src/main.py'
 
