@@ -2,30 +2,522 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Jul  3 10:15:05 2024
+;; Created Wed Aug 14 11:03:52 2024
 ;; Desktop file format version 208
-;; Emacs version 29.3
+;; Emacs version 29.4
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (26245 27385 289588 100000) (desktop . "208") "ander@DESKTOP-F81D59A" nil nil ((((minibuffer . t) (tty-type . "xterm-color") (tty . "/dev/tty") (display-type . color) (background-mode . dark) (scroll-bar-foreground) (scroll-bar-background) (foreground-color . "unspecified-fg") (background-color . "unspecified-bg") (font . "tty") (height . 74) (width . 271) (modeline . t) (unsplittable) (menu-bar-lines . 1) (tab-bar-lines . 0) (frameset--id . "EE42-84DF-E198-AB74") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 271) (pixel-height . 73) (total-width . 271) (total-height . 73) (normal-height . 1.0) (normal-width . 1.0) (buffer ".bash_color" (selected . t) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 2221) (start . 764)) (prev-buffers ("*scratch*" 1 146))))])
+(setq desktop-saved-frameset [frameset 1 (26300 54632 366285 981000) (desktop . "208") "anders@anders-MS-7A70" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-PfEd-DejaVu Sans Mono-regular-normal-normal-*-11-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (child-frame-border-width) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#2e3436") (background-color . "#eeeeec") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 1) (tab-bar-lines . 1) (tool-bar-lines . 3) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 17) (scroll-bar-height . 17) (alpha) (alpha-background) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (use-frame-synchronization) (skip-taskbar) (z-group) (display-type . color) (background-mode . light) (cursor-color . "#204a87") (font-parameter) (sticky) (shaded) (environment) (dnd-root-window-position) (last-focus-update . t) (frameset--id . "E918-BC48-4EBE-6F11") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (tabs (current-tab (name . "clock.c") (explicit-name)) (tab (name . "ssd1306.c") (explicit-name) (time . 1723400773.828669) (ws ((min-height . 4) (min-width . 30) (min-height-ignore . 4) (min-width-ignore . 21) (min-height-safe . 1) (min-width-safe . 6) (min-pixel-height . 56) (min-pixel-width . 210) (min-pixel-height-ignore . 56) (min-pixel-width-ignore . 147) (min-pixel-height-safe . 14) (min-pixel-width-safe . 42)) hc (pixel-width . 1920) (pixel-height . 850) (total-width . 274) (total-height . 61) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 959) (pixel-height . 850) (total-width . 137) (total-height . 61) (normal-height . 1.0) (normal-width . 0.4994791666666667) (buffer "wwd.c" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 3 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 5429) (start . 4323)) (prev-buffers ("wwd.c" 3529 4015) ("ICM_42670.c" 10139 10482) ("nvs.c" 5401 6329))) (leaf (pixel-width . 478) (pixel-height . 850) (total-width . 68) (total-height . 61) (normal-height . 1.0) (normal-width . 0.25026041666666665) (buffer "display.c" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 3 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 3458) (start . 1992)) (prev-buffers ("ssd1306.c" 1948 3524) ("nvs.c" 1490 2897) ("wwd.c" 6282 6758))) (leaf (last . t) (pixel-width . 483) (pixel-height . 850) (total-width . 69) (total-height . 61) (normal-height . 1.0) (normal-width . 0.25026041666666665) (buffer "ssd1306.c" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 3 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 8272) (start . 7311)))))) (height . 61) (width . 269) (left . 0) (top . 27)) ((min-height . 4) (min-width . 30) (min-height-ignore . 4) (min-width-ignore . 21) (min-height-safe . 1) (min-width-safe . 6) (min-pixel-height . 56) (min-pixel-width . 210) (min-pixel-height-ignore . 56) (min-pixel-width-ignore . 147) (min-pixel-height-safe . 14) (min-pixel-width-safe . 42)) hc (pixel-width . 1920) (pixel-height . 850) (total-width . 274) (total-height . 61) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 609) (pixel-height . 850) (total-width . 87) (total-height . 61) (normal-height . 1.0) (normal-width . 0.3187183811129848) (buffer "wwd.c" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 3 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 9876) (start . 8643)) (prev-buffers ("UIFunctions.c" 8672 9042) ("button.c" 1064 2124) ("ui.c" 1 992) ("display.c" 4139 4583) ("wwd.c" 8643 9876) ("ssd1306.c" 8199 8771) ("ssd1306.h" 363 1620) ("ssd1306_utils.c" 2174 4265) ("base.el" 1 1023) ("power.c" 1 417) ("clock.c" 1 1187) ("InvError.h" 1 1294) (".emacs" 1 274) ("watchdog.h" 1 46) ("watchdog.c" 1 1660) ("timer.h" 1 129) ("led.c" 1 971) ("timer.c" 1 3561) ("uart.c" 1 1295) ("BQ25120A.h" 1 1478) ("i2c.c" 1 8500) ("BQ25120A.c" 1 10457) ("spi.h" 1 482) ("spi.c" 1 760) ("ICM_42670.h" 1 2514) ("interrupts.c" 1 1763) ("uart.h" 1 358) ("ICM_42670.c" 1 10476) (".bashrc" 332 721) ("*scratch*" 1 1))) (leaf (pixel-width . 728) (pixel-height . 850) (total-width . 104) (total-height . 61) (normal-height . 1.0) (normal-width . 0.3777403035413154) (buffer "clock.c" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 3 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1503) (start . 988)) (prev-buffers ("clock.c" 1551 2051) ("button.c" 2445 2756) ("display.c" 4139 4735) ("test_serial.c" 3193 4001) ("test.c" 1805 2375) ("timer.c" 1202 2532) ("button.h" 1 454) ("ssd1306_utils.c" 4322 5218) ("i2c.c" 4052 4169) ("ssd1306.c" 8102 8739) ("ssd1306_utils.h" 749 1232) ("ssd1306.h" 1 821) ("wwd.c" 8393 8831))) (leaf (last . t) (pixel-width . 583) (pixel-height . 850) (total-width . 83) (total-height . 61) (normal-height . 1.0) (normal-width . 0.30354131534569984) (buffer "clock.c" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 3 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 4048) (start . 3737)) (prev-buffers ("clock.c" 3246 4451) ("wwd.c" 8643 9885) ("test_serial.c" 3193 4333) ("clock.h" 1069 1326) ("ssd1306.c" 3366 4725) ("button.h" 1 454) ("interrupts.h" 1 1) ("interrupts.c" 1 1794) ("i2c.c" 7093 8232) ("i2c.h" 1395 1513) ("ssd1306_utils.h" 1506 1714) ("ssd1306_utils.c" 3058 4907) ("display.h" 1 481)))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring nil)
+(setq search-ring '(#("prev_pos" 0 8 (isearch-case-fold-search t isearch-regexp-function nil)) #("get_ms" 0 6 (isearch-case-fold-search t isearch-regexp-function nil)) #("update_time(" 0 12 (isearch-case-fold-search t isearch-regexp-function nil)) #("test_" 0 5 (isearch-case-fold-search t isearch-regexp-function nil)) #("print_time" 0 10 (isearch-case-fold-search t isearch-regexp-function nil)) #("updatE_time" 0 11 (isearch-case-fold-search nil isearch-regexp-function nil)) #("setPageRan" 0 10 (isearch-case-fold-search nil isearch-regexp-function nil)) #("setPageRange" 0 12 (isearch-case-fold-search nil isearch-regexp-function nil)) #("SwitchLine" 0 10 (isearch-case-fold-search nil isearch-regexp-function nil)) #("WriteList" 0 9 (isearch-case-fold-search nil isearch-regexp-function nil)) #("ClearDisplay" 0 12 (isearch-case-fold-search nil isearch-regexp-function nil)) #("		" 0 2 (isearch-case-fold-search t isearch-regexp-function nil)) #("Write" 0 5 (isearch-case-fold-search nil isearch-regexp-function nil)) #("start" 0 5 (isearch-case-fold-search t isearch-regexp-function nil)) #("GPIO" 0 4 (isearch-case-fold-search nil isearch-regexp-function nil)) #("SENSOR_CONFIG" 0 13 (isearch-case-fold-search nil isearch-regexp-function nil))))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.bash_color"))
+(setq file-name-history '("/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ui/UIFunctions.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ui/ui.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/test/test_serial.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/test/test.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/interrupts.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/button.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/button.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/display.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/clock.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306_utils.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306_utils.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c_addr.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306.c" "/home/anders/.emacs.d/base.el" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306_utils.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_apex.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/circular_buffer.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/memory/nvs.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_time.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/circular_buffer.c" "~/.bashrc" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/interrupts.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_defs.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/spi.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/spi.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_driver.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_transport.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/led.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/timer.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/watchdog.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/watchdog.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/timer.h" "~/.emacs" "/home/anders/.emacs" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/timer.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/clock.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/spi.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/Invn/InvError.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_transport.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_driver.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/interrupts.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/power/power.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.h" "~/Code/python/equipment/EEequipment/.git/MERGE_MSG" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.h" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/wwd.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_apex.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_apex.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_driver.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_driver.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/circular_buffer.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/led.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/led.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/wwd.c" "c:/Users/ander/.emacs" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/compile_commands.json" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/memory/nvs.c" "c:/Users/ander/.emacs.d/code.el" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_driver.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/imu.c" "C:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/wwd.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.h" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/interrupts.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c" "c:/Users/ander/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_imu_driver.c"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/cygdrive/c/Users/ander/.bash_color"
-  ".bash_color"
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/clock.c"
+  "clock.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  1503
+  '(2513 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 52513 625517 537000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring (2376 2532 2168 3057 3066 2409 2373 2502 2408 2404 2056 1187 3807 2176 4479 2054))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/wwd.c"
+  "wwd.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  9876
+  '(3117 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 52514 521304 598000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2695 11495 6266 11102 1799 9600 9775 1823 9991 1646 9790 1103 4054 5436 7588 9876))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ui/UIFunctions.c"
+  "UIFunctions.c"
+  'c-mode
+  '(font-lock-mode display-line-numbers-mode yas-minor-mode lsp-mode company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode)
+  9042
+  '(9042 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 52513 625517 383000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (3310 1086 1085 1018 1017 1083 9042))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/button.c"
+  "button.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  2124
+  '(2492 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 51448 196702 527000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1152 1064 943 942 2751 2769 4294 3493 2772 998 1151 4122 2593 2444 2448 2124))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ui/ui.c"
+  "ui.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode display-line-numbers-mode yas-minor-mode lsp-mode)
+  992
+  '(7947 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 50659 21823 749000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (19585 7787 9628 8535 8831 8624 9190 8898 9263 8850 9575 9537 8446 21844 23125 21915))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/display.c"
+  "display.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  4583
+  '(1255 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 12692 853506 731000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (4643 1257 3948 3479 3455 1159 1127 1100 1222 4713 4690 4661 4690 4735 4757 4583))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/test/test_serial.c"
+  "test_serial.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  4333
+  '(4049 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 4645 430645 255000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring (4278))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/clock.h"
+  "clock.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  1326
+  '(1034 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 3935 543295 224000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring (1188 1219 1233 1029 998 1325 1282 1257))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306.c"
+  "ssd1306.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  4725
+  '(8723 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 3522 249427 367000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (8001 5029 7513 3366 3610 11594 11807 1139 1108 10975 3470 1163 1219 1063 4128 4725))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/test/test.c"
+  "test.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  2375
+  '(689 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 48667 433242 296000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/button.h"
+  "button.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  454
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26299 47636 842643 726000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/timer.c"
+  "timer.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  2532
+  '(2275 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 47588 219080 160000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (3518 3461 3471 3195 3240 3008 2839 1246 1182 2103 1565 1493 1527 1494 1957 2143))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/interrupts.h"
+  "interrupts.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26299 47327 899784 162000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/interrupts.c"
+  "interrupts.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  1794
+  '(5064 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 46966 849176 266000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (5649 5644 5553 5496 5410 1 5133 4798))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c.c"
+  "i2c.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  8232
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 46930 729473 695000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (8132 8458 8541 8540 5145 4172 8145 8056 7868 8327 8963 8838 8837 8861 9646 288))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306_utils.c"
+  "ssd1306_utils.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode display-line-numbers-mode yas-minor-mode lsp-mode)
+  5218
+  '(4906 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 46924 998553 276000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (4001 3327 4022 3367 5341 5418 4459 4505 4577 4688 4908 4958 4907 4407 4586 4790))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c.h"
+  "i2c.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  1513
+  '(1522 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 46214 105286 190000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1720 1650 1598 1497 1446 1389 1335 524 501 1653 1621))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/memory/nvs.c"
+  "nvs.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  2897
+  '(6182 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 46106 773625 329000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring (5958 3250))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306.h"
+  "ssd1306.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  1620
+  '(262 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 45946 414582 471000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (134))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/oled/ssd1306_utils.h"
+  "ssd1306_utils.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  1714
+  '(1208 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 41838 316811 734000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2073 1661 111))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/display.h"
+  "display.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  481
+  '(444 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 40896 474569 804000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (558 409))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/i2c_addr.h"
+  "i2c_addr.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-mode yas-minor-mode display-line-numbers-mode font-lock-mode)
+  509
+  '(517 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 38629 886623 911000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/.emacs.d/base.el"
+  "base.el"
+  'emacs-lisp-mode
+  '(yas-minor-mode eldoc-mode font-lock-mode display-line-numbers-mode)
+  1023
+  '(1023 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 38128 80400 893000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (1023 1023))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.c"
+  "ICM_42670.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode lsp-signature-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  13526
+  '(9644 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 37636 560385 374000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (15935 15285 10285 10476 4681 998 937 10474 10445 4181 10438 10451 11884 10445 10234 10279))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/circular_buffer.h"
+  "circular_buffer.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  1016
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26299 33139 774954 725000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/circular_buffer.c"
+  "circular_buffer.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  637
+  '(750 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 33140 30684 669000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring (3294 1985 1938 1895 1827 1735 1651 2053 150 91 120 1 2130 2057 1492 712))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/inv_time.c"
+  "inv_time.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  1102
+  '(1102 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 29187 763315 506000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/ICM_42670.h"
+  "ICM_42670.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  597
+  '(2513 nil)
+  nil
+  nil
+  '((buffer-display-time 26299 18208 401316 743000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2515 2607 2565 2665 1 2300 2257 2161 2257))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/power/power.c"
+  "power.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  417
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26299 6768 959809 595000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/.bashrc"
+  ".bashrc"
   'sh-mode
-  '(font-lock-mode display-line-numbers-mode)
-  2221
-  '(2153 nil)
+  '(yas-minor-mode font-lock-mode sh-electric-here-document-mode display-line-numbers-mode)
+  721
+  '(1 nil)
   nil
   nil
-  '((buffer-display-time 26245 27381 746723 600000) (buffer-file-coding-system . undecided-unix))
-  '((mark-ring (2259 1))))
+  '((buffer-display-time 26299 6699 590892 24000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.h"
+  "uart.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  358
+  '(500 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 64712 25213 770000) (buffer-file-coding-system . undecided-dos))
+  '((mark-ring (525 358))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/spi.c"
+  "spi.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-signature-mode lsp-mode display-line-numbers-mode)
+  760
+  '(2711 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 51867 292302 859000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (2890 2967 2889 2194 590 2364 3318 3318 3195 2890 2889 2890 2890 2890 2804 2804))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/spi.h"
+  "spi.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  482
+  '(417 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 50759 749704 977000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.c"
+  "BQ25120A.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  10457
+  '(10610 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 20869 700229 839000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (7620 7095 6927 7033 6375 6952 6259 9072 10374 10610 10610 3599 3492 7279 6908 2736))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/bms/BQ25120A.h"
+  "BQ25120A.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  1478
+  '(1455 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 20247 88967 321000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/comm/uart.c"
+  "uart.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  1295
+  '(2525 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 15702 829168 715000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (724 2734))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/hardware/led.c"
+  "led.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  971
+  '(838 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 12458 530768 707000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/timer.h"
+  "timer.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  129
+  '(232 nil)
+  nil
+  nil
+  '((buffer-display-time 26298 338 170406 274000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (63 37 123 211))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/watchdog.c"
+  "watchdog.c"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  1660
+  '(1807 nil)
+  nil
+  nil
+  '((buffer-display-time 26297 61812 849104 577000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1660))))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/peripheral/watchdog.h"
+  "watchdog.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode font-lock-mode yas-minor-mode lsp-mode display-line-numbers-mode)
+  46
+  '(40 nil)
+  nil
+  nil
+  '((buffer-display-time 26297 60061 110071 107000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(yas-minor-mode font-lock-mode eldoc-mode display-line-numbers-mode)
+  274
+  '(72 nil)
+  nil
+  nil
+  '((buffer-display-time 26297 56588 786243 515000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/anders/Documents/CCS/workspace_WWD/WWD_prog/src/ic/imu/Invn/InvError.h"
+  "InvError.h"
+  'c-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode eldoc-mode lsp-managed-mode yas-minor-mode font-lock-mode lsp-mode display-line-numbers-mode)
+  1294
+  '(1737 nil)
+  nil
+  nil
+  '((buffer-display-time 26300 48150 880087 14000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (1624 1713 440))))
 

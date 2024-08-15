@@ -12,7 +12,7 @@
 ;; turn on syntax highlighting
 ;; (global-font-lock-mode 1)
 (global-font-lock-mode t) ;; enable syntax highlighting for all modes
-
+(add-to-list 'auto-mode-alist '("\\.bash\\'" . shell-script-mode))
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4) ;; set tabs to be 4 spaces wide
@@ -24,6 +24,7 @@
 
 ;; file templates
 (add-hook 'find-file-hook 'auto-insert)
+
 (add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
 
 ;; Customize font-lock mode for c++-mode (following stuff is for Arduino files I think)
@@ -37,8 +38,6 @@
   )
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
-
-
 
 
 
@@ -56,7 +55,20 @@
 
 
 
-;; random solution to multi-line commenting in stackexchange
+
+;; automatic insert Doxygen style header
+(defun insert-doxygen-function-header ()
+  "Insert a Doxygen function header at the point."
+  (interactive)
+  (insert "/**\n")
+  (insert " * @brief \n")
+  (insert " *\n")
+  (insert " */\n"))
+(global-set-key (kbd "C-c d") 'insert-doxygen-function-header)
+
+
+;; random solution to multi-line commenting in StackExchange
+;; (Doesn't show up when doing M-x) ??
 (defun my-prettify-c-block-comment (orig-fun &rest args)
   (let* ((first-comment-line (looking-back "/\\*\\s-*.*"))
          (star-col-num (when first-comment-line
