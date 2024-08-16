@@ -14,7 +14,7 @@
 (line-number-mode 1)
 (global-display-line-numbers-mode) ;; this one enables line numbers
 (setq-default truncate-lines 1)
-
+(setq warning-minimum-level :error)
 
 ;; Set the default font
 (set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 80)
@@ -28,21 +28,15 @@
 ;; turn on syntax highlighting
 ;; (global-font-lock-mode 1)
 (global-font-lock-mode t) ;; enable syntax highlighting for all modes
-(dolist (pattern '("\\.bashrc\\'" "\\.bashrc_user\\'" "\\.sh\\'"))
+(dolist (pattern '("\\.bashrc\\'" "\\.bashrc_user\\'" "\\.sh\\'" "\\.bashrc_color\\'"))
   (add-to-list 'auto-mode-alist `(,pattern . shell-script-mode)))
 
 
+;; WINDOW NAVIGATION
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
 
-;; SSH
-(setq tramp-default-method "sshx")
-(setq tramp-verbose 10)
 
-(defun connect-remote()
-  "Connect to a remote server via SSH and open a file"
-  (interactive)
-  (find-file "/ssh:anders@anders-ms-7a70:/home/anders/Documents/CCS/workspace_WWD/WWD_prog/wwd.c")
-  (load "~/.emacs.d/code.el")
-  (load "~/.emacs.d/lsp.el"))
 
 
 ;; BACKUPS
