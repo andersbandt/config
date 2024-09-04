@@ -1,6 +1,11 @@
 
 
 
+
 emacs/.emacs.d/.cache/*
 emacs/.emacs.d/.saves/*
 emacs/.emacs.d/.saves/!*
+
+
+emacs/session.*
+
