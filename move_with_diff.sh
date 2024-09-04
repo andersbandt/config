@@ -10,17 +10,16 @@ move_with_diff() {
         if diff --color "$dest_file" "$src_file"; then
             echo "No differences found between $src_file and $dest_file. Skipping copy."
         else
-	    echo -e "\tdifferences in RED are being eliminated in GitHub repo"
+	    echo -e "\tdifferences in RED are being ELIMINATED"
             echo "Do you want to overwrite $dest_file with $src_file? (y/n)"
             read -r answer
             if [[ "$answer" == "y" ]]; then
-                cp -v "$src_file" "$dest_file"
-                # cp -vi "$src_file" "$dest_file"
+                cp -rv "$src_file" "$dest_file"
             else
                 echo "Skipping $src_file"
             fi
         fi
     else
-        cp -vi "$src_file" "$dest_file"
+        cp -rv "$src_file" "$dest_file"
     fi
 }
