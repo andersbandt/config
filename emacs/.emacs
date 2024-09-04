@@ -22,7 +22,18 @@
 
 ;; SET SYSTEM SPECIFIC COMMANDS
 ;; TODO: I would like to add some system control to change certain things in config
-(setq compile-command "/home/anders/ti/ccs1270/ccs/utils/bin/gmake -C /home/anders/Documents/CCS/workspace_WWD/WWD_prog/Debug -k -j 8 all -O")
+(cond
+ ((eq system-name 'ANDERS-LAPTOP)
+  (progn
+    (setq compile-command "/home/anders/ti/ccs1270/ccs/utils/bin/gmake -C /home/anders/Documents/CCS/workspace_WWD/WWD_prog/Debug -k -j 8 all -O")
+    (message "System: [ANDERS-LAPTOP]")))
+ ((eq system-name 'darwin)
+  (progn
+    (message "Mac OS X")))
+ ((eq system-name 'gnu/linux)
+  (progn
+    (message "Linux"))))
+
 
 
 (custom-set-variables
@@ -39,7 +50,6 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'scroll-left 'disabled nil)
-
 
 
 ;; LOAD LSP-MODE settings

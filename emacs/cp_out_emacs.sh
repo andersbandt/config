@@ -14,14 +14,23 @@ src_files=(".emacs")
 dest_dir="$HOME"
 
 
+
 # Perform the move operation with diff check
 for src_file in "${src_files[@]}"; do
-    dest_file="$dest_dir/$(basename "$src_file")"
-    move_with_diff "$src_file" "$dest_file"
+    for file in $src_file; do
+        if [[ -e "$file" ]]; then  # Check if the file exists
+            dest_file="$dest_dir/$(basename "$file")"
+            move_with_diff "$file" "$dest_file"
+        else
+            echo -e "${YELLOW}No files found matching $src_file${ENDC}"
+        fi
+    done
 done
 
 
-src_files=(".emacs.d/base.el" ".emacs.d/obsidian.el" ".emacs.d/code.el" ".emacs.d/lsp.el")
+
+# Specify the files to be moved
+src_files=("/.emacs.d/*el")
 dest_dir="$HOME/.emacs.d/"
 
 
