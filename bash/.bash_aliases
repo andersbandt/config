@@ -76,5 +76,7 @@ alias wwdapi='python ~/Documents/GitHub/wwd_gui_api/main.py'
 
 alias vanlife='cd $ONEDRIVE/Projects/Van_Life'
 alias hydroponics='cd $ONEDRIVE/Projects/hidden_hydroponic'
-alias financeanalyzer='python $HOME/Documents/GitHub/Financial-Analyzer/src/main.py'
+alias financeanalyzer='python "~/Documents/GitHub/Financial-Analyzer/src/main.py"'
+
+
 
