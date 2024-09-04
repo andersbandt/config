@@ -29,7 +29,7 @@ done
 
 
 # Specify the files to be moved
-src_files=("$HOME/.emacs.d/*el")
+src_files=("$HOME/.emacs.d/*el" "$HOME/.emacs.d/themes/*")
 dest_dir=".emacs.d/"
 
 
