@@ -22,10 +22,6 @@
 (electric-pair-mode 1)
 
 
-;; file templates
-(add-hook 'find-file-hook 'auto-insert)
-
-(add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
 
 ;; Customize font-lock mode for c++-mode (following stuff is for Arduino files I think)
 (defun my-c++-mode-hook ()
@@ -41,6 +37,11 @@
 
 
 
+;; file templates
+(add-hook 'find-file-hook 'auto-insert)
+(add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
+
+
 ;; compilation window settings
 (defun my-compilation-hook ()
   (when (not (get-buffer-window "*compilation*"))
@@ -54,6 +55,21 @@
 (add-hook 'compilation-mode-hook 'my-compilation-hook)
 
 
+;; create compilation window command
+(defun my-create-compile-frame ()
+  "Create a frame for compiling at the bottom of the screen."
+  (interactive)
+  (let* ((compile-frame-height 10) ;; Set the height of the compile frame as desired
+         (compile-frame-y-pos (- (frame-height) compile-frame-height)))
+    (setq compile-frame (make-frame '((name . "Compile")
+                                      (height . ,compile-frame-height)
+                                      (width . 100)
+                                      (top . ,compile-frame-y-pos)
+                                      (left . 0))))
+    (select-frame-set-input-focus compile-frame)))
+
+;; Bind a key to create the compile frame
+(global-set-key (kbd "<f5>") 'my-create-compile-frame)
 
 
 ;; automatic insert Doxygen style header

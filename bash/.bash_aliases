@@ -60,6 +60,9 @@ filetransfer_t='$ONEDRIVE/FileTransfer'
 
 
 ### specific projects
+alias config='cd $BASEPATH/Documents/GitHub/config'
+
+
 # WWD
 alias wwd='cd $ONEDRIVE/Projects/WWD'
 alias wwddatasheet='cd $ONEDRIVE/Projects/WWD/electrical/datasheets'
@@ -71,10 +74,11 @@ alias wwdcode='cd $ONEDRIVE/Code/python/WWD/'
 alias wwdlog='/home/anders/Code/bash/tail_recent.sh'
 wwd_t='$ONEDRIVE/Projects/WWD'
 wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
+
 alias wwdapi='python ~/Documents/GitHub/wwd_gui_api/main.py'
 
-
-alias vanlife='cd $ONEDRIVE/Projects/Van_Life'
+# Hidden-Hydroponics
 alias hydroponics='cd $ONEDRIVE/Projects/hidden_hydroponic'
+alias vanlife='cd $ONEDRIVE/Projects/Van_Life'
 alias financeanalyzer='python $HOME/Documents/GitHub/Financial-Analyzer/src/main.py'
 

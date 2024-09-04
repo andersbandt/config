@@ -24,23 +24,25 @@ export system
 # change environment executables
 if [ $system = "Windows" ]
 then
-    alias python='/cygdrive/c/Users/ander/AppData/Local/Programs/Python/Python312/python'		
+    alias python='/cygdrive/c/Users/ander/AppData/Local/Programs/Python/Python310/python'
+    alias emacs='emacs -q -nw --load ~/.emacs.d/base.el'	
 elif [ $system = "Linux" ]
 then
     alias python="python3"
     alias emacs="emacs -q -nw --load ~/.emacs.d/base.el"
 fi
 
-
+# do some other OS specific shit
 if [ $system = "Windows" ]
 then
 	alias start='cygstart'
-      	alias apt-get='apt-cyg'
-      	alias installer="start '/cygdrive/c/Users/ander/OneDrive/Code/shell_scripts/setup-x86_64.exe'"
+    alias apt-get='apt-cyg' 
+    alias installer="start '/cygdrive/c/Users/ander/OneDrive/Code/shell_scripts/setup-x86_64.exe'"
 	alias reboot="/cygdrive/c/WINDOWS/system32/shutdown.exe /g"
 	alias shutdown="/cygdrive/c/WINDOWS/system32/shutdown.exe /s"	
 	alias shutdownabort="/cygdrive/c/WINDOWS/system32/shutdown.exe /a"
 	alias ctags="'/cygdrive/c/Program Files/ctags-p6.1.20240505.0-x64/ctags.exe'"
+    ln -s /cygdrive/c /c
 elif [ $system = "Linux" ]
 then
 	alias start='xdg-open'
