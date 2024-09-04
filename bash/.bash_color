@@ -10,7 +10,6 @@ export TERM=xterm-color
 #############################
 ENDC='\033[0m'
 
-
 ### foreground colors (30-37)
 BLACK='\033[0;30'
 RED='\033[0;31'
@@ -83,7 +82,7 @@ BG_magenta1='\033[48;5;176m'
 if [ "$IS_SSH" == 1 ]; then
    PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ $ENDC"
 else
-  PS1="${blue1}\u@${magenta2}\h:\w\\n$ $ENDC"
+  PS1="${blue1}\u@${magenta2}\h:\w\\n$ " # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
 fi
 
 
@@ -103,7 +102,7 @@ fi
 LS_COLORS=$LS_COLORS"di=$WHITE$BG_RED:"
 LS_COLORS=$LS_COLORS"ex=$B_GREEN:"
 LS_COLORS=$LS_COLORS"fi=$B_PURPLE:"
-LS_COLORS=$LS_COLORS"ln=$YELLOW:"
+LS_COLORS=$LS_COLORS"ln=$B_CYAN:"
 #LS_COLORS=$LS_COLORS"*.sh=$L_RED:" # CAN'T GET THIS TO WORK as ex rule overrules it
 
 LS_COLORS=$LS_COLORS"*.md=$WHITE:" # for some reason Cygwin thinks most of the ones in Obsidian are executables

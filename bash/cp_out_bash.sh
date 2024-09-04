@@ -1,5 +1,5 @@
 
-source ./move_with_diff.sh
+source ../move_with_diff.sh
 source ~/.bash_color
 
 
