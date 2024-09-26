@@ -73,7 +73,9 @@ alias wwdcode='cd $ONEDRIVE/Code/python/WWD/'
 #alias wwdlog='cd $BASEPATH/Documents/GitHub/wwd_gui_api/log/'
 alias wwdlog='/home/anders/Code/bash/tail_recent.sh'
 wwd_t='$ONEDRIVE/Projects/WWD'
-wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
+
+#wwdccs_t='/cygdrive/c/Users/ander/Documents/CCS/workspace_WWD'
+wwdccs_t="$BASEPATH/Documents/CCS/workspace_WWD/WWD_prog/"
 
 alias wwdapi='python ~/Documents/GitHub/wwd_gui_api/main.py'
 

@@ -1,9 +1,5 @@
 
 
-# sets the value of TERM to a terminal that supports colorization
-#      not sure if this is needed with all the color config stuff I have in ~/.bashrc
-export TERM=xterm-color
-
 
 #############################
 #### COLOR VARIABLES  #######
