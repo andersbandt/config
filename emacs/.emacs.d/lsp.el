@@ -21,6 +21,10 @@
 
 
 (which-key-mode)
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (auto-complete-mode 1)))
+	  
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 
@@ -36,7 +40,6 @@
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools)
   (yas-global-mode))
-
 
 
 

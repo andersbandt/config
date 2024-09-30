@@ -20,6 +20,10 @@
 (load "~/.emacs.d/code.el")
 
 
+;; LOAD LSP-MODE settings
+(load "~/.emacs.d/lsp.el")
+
+
 ;; SET SYSTEM SPECIFIC COMMANDS
 ;; TODO: I would like to add some system control to change certain things in config
 (cond
@@ -36,29 +40,24 @@
 
 
 
-(custom-set-variables
+;; (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
- '(package-selected-packages '(magit-todos auto-header)))
-(custom-set-faces
+ ;; '(inhibit-startup-screen t)
+ ;; '(package-selected-packages '(helm-z auto-header)))
+;; (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'scroll-left 'disabled nil)
-
-
-;; LOAD LSP-MODE settings
-(load "~/.emacs.d/lsp.el")
+;; (put 'scroll-left 'disabled nil)
 
 
 ;; STARTUP ECHO MESSAGE
 (defun display-startup-echo-area-message ()
   (message ".emacs is ready to roll!"))
-
 
 
