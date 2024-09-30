@@ -22,6 +22,17 @@
 (electric-pair-mode 1)
 
 
+;; turn on syntax highlighting
+(global-font-lock-mode t) ;; enable syntax highlighting for all modes
+(dolist (pattern '("\\.bashrc\\'" "\\.bashrc_user\\'" "\\.sh\\'" "\\.bashrc_color\\'"))
+  (add-to-list 'auto-mode-alist `(,pattern . shell-script-mode)))
+
+
+
+;; file templates
+(add-hook 'find-file-hook 'auto-insert)
+(add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
+
 
 ;; Customize font-lock mode for c++-mode (following stuff is for Arduino files I think)
 (defun my-c++-mode-hook ()
@@ -37,11 +48,6 @@
 
 
 
-;; file templates
-(add-hook 'find-file-hook 'auto-insert)
-(add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
-
-
 ;; compilation window settings
 (defun my-compilation-hook ()
   (when (not (get-buffer-window "*compilation*"))
@@ -52,9 +58,8 @@
           (select-window w)
           (switch-to-buffer "*compilation*")
           (shrink-window (- h compilation-window-height)))))))
+
 (add-hook 'compilation-mode-hook 'my-compilation-hook)
-
-
 ;; create compilation window command
 (defun my-create-compile-frame ()
   "Create a frame for compiling at the bottom of the screen."

@@ -14,7 +14,6 @@ src_files=(".emacs")
 dest_dir="$HOME"
 
 
-
 # Perform the move operation with diff check
 for src_file in "${src_files[@]}"; do
     for file in $src_file; do
@@ -29,7 +28,7 @@ done
 
 
 # Specify the files to be moved
-src_files=(".emacs.d/*el")
+src_files=(./.emacs.d/*el) # ensure no quotes around wildcard
 dest_dir="$HOME/.emacs.d/"
 
 
@@ -44,5 +43,8 @@ for src_file in "${src_files[@]}"; do
         fi
     done
 done
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1054169a9fb09f14c1c363eb8dc9e42d78a5f287
