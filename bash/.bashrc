@@ -33,8 +33,6 @@ esac
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     SESSION_TYPE=remote/ssh
     IS_SSH=1
-    PS1="$"
-    return;
 # many other tests omitted
 else
     # commented out below case code cuz I don't understand it
