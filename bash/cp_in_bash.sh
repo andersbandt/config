@@ -3,6 +3,9 @@ source ../move_with_diff.sh
 source ~/.bash_color
 
 
+# TODO: add some option for user to input revision comments and keep that in the file system
+
+
 echo -e "${REDm}Executing COPY to IN${ENDC}"
 echo -e "${CYANm}Files in Github will be overwritten by local computer files\n"
 

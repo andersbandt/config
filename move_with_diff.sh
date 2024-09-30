@@ -7,7 +7,7 @@ move_with_diff() {
 
     if [[ -e "$dest_file" ]]; then
         echo -e "\n\nLooking for differences between $src_file and $dest_file:"
-        if diff --color "$dest_file" "$src_file"; then
+        if diff --strip-trailing-cr --color "$dest_file" "$src_file"; then
             echo "No differences found between $src_file and $dest_file. Skipping copy."
         else
 	    echo -e "\tdifferences in RED are being ELIMINATED"
