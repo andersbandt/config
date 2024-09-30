@@ -28,7 +28,7 @@ done
 
 
 # Specify the files to be moved
-src_files=("/.emacs.d/*.el")
+src_files=(./.emacs.d/*el) # ensure no quotes around wildcard
 dest_dir="$HOME/.emacs.d/"
 
 
