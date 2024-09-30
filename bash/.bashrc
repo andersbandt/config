@@ -1,8 +1,8 @@
 
 # @author   Anders Bandt
-version="3.00"
+version="3.10"
 rev="A"
-date="2024-07-02"
+date="2024-09-30"
 title="Ders' Bash RC"
 
 
@@ -16,7 +16,6 @@ echo "    rev="     $rev
 
 alias reload='source ~/.bashrc'
 alias editprof='emacs ~/.bashrc'
-
 
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -33,6 +32,7 @@ esac
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     SESSION_TYPE=remote/ssh
     IS_SSH=1
+    PS1="$"
 # many other tests omitted
 else
     # commented out below case code cuz I don't understand it
