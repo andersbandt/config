@@ -19,7 +19,8 @@ alias c='cd /cygdrive/c'
 alias d='cd /cygdrive/d'
 alias ti='cd $BASEPATH/ti'
 alias tmp='cd ~/tmp'
-alias ander='cd /cygdrive/c/Users/ander'
+alias ander='cd $BASEPATH'
+alias appdata='cd $BASEPATH/AppData'
 
 ### EASY NATIVE WINDOWS ###
 alias downloads='cd $BASEPATH/Downloads'
