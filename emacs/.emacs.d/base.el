@@ -184,4 +184,6 @@
 (defun display-startup-echo-area-message ()
     (message "Let's stroll...."))
 
-
+;; PROJECT MANAGEMENT
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
