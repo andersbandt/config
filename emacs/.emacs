@@ -61,3 +61,7 @@
   (message ".emacs is ready to roll!"))
 
 
+;; set up code folding
+(hs-minor-mode)
+
+
