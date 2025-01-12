@@ -6,33 +6,6 @@
 ;; Keywords: Syntax coding with emacs
 
 
-;; CODING WITH EMACS
-(setq c-basic-offset 4)
-
-;; turn on syntax highlighting
-;; (global-font-lock-mode 1)
-(global-font-lock-mode t) ;; enable syntax highlighting for all modes
-(add-to-list 'auto-mode-alist '("\\.bash\\'" . shell-script-mode))
-
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4) ;; set tabs to be 4 spaces wide
-(setq c-basic-offset 4) ; this line is critical for C based modes like .c and .php I guess
-(setq-default indent-line-function 'insert-tab)
-
-(electric-pair-mode 1)
-
-
-;; turn on syntax highlighting
-(global-font-lock-mode t) ;; enable syntax highlighting for all modes
-(dolist (pattern '("\\.bashrc\\'" "\\.bashrc_user\\'" "\\.sh\\'" "\\.bashrc_color\\'"))
-  (add-to-list 'auto-mode-alist `(,pattern . shell-script-mode)))
-
-
-
-;; file templates
-(add-hook 'find-file-hook 'auto-insert)
-(add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
-
 
 ;; Customize font-lock mode for c++-mode (following stuff is for Arduino files I think)
 (defun my-c++-mode-hook ()
@@ -48,6 +21,57 @@
 
 
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MAIN SETTINGS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; handle certain per file extension type
+(add-to-list 'auto-mode-alist '("\\.ino\\'" . c++-mode)) ;; Associate .ino files with c++-mode
+(add-to-list 'auto-mode-alist '("\\.bash\\'" . shell-script-mode))
+(dolist (pattern '("\\.bashrc\\'" "\\.bashrc_user\\'" "\\.sh\\'" "\\.bashrc_color\\'"))
+  (add-to-list 'auto-mode-alist `(,pattern . shell-script-mode)))
+
+;; turn on syntax highlighting
+(global-font-lock-mode t) ;; enable syntax highlighting for all modes
+
+;; automaticaly handles () and {}
+(electric-pair-mode 1)
+
+;; set up code folding
+(hs-minor-mode)
+
+
+;; tabs and spacing rules
+(setq-default indent-tabs-mode nil)
+(setq-default indent-line-function 'insert-tab)
+
+(setq-default tab-width 4) ;; set tabs to be 4 spaces wide
+(setq c-basic-offset 4) ; this line is critical for C based modes like .c and .php I guess
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; COMPILATION SETTINGS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;; SET SYSTEM SPECIFIC COMMANDS
+(cond
+ ((eq system-name 'ANDERS-LAPTOP)
+  (progn
+    (setq compile-command "/home/anders/ti/ccs1270/ccs/utils/bin/gmake -C /home/anders/Documents/CCS/workspace_WWD/WWD_prog/Debug -k -j 8 all -O")
+    (message "System: [ANDERS-LAPTOP]")))
+ ((eq system-name 'darwin)
+  (progn
+    (message "Mac OS X")))
+ ((eq system-name 'gnu/linux)
+  (progn
+    (message "Linux"))))
+(setq compile-command "/home/anders/ti/ccs1270/ccs/utils/bin/gmake -C /home/anders/Documents/CCS/workspace_WWD/WWD_prog/Debug -k -j 8 all -O")
+
+
+
 ;; compilation window settings
 (defun my-compilation-hook ()
   (when (not (get-buffer-window "*compilation*"))
@@ -60,7 +84,9 @@
           (shrink-window (- h compilation-window-height)))))))
 
 (add-hook 'compilation-mode-hook 'my-compilation-hook)
+
 ;; create compilation window command
+
 (defun my-create-compile-frame ()
   "Create a frame for compiling at the bottom of the screen."
   (interactive)
@@ -75,6 +101,15 @@
 
 ;; Bind a key to create the compile frame
 (global-set-key (kbd "<f5>") 'my-create-compile-frame)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TEMPLATES and STRING INSERTION
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; file templates with find-file I guess ? used  auto-insert?
+(add-hook 'find-file-hook 'auto-insert)
 
 
 ;; automatic insert Doxygen style header
@@ -114,7 +149,42 @@
 ;; (advice-remove 'c-indent-new-comment-line #'my-prettify-c-block-comment)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LSP MODE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; STARTUP ECHO MESSAGE
-(defun display-startup-echo-area-message ()
-    (message "Sourced code.el...."))
+;; TODO: figure out how to only load this section if we want "full"" startup?
+
+
+;; Set lsp-mode specific packages
+;;     company - this is the the autocompletion frontend
+(setq package-selected-packages '(lsp-mode yasnippet lsp-treemacs helm-lsp
+    projectile hydra flycheck company avy which-key helm-xref dap-mode))
+
+(when (cl-find-if-not #'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (mapc #'package-install package-selected-packages))
+
+
+(which-key-mode)
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (auto-complete-mode 1)))
+	  
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil
+      company-idle-delay 0.0
+      company-minimum-prefix-length 1
+      lsp-idle-delay 0.1)  ;; clangd is fast
+
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools)
+  (yas-global-mode))
+
+
