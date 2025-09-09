@@ -22,6 +22,7 @@ alias emacss="emacs"
 alias home='cd'
 alias h='history'
 alias hg='history | grep'
+alias diff='diff --color'
 
 
 ### ls ###

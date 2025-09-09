@@ -146,6 +146,10 @@ if [ -x /home/anders/.local/bin ]; then
 fi
 
 
+# set TZ variable for use with Python datetime.datetime.now() function
+export TZ=""
+
+
 ############################
 ### SOURCE OTHER FILES  ####
 ############################

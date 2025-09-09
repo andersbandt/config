@@ -4,7 +4,7 @@
 if [ $system = "Windows" ]
 then
     BASEPATH="/cygdrive/c/Users/ander"
-    ONEDRIVE="$HOME/OneDrive"
+    ONEDRIVE=$HOME/OneDrive
 elif [ $system = "Linux" ]
 then
     BASEPATH="/home/anders"
@@ -17,7 +17,7 @@ fi
 #### GENERAL ###
 alias c='cd /cygdrive/c'
 alias d='cd /cygdrive/d'
-alias ti='cd $BASEPATH/ti'
+alias ti='cd /cygdrive/c/ti'
 alias tmp='cd ~/tmp'
 alias ander='cd $BASEPATH'
 alias appdata='cd $BASEPATH/AppData'
@@ -30,6 +30,7 @@ alias documents='cd $BASEPATH/Documents'
 
 ### ONE DRIVE ###
 alias onedrive='cd $ONEDRIVE/'
+alias onedrivedocuments='cd $ONEDRIVE/Documents'
 alias filetransfer='cd $ONEDRIVE/FileTransfer'
 
 alias engineering='cd "$ONEDRIVE/Documents/engineering"'
@@ -47,12 +48,13 @@ alias ccs='cd $BASEPATH/Documents/CCS/'
 alias altium='cd $BASEPATH/Documents/Altium/'
 alias github='cd ~/Documents/GitHub'
 alias projects='cd $ONEDRIVE/Projects'
+alias pcblibrary='cd $ONEDRIVE/PCB Library/'
 
 
 ##############################
 ### NAV VARIABLES          ###
 ##############################
-onedrive_t='$ONEDRIVE/'
+onedrive_t='$ONEDRIVE'
 projects_t='$ONEDRIVE/Projects'
 code_t='$ONEDRIVE/Code'
 documents_t='/cygdrive/c/Users/ander/Documents/'
