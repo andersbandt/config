@@ -159,7 +159,7 @@
 
 
 ;; Set the default font
-(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 80)
+;;(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 80)
 
 ;; theme settings - THESE DON't WORK IF YOU OVERRIDE THE CONSOLE SETTINGS I GUESS IN CYGWIN
 ;; (load-theme 'tango t) ;; light theme. white/gray with green
