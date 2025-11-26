@@ -59,9 +59,15 @@ fi
 alias loadti='$BASEPATH/ti/ccs1200/ccs/ccs_base/scripting/examples/loadti/loadti.bat'
 
 
+
+
+
+
 ##############################
-### SSH / SFTP ALIAS      ####
+### RDP / SSH / SFTP ALIAS      ####
 ##############################
+
+alias rdp@pc="mstsc /cygdrive/c/Users/ander/OneDrive/Documents/computer/DESKTOP-FOO0R24/DESKTOP-FOO0R24.rdp"
 alias ssh@breeze="ssh observe@breeze"
 alias ssh@grow="ssh pi@grow"
 alias ssh@van1="ssh anders@van1"
