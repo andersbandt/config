@@ -35,3 +35,12 @@ Both of these files should be palced at the home directory.
 
 *work in progress*
 
+
+
+## TODO:
+- [ ] have emacs initialization script create site-lisp directory if it doesn't exist
+- [ ] also place emacs home directory re-config for windows system in file cp out
+
+
+
+
