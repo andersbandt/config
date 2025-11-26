@@ -80,7 +80,7 @@ BG_magenta1='\033[48;5;176m'
 # sets the prompt to custom colors
 
 if [ "$IS_SSH" == 1 ]; then
-   PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ $ENDC"
+   PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ "
 else
   PS1="${blue1}\u@${magenta2}\h:\w\\n$ " # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
 fi
