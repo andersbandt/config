@@ -64,7 +64,7 @@ alias loadti='$BASEPATH/ti/ccs1200/ccs/ccs_base/scripting/examples/loadti/loadti
 ##############################
 alias ssh@breeze="ssh observe@breeze"
 alias ssh@grow="ssh pi@grow"
-alias ssh@van="ssh anders@van"
+alias ssh@van1="ssh anders@van1"
 alias ssh@ubuntu="ssh anders@anders-MS-7A70"
 alias sftp@ubuntu="sftp anders@anders-MS-7A70"
 

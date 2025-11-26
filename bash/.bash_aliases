@@ -17,7 +17,7 @@ fi
 #### GENERAL ###
 alias c='cd /cygdrive/c'
 alias d='cd /cygdrive/d'
-alias ti='cd /cygdrive/c/ti'
+alias ti='cd $BASEPATH/ti'
 alias tmp='cd ~/tmp'
 alias ander='cd $BASEPATH'
 alias appdata='cd $BASEPATH/AppData'
@@ -26,29 +26,39 @@ alias appdata='cd $BASEPATH/AppData'
 alias downloads='cd $BASEPATH/Downloads'
 alias desktop='cd $BASEPATH/Desktop'
 alias documents='cd $BASEPATH/Documents'
+alias pictures='cd $BASEPATH/Pictures'
+
+### LOCAL FILES ###
+alias obsidian='cd $BASEPATH/Documents/Obsidian'
+alias ccs='cd $BASEPATH/Documents/CCS/'
+alias altium='cd $BASEPATH/Documents/Altium/'
+alias github='cd ~/Documents/GitHub'
 
 
 ### ONE DRIVE ###
-alias onedrive='cd $ONEDRIVE/'
-alias onedrivedocuments='cd $ONEDRIVE/Documents'
+alias one='cd $ONEDRIVE/'
+alias onepictures='cd $ONEDRIVE/Pictures'
+alias onedocuments='cd $ONEDRIVE/Documents'
+alias projects='cd $ONEDRIVE/Projects'
 alias filetransfer='cd $ONEDRIVE/FileTransfer'
 
-alias engineering='cd "$ONEDRIVE/Documents/engineering"'
-alias financials='cd $ONEDRIVE/Documents/financials'
-alias monthlystatements='cd $ONEDRIVE/Documents/financials/2023/monthly_statements'
-
-
+# Code
 alias code='cd $ONEDRIVE/Code/'
 alias arduino='cd $ONEDRIVE/Code/Arduino'
 alias embedded='cd $ONEDRIVE/Code/embedded'
 alias gopython='cd $ONEDRIVE/Code/python'
 alias matlab='cd $ONEDRIVE/Code/MATLAB'
-alias obsidian='cd $BASEPATH/Documents/Obsidian'
-alias ccs='cd $BASEPATH/Documents/CCS/'
-alias altium='cd $BASEPATH/Documents/Altium/'
-alias github='cd ~/Documents/GitHub'
-alias projects='cd $ONEDRIVE/Projects'
-alias pcblibrary='cd $ONEDRIVE/PCB Library/'
+
+# Documents
+alias education='cd $ONEDRIVE/Documents/education'
+alias engineering='cd $ONEDRIVE/Documents/engineering'
+alias living='cd $ONEDRIVE/Documents/living'
+alias health='cd $ONEDRIVE/Documents/health'
+alias writings='cd $ONEDRIVE/Documents/writings'
+
+## financials
+alias financials='cd $ONEDRIVE/Documents/financials'
+alias monthlystatements='cd $ONEDRIVE/Documents/financials/2023/monthly_statements'
 
 
 ##############################
