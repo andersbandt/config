@@ -10,7 +10,7 @@ title="Ders' Bash RC"
 ### INITIALIZATION         ###
 ##############################
 
-alias reload='source ~/.bashrc'
+alias reload='source ~/.bashrc;clear'
 alias editprof='emacs ~/.bashrc'
 
 

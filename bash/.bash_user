@@ -44,6 +44,7 @@ alias rm='rm -i'
 ### GREP ALLIAS            ###
 ##############################
 alias grep="grep -i --color='auto'"
+alias grepr="grep -ir --color='auto'"
 alias egrep="egrep -i --color='auto'"
 alias fgrep="fgrep -i --color='auto'"
 alias zgrep="zgrep -i --color='auto'"

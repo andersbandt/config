@@ -21,6 +21,7 @@ alias ti='cd $BASEPATH/ti'
 alias tmp='cd ~/tmp'
 alias ander='cd $BASEPATH'
 alias appdata='cd $BASEPATH/AppData'
+alias programfiles='cd "/cygdrive/c/Program Files"'
 
 ### EASY NATIVE WINDOWS ###
 alias downloads='cd $BASEPATH/Downloads'
@@ -33,6 +34,7 @@ alias screenshots='cd $BASEPATH/Pictures/Screenshots'
 alias obsidian='cd $BASEPATH/Documents/Obsidian'
 alias ccs='cd $BASEPATH/Documents/CCS/'
 alias altium='cd $BASEPATH/Documents/Altium/'
+alias kicad='cd $BASEPATH/Documents/KiCAD/'
 alias github='cd ~/Documents/GitHub'
 
 
@@ -42,6 +44,7 @@ alias onepictures='cd $ONEDRIVE/Pictures'
 alias onedocuments='cd $ONEDRIVE/Documents'
 alias projects='cd $ONEDRIVE/Projects'
 alias filetransfer='cd $ONEDRIVE/FileTransfer'
+alias pcb='cd $ONEDRIVE/PCB_Library'
 
 # Code
 alias code='cd $ONEDRIVE/Code/'
@@ -59,7 +62,7 @@ alias writings='cd $ONEDRIVE/Documents/writings'
 
 ## financials
 alias financials='cd $ONEDRIVE/Documents/financials'
-alias monthlystatements='cd $ONEDRIVE/Documents/financials/2023/monthly_statements'
+alias monthlystatements='cd $ONEDRIVE/Documents/financials/2026/monthly_statements'
 
 
 ##############################
