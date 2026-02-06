@@ -29,6 +29,7 @@ alias documents='cd $BASEPATH/Documents'
 alias pictures='cd $BASEPATH/Pictures'
 
 ### LOCAL FILES ###
+alias screenshots='cd $BASEPATH/Pictures/Screenshots'
 alias obsidian='cd $BASEPATH/Documents/Obsidian'
 alias ccs='cd $BASEPATH/Documents/CCS/'
 alias altium='cd $BASEPATH/Documents/Altium/'
