@@ -1,4 +1,7 @@
 
+
+echo "temp"
+
 source ../move_with_diff.sh
 source ~/.bash_color
 
