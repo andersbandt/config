@@ -1,4 +1,8 @@
 
 
-
+# Auto-save files
 auto-save-list/*
+
+# Machine-specific state files (prevent cross-machine conflicts)
+ido.last
+elgrep-data.el
