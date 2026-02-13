@@ -23,9 +23,12 @@ alias home='cd'
 alias h='history'
 alias hg='history | grep'
 alias diff='diff --color'
+alias mv='mv -i'
+alias cp='cp -irp'
+alias rm='rm -i'
 
 
-### ls ###
+### LS
 alias ls='ls --color=auto'
 alias la='ls -la'
 alias ll='ls -lF'
@@ -34,15 +37,7 @@ alias lt='ls -lt'
 alias lrt='ls -lrt'
 
 
-### mv, cp, rm ###
-alias mv='mv -i'
-alias cp='cp -irp'
-alias rm='rm -i'
-
-
-##############################
-### GREP ALLIAS            ###
-##############################
+### GREP
 alias grep="grep -i --color='auto'"
 alias grepr="grep -ir --color='auto'"
 alias egrep="egrep -i --color='auto'"
@@ -50,7 +45,12 @@ alias fgrep="fgrep -i --color='auto'"
 alias zgrep="zgrep -i --color='auto'"
 
 
-# MISPELL
+### random
+alias bat="python -m rich.markdown"
+
+
+
+### mispell
 alias sl='ls'
 alias ccd="cd"
 alias cdd="cd"

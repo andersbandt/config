@@ -38,22 +38,15 @@ detect_repo_root() {
 }
 
 source_colors() {
-    # Source color definitions if available
-    local color_file="$REPO_ROOT/bash/.bash_color"
-    if [[ -f "$color_file" ]]; then
-        # Temporarily source just the color variables we need
-        source "$color_file" 2>/dev/null || true
-    fi
-
-    # Fallback to basic colors if sourcing failed
-    if [[ -z "$RED" ]]; then
-        RED='\033[00;31m'
-        GREEN='\033[00;32m'
-        YELLOW='\033[00;33m'
-        BLUE='\033[00;34m'
-        CYAN='\033[00;36m'
-        ENDC='\033[0m'
-    fi
+    # Define colors directly — don't source .bash_color, whose base color
+    # variables intentionally omit the closing 'm' (for use with LS_COLORS
+    # and PS1 in a different way), which would break echo -e usage here.
+    RED='\033[00;31m'
+    GREEN='\033[00;32m'
+    YELLOW='\033[00;33m'
+    BLUE='\033[00;34m'
+    CYAN='\033[00;36m'
+    ENDC='\033[0m'
 }
 
 detect_os() {
