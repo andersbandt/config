@@ -13,15 +13,15 @@
 
 
 ;; LOAD BASE (DERS) settings
-(load "~/.emacs.d/base.el")
+(load "base")
 
 
 ;; LOAD CODE SETTINGS
-(load "~/.emacs.d/code.el")
+(load "code")
 
 
 ;; LOAD LSP-MODE settings
-(load "~/.emacs.d/lsp.el")
+(load "lsp")
 
 
 ;; SET SYSTEM SPECIFIC COMMANDS

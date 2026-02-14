@@ -23,7 +23,24 @@
 
 
 
-;; MANAGE PACKAGES
+;; Auto-install missing packages on startup
+(defvar my-required-packages
+  '(elm-mode
+    helm
+    magit
+    markdown-mode
+    projectile
+    use-package
+    vertico
+    wgrep
+    whitespace-cleanup-mode
+    yasnippet
+    zprint-mode))
+
+(dolist (pkg my-required-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
 (require 'use-package)
 
 
@@ -70,8 +87,8 @@
 
 
 ;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "~/.emacs.d/custom.el" user-emacs-directory))
-(load custom-file)
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
 
 ;; Settings for currently logged in user
 ;; (setq user-settings-dir
@@ -79,12 +96,13 @@
 ;; (add-to-list 'load-path user-settings-dir)
 
 ;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
+(when (file-directory-p site-lisp-dir)
+  (dolist (project (directory-files site-lisp-dir t "\\w+"))
+    (when (file-directory-p project)
+      (add-to-list 'load-path project))))
 
 ;; BACKUPS
-(setq backup-directory-alist '(("." . "~/.emacs.d/.saves"))) ; don't litter fs tree
+(setq backup-directory-alist `(("." . ,(expand-file-name ".saves" user-emacs-directory)))) ; don't litter fs tree
 (setq backup-by-copying t) ; don't clobber symlinks
 (setq delete-old-versions t
 	  kept-new-versions 6
@@ -107,27 +125,6 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-;; Setup packages
-;; (require 'setup-package)
-
-;; Edit plists
-;; (require 'setup-plist)
-
-;; Install extensions if they're missing
-(defun init--install-packages ()
-  (packages-install
-   '(
-     elm-mode
-     magit
-     magit
-     markdown-mode
-     use-package
-     vertico
-     wgrep
-     whitespace-cleanup-mode
-     yasnippet
-     zprint-mode
-     )))
 
 
 ;; (use-package vertico

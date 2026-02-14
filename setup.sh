@@ -274,8 +274,60 @@ setup_emacs() {
     # Symlink .emacs
     create_symlink "$REPO_ROOT/emacs/.emacs" "$HOME/.emacs"
 
-    # Symlink entire .emacs.d directory
-    create_symlink "$REPO_ROOT/emacs/.emacs.d" "$HOME/.emacs.d"
+    # .emacs.d must be a real directory (not a symlink) so that packages
+    # and runtime state (elpa/, ido.last, etc.) live locally per machine.
+    # Only the config .el files are symlinked into it.
+    if [[ -L "$HOME/.emacs.d" ]]; then
+        echo -e "${YELLOW}⚠${ENDC} $HOME/.emacs.d is a symlink — replacing with real directory"
+        if [[ "$DRY_RUN" == true ]]; then
+            echo -e "${BLUE}[DRY-RUN]${ENDC} Would remove symlink and create directory: $HOME/.emacs.d"
+        else
+            rm "$HOME/.emacs.d"
+            mkdir -p "$HOME/.emacs.d"
+            echo -e "${GREEN}✓${ENDC} Created directory: $HOME/.emacs.d"
+        fi
+    elif [[ ! -d "$HOME/.emacs.d" ]]; then
+        if [[ "$DRY_RUN" == true ]]; then
+            echo -e "${BLUE}[DRY-RUN]${ENDC} Would create directory: $HOME/.emacs.d"
+        else
+            mkdir -p "$HOME/.emacs.d"
+            echo -e "${GREEN}✓${ENDC} Created directory: $HOME/.emacs.d"
+        fi
+    else
+        echo -e "${GREEN}✓${ENDC} Directory exists: $HOME/.emacs.d"
+    fi
+
+    # Symlink individual config .el files.
+    # elgrep-data.el is intentionally excluded (machine-specific runtime state).
+    local emacs_el_files=(
+        "base.el"
+        "code.el"
+        "custom.el"
+        "lsp.el"
+        "obsidian.el"
+        "org.el"
+    )
+
+    for file in "${emacs_el_files[@]}"; do
+        create_symlink "$REPO_ROOT/emacs/.emacs.d/$file" "$HOME/.emacs.d/$file"
+    done
+
+    # On Windows/Cygwin, copy the AppData bootstrap file if APPDATA is set.
+    # Native Windows Emacs loads from AppData/Roaming/.emacs — can't use symlinks.
+    if [[ "$system" == "Windows" ]] && [[ -n "$APPDATA" ]]; then
+        local appdata_unix
+        appdata_unix="$(cygpath -u "$APPDATA")"
+        local dest="$appdata_unix/.emacs"
+        local src="$REPO_ROOT/emacs/windows-appdata-init.el"
+
+        if [[ "$DRY_RUN" == true ]]; then
+            echo -e "${BLUE}[DRY-RUN]${ENDC} Would copy Windows bootstrap: $src -> $dest"
+        else
+            cp "$src" "$dest"
+            echo -e "${GREEN}✓${ENDC} Copied Windows bootstrap: $dest"
+            echo -e "${YELLOW}  Edit my-emacs-repo/HOME paths in $dest if needed${ENDC}"
+        fi
+    fi
 
     echo -e "\n${GREEN}Emacs setup complete${ENDC}"
 }
@@ -302,9 +354,24 @@ check_all_symlinks() {
         if ! verify_symlink "$HOME/.emacs" "$REPO_ROOT/emacs/.emacs"; then
             all_valid=false
         fi
-        if ! verify_symlink "$HOME/.emacs.d" "$REPO_ROOT/emacs/.emacs.d"; then
+
+        # .emacs.d should be a real directory, not a symlink
+        if [[ -L "$HOME/.emacs.d" ]]; then
+            echo -e "${RED}✗${ENDC} Should be a real directory (not a symlink): $HOME/.emacs.d"
+            all_valid=false
+        elif [[ -d "$HOME/.emacs.d" ]]; then
+            echo -e "${GREEN}✓${ENDC} Directory exists: $HOME/.emacs.d"
+        else
+            echo -e "${RED}✗${ENDC} Missing directory: $HOME/.emacs.d"
             all_valid=false
         fi
+
+        local emacs_el_files=("base.el" "code.el" "custom.el" "lsp.el" "obsidian.el" "org.el")
+        for file in "${emacs_el_files[@]}"; do
+            if ! verify_symlink "$HOME/.emacs.d/$file" "$REPO_ROOT/emacs/.emacs.d/$file"; then
+                all_valid=false
+            fi
+        done
     fi
 
     echo ""
