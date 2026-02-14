@@ -13,8 +13,9 @@
 (setenv "HOME" "C:/Users/ander/")
 (setq default-directory "C:/Users/ander/")
 
-;; Packages and runtime state stay in AppData/Roaming/.emacs.d/ (the default),
-;; not in the repo.
+;; Setting HOME above causes ~/ to resolve to C:/Users/ander/, which would break
+;; the default user-emacs-directory. Pin it explicitly so packages stay in AppData.
+(setq user-emacs-directory "C:/Users/ander/AppData/Roaming/.emacs.d/")
 
 ;; Add repo's .emacs.d/ to load-path so (load "base") etc. find config files
 (add-to-list 'load-path (concat my-emacs-repo "/.emacs.d"))

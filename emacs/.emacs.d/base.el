@@ -25,7 +25,8 @@
 
 ;; Auto-install missing packages on startup
 (defvar my-required-packages
-  '(elm-mode
+  '(;; General
+    elm-mode
     helm
     magit
     markdown-mode
@@ -35,7 +36,15 @@
     wgrep
     whitespace-cleanup-mode
     yasnippet
-    zprint-mode))
+    zprint-mode
+    ;; LSP / completion
+    lsp-mode
+    lsp-treemacs
+    helm-lsp
+    company
+    flycheck
+    which-key
+    dap-mode))
 
 (dolist (pkg my-required-packages)
   (unless (package-installed-p pkg)

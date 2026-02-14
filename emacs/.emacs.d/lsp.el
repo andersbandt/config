@@ -7,7 +7,7 @@
 
 
 ;; LOAD CODE SETTINGS
-(load "~/.emacs.d/code.el")
+(load "code")
 
 
 ;; Set lsp-mode specific packages
@@ -21,10 +21,16 @@
 
 
 (which-key-mode)
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (auto-complete-mode 1)))
-	  
+
+;; On Windows, pylsp lives in the Python Scripts folder which isn't on Emacs's PATH.
+;; Set the full path here. Find it with: where pylsp (in cmd/powershell)
+(when (eq system-type 'windows-nt)
+  (setq lsp-pylsp-server-command
+        '("C:/Users/ander/AppData/Local/Programs/Python/Python312/Scripts/pylsp.exe"))
+
+
+
+(add-hook 'python-mode-hook 'lsp)
 (add-hook 'c-mode-hook 'lsp)
 (add-hook 'c++-mode-hook 'lsp)
 
@@ -38,6 +44,7 @@
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (add-hook 'lsp-mode-hook #'company-mode)
   (require 'dap-cpptools)
   (yas-global-mode))
 

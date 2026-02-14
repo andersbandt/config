@@ -155,6 +155,25 @@ This validates:
 - They point to the correct targets in the repo
 - No broken or missing symlinks
 
+## In-Progress / Known Issues
+
+### Python LSP (pylsp) — NOT WORKING as of Feb 2026
+
+Attempted to get Python code completion via `lsp-mode` + `pylsp`. Current state:
+
+- `pylsp` is installed at `C:/Users/ander/AppData/Local/Programs/Python/Python312/Scripts/pylsp.exe`
+- `lsp-mode` is installed and loads
+- `lsp-pylsp-server-command` is set to the full path in `lsp.el` (Windows only)
+- LSP still shows **disconnected** when opening a `.py` file
+- `lsp-workspace-show-log` shows "IO MESSAGES DISABLED" — enable with `(setq lsp-log-io t)` before diagnosing
+
+**Next debugging steps:**
+1. Enable `(setq lsp-log-io t)`, restart Emacs, open `.py` file, then check `M-x lsp-workspace-show-log`
+2. Try running pylsp manually from a cmd prompt to see if it errors on startup
+3. May be a Cygwin vs native Windows Python mismatch — pylsp was installed via Cygwin pip but Windows Emacs runs it as a native process
+
+---
+
 ## Legacy Workflow (Deprecated)
 
 **Prior to February 2026**, this repo used a "copy in / copy out" workflow with separate bash scripts:
