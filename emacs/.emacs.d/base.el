@@ -11,6 +11,12 @@
 
 
 
+;; Keep emacs Custom-settings in separate file
+;; NOTE: must be set before package-initialize so Emacs knows where to
+;; persist package-selected-packages (avoids "temporarily" warning).
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
@@ -20,8 +26,6 @@
 ;; If there are no archived package contents, refresh them
 (when (not package-archive-contents)
   (package-refresh-contents))
-
-
 
 ;; Auto-install missing packages on startup
 (defvar my-required-packages
@@ -46,9 +50,19 @@
     which-key
     dap-mode))
 
+(defvar my--packages-refreshed nil
+  "Non-nil if package archives have been refreshed this session.")
+
 (dolist (pkg my-required-packages)
   (unless (package-installed-p pkg)
-    (package-install pkg)))
+    (condition-case _err
+        (package-install pkg)
+      (file-error
+       ;; Stale cache — refresh once and retry
+       (unless my--packages-refreshed
+         (package-refresh-contents)
+         (setq my--packages-refreshed t))
+       (package-install pkg)))))
 
 (require 'use-package)
 
@@ -94,10 +108,6 @@
   (load "~/.emacs.d/code.el")
   (load "~/.emacs.d/lsp.el"))
 
-
-;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file 'noerror)
 
 ;; Settings for currently logged in user
 ;; (setq user-settings-dir
