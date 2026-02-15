@@ -1,0 +1,7 @@
+[Unit]
+Description=Monthly backup
+
+[Service]
+Type=oneshot
+ExecStart=/home/anders/Code/bash/backup.sh
+User=anders
