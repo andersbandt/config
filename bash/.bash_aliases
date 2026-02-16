@@ -85,14 +85,15 @@ alias wwd='cd $ONEDRIVE/Projects/WWD'
 alias wwddatasheet='cd $ONEDRIVE/Projects/WWD/electrical/datasheets'
 alias wwddocumentation='cd $ONEDRIVE/Projects/WWD/documentation'
 alias wwdfirmware='cd $ONEDRIVE/Projects/WWD/firmware'
-alias wwdccs='cd $BASEPATH/Documents/CCS/workspace_WWD/WWD_prog'
+alias wwdprog='cd $BASEPATH/Documents/NCS/WWD-n/src'
+alias wwdncs='cd $BASEPATH/Documents/NCS/WWD-n'
 alias wwdcode='cd $ONEDRIVE/Code/python/WWD/'
 #alias wwdlog='cd $BASEPATH/Documents/GitHub/wwd_gui_api/log/'
 alias wwdlog='/home/anders/Code/bash/tail_recent.sh'
 wwd_t='$ONEDRIVE/Projects/WWD'
 wwdccs_t="$BASEPATH/Documents/CCS/workspace_WWD/WWD_prog/"
 
-alias wwdapi='python ~/Documents/GitHub/wwd_gui_api/main.py'
+alias wwdapi='python3 ~/Documents/GitHub/wwd_gui_api/main.py'
 
 # Hidden-Hydroponics
 alias hydroponics='cd $ONEDRIVE/Projects/hidden_hydroponic'

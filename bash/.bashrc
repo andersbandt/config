@@ -150,6 +150,12 @@ fi
 export TZ=""
 
 
+# for adding ARM compilers
+if [ -x /opt/gcc-arm-none-eabi-10.3-2021.10/bin ]; then
+    export PATH=/opt/gcc-arm-none-eabi-10.3-2021.10/bin:$PATH
+fi
+
+
 ############################
 ### SOURCE OTHER FILES  ####
 ############################

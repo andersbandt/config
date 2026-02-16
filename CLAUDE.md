@@ -128,6 +128,20 @@ The same configuration files work across all platforms thanks to conditional log
 
 Platform-specific behavior (file paths, command aliases) is handled by the `$system` variable set in `.bash_os`.
 
+## Backup Scripts
+
+The `backup/` directory contains automated backup scripts and systemd units:
+
+- **`backup.sh`** — Full-system backup for Ubuntu desktop. Creates a bzip2-compressed tarball of `/` to an external HDD at `/mnt/backdrive_1/backup`. Excludes `~/Pictures` and `~/.cache`. Auto-deletes backups older than 2 weeks.
+- **`backup-pi.sh`** — Lightweight Raspberry Pi backup. Backs up `/home/pi`, system configs (`/etc/systemd/system`, cron, fstab, hosts, network, apt sources), and `/opt` to a USB drive at `/mnt/usb/backup`.
+- **`checksums.sh`** — Generate and verify SHA256 checksums for files in a directory. Two modes: `checksums.sh [DIR] [OUTPUT]` to generate, `checksums.sh --verify FILE [DIR]` to verify. Useful for detecting file corruption in backups and archives.
+- **`backup.service`** — systemd oneshot service that runs `backup.sh`.
+- **`backup.timer`** — systemd timer that triggers the backup monthly. Uses `Persistent=true` (catches up after missed runs) and `RandomizedDelaySec=1h`.
+
+These scripts are standalone (not symlinked anywhere). To install the systemd timer, copy the `.service` and `.timer` files to `/etc/systemd/system/` and enable with `systemctl enable --now backup.timer`.
+
+**Note**: The `backup.service` currently references `ExecStart=/home/anders/Code/bash/backup.sh` — this path may need updating to point to the repo location.
+
 ## Key Files
 
 ### Setup Script
@@ -136,6 +150,7 @@ Platform-specific behavior (file paths, command aliases) is handled by the `$sys
 ### Configuration Files
 - **Bash**: `.bashrc`, `.bash_profile`, `.bash_user`, `.bash_aliases`, `.bash_os`, `.bash_color`
 - **Emacs**: `.emacs`, `.emacs.d/` (entire directory including all `.el` files and themes)
+- **Backup**: `backup.sh`, `backup-pi.sh`, `checksums.sh`, `backup.service`, `backup.timer`
 
 ### Documentation
 - **`CLAUDE.md`** — This file (instructions for Claude Code)

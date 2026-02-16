@@ -3,5 +3,4 @@ Description=Monthly backup
 
 [Service]
 Type=oneshot
-ExecStart=/home/anders/Code/bash/backup.sh
-User=anders
+ExecStart=/home/anders/Documents/GitHub/config/backup/backup.sh

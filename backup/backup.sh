@@ -14,7 +14,7 @@ echo "Creating backup at path: $BACKPATH"
 echo -e "\twith date $TODAY"
 
 # Delete backup files older than 2 weeks
-find "$BACKPATH" -mtime +14 -type f -delete
+#find "$BACKPATH" -mtime +14 -type f -delete
 
 START=$(date +%s)
 
