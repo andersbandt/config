@@ -1,4 +1,5 @@
 
+
 source ../move_with_diff.sh
 source ~/.bash_color
 
@@ -10,7 +11,7 @@ echo -e "${PURPLEm}using system $system ${ENDC}"
 
 
 # Specify the files to be moved
-src_files=(".bashrc" ".bash_user" ".bash_aliases" ".bash_os" ".bash_color" )
+src_files=(".bashrc" ".bash_user" ".bash_aliases" ".bash_os" ".bash_color" ".bash_profile")
 dest_dir="$HOME"
 
 

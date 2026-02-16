@@ -11,30 +11,11 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; STYLE SETTINGS
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; editor style
-(line-number-mode 1)
-(global-display-line-numbers-mode) ;; this one enables line numbers
-(setq-default truncate-lines 1)
-(setq warning-minimum-level :error)
-
-
-;; Set the default font
-(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 80)
-
-;; theme settings - THESE DON't WORK IF YOU OVERRIDE THE CONSOLE SETTINGS I GUESS IN CYGWIN
-;; (load-theme 'tango t) ;; light theme. white/gray with green
-(load-theme 'misterioso t) ;; dark theme
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; MANAGE PACKAGES
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;; Keep emacs Custom-settings in separate file
+;; NOTE: must be set before package-initialize so Emacs knows where to
+;; persist package-selected-packages (avoids "temporarily" warning).
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -46,25 +27,44 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+;; Auto-install missing packages on startup
+(defvar my-required-packages
+  '(;; General
+    elm-mode
+    helm
+    magit
+    markdown-mode
+    projectile
+    use-package
+    vertico
+    wgrep
+    whitespace-cleanup-mode
+    yasnippet
+    zprint-mode
+    ;; LSP / completion
+    lsp-mode
+    lsp-treemacs
+    helm-lsp
+    company
+    flycheck
+    which-key
+    dap-mode))
+
+(defvar my--packages-refreshed nil
+  "Non-nil if package archives have been refreshed this session.")
+
+(dolist (pkg my-required-packages)
+  (unless (package-installed-p pkg)
+    (condition-case _err
+        (package-install pkg)
+      (file-error
+       ;; Stale cache — refresh once and retry
+       (unless my--packages-refreshed
+         (package-refresh-contents)
+         (setq my--packages-refreshed t))
+       (package-install pkg)))))
 
 (require 'use-package)
-
-
-;; Install extensions if they're missing
-(defun init--install-packages ()
-  (packages-install
-   '(
-     elm-mode
-     magit
-     magit
-     markdown-mode
-     use-package
-     vertico
-     wgrep
-     whitespace-cleanup-mode
-     yasnippet
-     zprint-mode
-     )))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -95,18 +95,15 @@
 (add-to-list 'load-path site-lisp-dir)
 
 
-;; Keep emacs Custom-settings in separate file
-(setq custom-file (expand-file-name "~/.emacs.d/custom.el" user-emacs-directory))
-(load custom-file)
-
 ;; Add external projects to load path
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
+(when (file-directory-p site-lisp-dir)
+  (dolist (project (directory-files site-lisp-dir t "\\w+"))
+    (when (file-directory-p project)
+      (add-to-list 'load-path project))))
 
 
 ;; BACKUPS
-(setq backup-directory-alist '(("." . "~/.emacs.d/.saves"))) ; don't litter fs tree
+(setq backup-directory-alist `(("." . ,(expand-file-name ".saves" user-emacs-directory)))) ; don't litter fs tree
 (setq backup-by-copying t) ; don't clobber symlinks
 (setq delete-old-versions t
 	  kept-new-versions 6
@@ -130,9 +127,6 @@
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 
-;; Edit plists
-;; (require 'setup-plist)
-
 
 ;; (use-package vertico
 ;;   :init
@@ -154,6 +148,23 @@
 (require 'ido)
 (ido-mode t)
 
+
+;; EDITOR STYLE SETTINGS
+(line-number-mode 1)
+(global-display-line-numbers-mode) ;; this one enables line numbers
+(setq-default truncate-lines 1)
+(setq warning-minimum-level :error)
+
+
+;; Set the default font
+;;(set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 80)
+
+;; theme settings - THESE DON't WORK IF YOU OVERRIDE THE CONSOLE SETTINGS I GUESS IN CYGWIN
+;; (load-theme 'tango t) ;; light theme. white/gray with green
+(load-theme 'misterioso t) ;; dark theme
+
+
+
 ;; AUTOCOMPLETION MANAGER
 (require' helm)
 (helm-mode 1) ; facultative
@@ -166,24 +177,3 @@
 ;; PROJECT MANAGEMENT
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; NETWORKING
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; SSH
-(setq tramp-default-method "sshx")
-(setq tramp-verbose 10)
-
-(defun connect-remote()
-  "Connect to a remote server via SSH and open a file"
-  (interactive)
-  (find-file "/ssh:anders@anders-ms-7a70:/home/anders/Documents/CCS/workspace_WWD/WWD_prog/wwd.c")
-  (load "~/.emacs.d/code.el")
-  (load "~/.emacs.d/lsp.el"))
-
-
-
-
-

@@ -123,8 +123,12 @@
 (global-set-key (kbd "C-c d") 'insert-doxygen-function-header)
 
 
-;; random solution to multi-line commenting in StackExchange
-;; (Doesn't show up when doing M-x) ??
+;; Make RET inside block comments auto-continue with * and auto-close */
+(defun my-c-comment-ret-setup ()
+  (local-set-key (kbd "RET") 'c-context-line-break))
+(add-hook 'c-mode-common-hook 'my-c-comment-ret-setup)
+
+;; Advice to auto-close */ and insert * when pressing Enter after /*
 (defun my-prettify-c-block-comment (orig-fun &rest args)
   (let* ((first-comment-line (looking-back "/\\*\\s-*.*"))
          (star-col-num (when first-comment-line

@@ -10,7 +10,7 @@ title="Ders' Bash RC"
 ### INITIALIZATION         ###
 ##############################
 
-alias reload='source ~/.bashrc'
+alias reload='source ~/.bashrc;clear'
 alias editprof='emacs ~/.bashrc'
 
 
@@ -144,6 +144,10 @@ fi
 if [ -x /home/anders/.local/bin ]; then
     export PATH=/home/anders/.local/bin:$PATH
 fi
+
+
+# set TZ variable for use with Python datetime.datetime.now() function
+export TZ=""
 
 
 ############################

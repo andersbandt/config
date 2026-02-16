@@ -1,18 +1,20 @@
+# Emacs cache/state directories
+emacs/.emacs.d/.cache/
+emacs/.emacs.d/.saves/
+emacs/.emacs.d/elpa/
 
-
-emacs/.emacs.d/.cache/*
-emacs/.emacs.d/.saves/*
-emacs/.emacs.d/.saves/!*
+# Emacs session/state files (machine-specific)
 emacs/.emacs.d/session*
-emacs/.emacs.d/elpa/*
-    
+emacs/.emacs.d/ido.last
+emacs/.emacs.d/elgrep-data.el
 
-# compiled emacs files
+# Compiled Emacs files
 *.elc
 
-
-# some other random stuff
+# Emacs backup/lock files
 ~*
-.bak*
+*.bak
+.#*
 
-    
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json

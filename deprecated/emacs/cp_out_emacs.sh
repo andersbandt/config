@@ -43,8 +43,6 @@ for src_file in "${src_files[@]}"; do
         fi
     done
 done
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 1054169a9fb09f14c1c363eb8dc9e42d78a5f287
+

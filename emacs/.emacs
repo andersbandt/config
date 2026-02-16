@@ -13,11 +13,31 @@
 
 
 ;; LOAD BASE (DERS) settings
-(load "~/.emacs.d/base.el")
+(load "base")
 
 
 ;; LOAD CODE SETTINGS
-(load "~/.emacs.d/code.el")
+(load "code")
+
+
+;; LOAD LSP-MODE settings
+(load "lsp")
+
+
+;; SET SYSTEM SPECIFIC COMMANDS
+;; TODO: I would like to add some system control to change certain things in config
+(cond
+ ((eq system-name 'ANDERS-LAPTOP)
+  (progn
+    (setq compile-command "/home/anders/ti/ccs1270/ccs/utils/bin/gmake -C /home/anders/Documents/CCS/workspace_WWD/WWD_prog/Debug -k -j 8 all -O")
+    (message "System: [ANDERS-LAPTOP]")))
+ ((eq system-name 'darwin)
+  (progn
+    (message "Mac OS X")))
+ ((eq system-name 'gnu/linux)
+  (progn
+    (message "Linux"))))
+
 
 
 (custom-set-variables
@@ -43,5 +63,3 @@
 ;; STARTUP ECHO MESSAGE
 (defun display-startup-echo-area-message ()
     (message ".emacs is INITIALIZED! Lucky bastard."))
-
-

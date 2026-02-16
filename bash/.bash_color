@@ -43,7 +43,6 @@ B_WHITE='\033[01;37'
 
 ### background colors (40-47)
 BG_BLACK='\033[;40'
-#BG_RED='\033[48;41'
 BG_RED='\033[;41'
 BG_GREEN='\033[;42'
 BG_YELLOW='\033[;43'
@@ -63,6 +62,7 @@ BBG_CYAN='\033[48;5;106'
 BBG_WHITE='\033[48;5;107'
 
 ### 256 color escape code (select with 38)
+### 	look up "Xterm 256 chart" to see table of values
 blue1='\033[38;5;39m'
 blue2='\033[38;5;57m'
 magenta1='\033[38;5;176m'
@@ -70,7 +70,8 @@ magenta2='\033[38;5;206m'
 yellow3='\033[38;5;48m'
 
 
-BG_magenta1='\033[48;5;176m'
+BG_magenta1='\033[48;5;176'
+BG_red1='\033[48;5;124'
 
 
 #############################
@@ -81,6 +82,9 @@ BG_magenta1='\033[48;5;176m'
 
 if [ "$IS_SSH" == 1 ]; then
    PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ "
+elif [ $system = "Linux" ]
+then
+  PS1="${blue2}\u@${magenta1}\h:\w\\n$ " # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
 else
   PS1="${blue1}\u@${magenta2}\h:\w\\n$ " # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
 fi
@@ -99,7 +103,7 @@ fi
 # *.ext: file with extension .ext
 
 
-LS_COLORS=$LS_COLORS"di=$WHITE$BG_RED:"
+LS_COLORS=$LS_COLORS"di=$WHITE$BG_red1:"
 LS_COLORS=$LS_COLORS"ex=$B_GREEN:"
 LS_COLORS=$LS_COLORS"fi=$B_PURPLE:"
 LS_COLORS=$LS_COLORS"ln=$B_CYAN:"
