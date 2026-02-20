@@ -68,12 +68,12 @@ alias monthlystatements='cd $ONEDRIVE/Documents/financials/2026/monthly_statemen
 ##############################
 ### NAV VARIABLES          ###
 ##############################
-onedrive_t='$ONEDRIVE'
-projects_t='$ONEDRIVE/Projects'
-code_t='$ONEDRIVE/Code'
+onedrive_t="$ONEDRIVE"
+projects_t="$ONEDRIVE/Projects"
+code_t="$ONEDRIVE/Code"
 documents_t='/cygdrive/c/Users/ander/Documents/'
-financials_t='$ONEDRIVE/Documents/financials/'
-filetransfer_t='$ONEDRIVE/FileTransfer'
+financials_t="$ONEDRIVE/Documents/financials/"
+filetransfer_t="$ONEDRIVE/FileTransfer"
 
 
 ### specific projects
@@ -90,7 +90,7 @@ alias wwdncs='cd $BASEPATH/Documents/NCS/WWD-n'
 alias wwdcode='cd $ONEDRIVE/Code/python/WWD/'
 #alias wwdlog='cd $BASEPATH/Documents/GitHub/wwd_gui_api/log/'
 alias wwdlog='/home/anders/Code/bash/tail_recent.sh'
-wwd_t='$ONEDRIVE/Projects/WWD'
+wwd_t="$ONEDRIVE/Projects/WWD"
 wwdccs_t="$BASEPATH/Documents/CCS/workspace_WWD/WWD_prog/"
 
 alias wwdapi='python3 ~/Documents/GitHub/wwd_gui_api/main.py'
