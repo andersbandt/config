@@ -72,7 +72,7 @@ onedrive_t='$ONEDRIVE'
 projects_t='$ONEDRIVE/Projects'
 code_t='$ONEDRIVE/Code'
 documents_t='/cygdrive/c/Users/ander/Documents/'
-financials_t='$ONEDRIVE/Documents/Financials/'
+financials_t='$ONEDRIVE/Documents/financials/'
 filetransfer_t='$ONEDRIVE/FileTransfer'
 
 
