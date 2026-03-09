@@ -72,6 +72,7 @@ alias ssh@breeze="ssh observe@breeze"
 alias ssh@grow="ssh pi@grow"
 alias ssh@van1="ssh anders@van1"
 alias ssh@ubuntu="ssh anders@anders-MS-7A70"
+alias ssh@anders-think="ssh anders@anders-think"
 alias sftp@ubuntu="sftp anders@anders-MS-7A70"
 
 
