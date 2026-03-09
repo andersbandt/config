@@ -84,9 +84,9 @@ if [ "$IS_SSH" == 1 ]; then
    PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ "
 elif [ $system = "Linux" ]
 then
-  PS1="${blue2}\u@${magenta1}\h:\w\\n$ " # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
+  PS1="${blue2}\u@${magenta1}\h:\w\\n$ \[\033[0m\]" # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
 else
-  PS1="${blue1}\u@${magenta2}\h:\w\\n$ " # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
+  PS1="${blue1}\u@${magenta2}\h:\w\\n$ \[\033[0m\]" # TODO: some weird prompt formatting if I tab to the beginning of a long prompt
 fi
 
 

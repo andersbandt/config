@@ -40,6 +40,9 @@
 
 ;; set up code folding
 (hs-minor-mode)
+;; Fold keybindings: C-c f 0 = fold all, C-c f j = unfold all
+(global-set-key (kbd "C-c f 0") 'hs-hide-all)
+(global-set-key (kbd "C-c f j") 'hs-show-all)
 
 
 ;; tabs and spacing rules
