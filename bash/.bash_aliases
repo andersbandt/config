@@ -98,5 +98,16 @@ alias wwdapi='python3 ~/Documents/GitHub/wwd_gui_api/main.py'
 # Hidden-Hydroponics
 alias hydroponics='cd $ONEDRIVE/Projects/hidden_hydroponic'
 alias vanlife='cd $ONEDRIVE/Projects/Van_Life'
-alias financeanalyzer='$HOME/Documents/GitHub/Financial-Analyzer/run_finance.sh'
+if [ $system = "Windows" ]
+then
+    _FA_SCRIPT="$(cygpath -m "$BASEPATH/Documents/GitHub/Financial-Analyzer/src/main.py")"
+elif [ $system = "Linux" ]
+then
+    _FA_SCRIPT="$HOME/Documents/GitHub/Financial-Analyzer/src/main.py"
+fi
+alias fa="python $_FA_SCRIPT"
+alias fa-load="python $_FA_SCRIPT -41"
+alias fa-spend="python $_FA_SCRIPT -51"
+alias fa-balances="python $_FA_SCRIPT -61"
+alias fa-invest="python $_FA_SCRIPT -91"
 
