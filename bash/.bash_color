@@ -80,6 +80,18 @@ BG_red1='\033[48;5;124'
 
 # sets the prompt to custom colors
 
+# Dynamic terminal tab title:
+#   - While a command runs: shows the command name (e.g. "dmesg", "git", "vim")
+#   - At the prompt: resets to current directory basename (same as before)
+__title_set_cmd() {
+    printf '\033]0;%s\007' "${BASH_COMMAND%% *}"
+}
+__title_set_dir() {
+    printf '\033]0;%s\007' "${PWD##*/}"
+}
+trap '__title_set_cmd' DEBUG
+PROMPT_COMMAND='__title_set_dir'
+
 if [ "$IS_SSH" == 1 ]; then
    PS1="${PURPLEm}\u@${GREENm}\h:\w\\n$ "
 elif [ $system = "Linux" ]
