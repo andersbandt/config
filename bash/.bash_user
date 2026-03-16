@@ -49,16 +49,6 @@ alias zgrep="zgrep -i --color='auto'"
 alias bat="python -m rich.markdown"
 
 
-##############################
-### CLAUDE CODE            ###
-##############################
-# Pass current directory as session name so Claude Code sets the tab title correctly
-claude() {
-    command claude --name "$(basename "$PWD")" "$@"
-}
-
-
-
 ### mispell
 alias sl='ls'
 alias ccd="cd"
