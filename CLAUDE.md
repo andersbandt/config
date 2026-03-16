@@ -189,6 +189,34 @@ Attempted to get Python code completion via `lsp-mode` + `pylsp`. Current state:
 
 ---
 
+## Roadmap / Future Improvements
+
+Discussed Feb 2026. Pick these up in future sessions.
+
+### Quick Wins
+- **Git config** — Track `.gitconfig` and `.gitignore_global` in the repo (aliases, editor, default branch, diff tool). Add to `setup.sh` symlinks.
+- **SSH config** — Track `~/.ssh/config` (host aliases, jump hosts, key mappings). Keys stay out, config is safe to track.
+- **Machine-local overrides** — Add a `~/.bash_local` sourced at the end of `.bashrc`, gitignored, for per-machine settings that shouldn't be shared.
+
+### New Machine Bootstrap
+- **Package list bootstrap** — Keep a curated essentials list in the repo. Have `setup.sh` offer to install them (`apt`, `snap`, `flatpak`). Builds on the package lists already saved in `backup.sh`.
+- **`setup.sh` dependency check** — Before symlinking, detect missing dependencies (emacs, git, curl, etc.) and offer to install them.
+- **Post-install checklist** — A markdown file of manual steps that can't be automated (browser login, SSH key gen, GitHub auth).
+
+### Windows Coverage
+- **Windows package list** — `winget export` or scoop manifest for reproducible installs. Could live in a `windows/` directory.
+- **Windows config files** — Windows Terminal settings, PowerShell profile, VS Code `settings.json`/extensions list. Symlinked or copied via a PowerShell setup script.
+
+### Backup Rework
+- **Slim down `backup.sh`** — The full `/` tarball is 35GB+ and not practically restorable for bare-metal recovery. Rework to only back up lightweight system configs (`/etc`, crontabs, systemd units, `/opt`) + package lists. Deja Dup already handles `$HOME` to a separate HDD. Model it after `backup-pi.sh` which already takes this approach.
+- **Current `backup.sh` excludes for reference** — Pictures, .cache, ncs/downloads, var/cache, var/log, var/tmp, snapd, flatpak, docker, Steam.
+
+### Longer Term
+- **Cron/systemd inventory** — Track any custom crontabs or systemd services beyond the backup timer.
+- **Emacs package pinning** — Pin MELPA package versions so installs are reproducible across machines (`use-package :pin` or lockfile approach).
+
+---
+
 ## Legacy Workflow (Deprecated)
 
 **Prior to February 2026**, this repo used a "copy in / copy out" workflow with separate bash scripts:
