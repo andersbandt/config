@@ -31,7 +31,9 @@ alias pictures='cd $BASEPATH/Pictures'
 
 ### LOCAL FILES ###
 alias screenshots='cd $BASEPATH/Pictures/Screenshots'
-alias obsidian='cd $BASEPATH/Documents/Obsidian'
+alias obs='cd $BASEPATH/Documents/Obsidian'
+alias obse='cd $BASEPATH/Documents/Obsidian/engineering'
+alias obsp='cd $BASEPATH/Documents/Obsidian/pathless'
 alias ccs='cd $BASEPATH/Documents/CCS/'
 alias ncs='cd $BASEPATH/Documents/NCS/'
 alias altium='cd $BASEPATH/Documents/Altium/'
