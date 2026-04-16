@@ -177,3 +177,44 @@
 ;; PROJECT MANAGEMENT
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MARKDOWN SETTINGS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Hide URLs in links so [text](url) shows just "text"
+(setq markdown-hide-urls t)
+
+;; Style tweaks for markdown faces (on top of misterioso theme)
+(custom-set-faces
+ '(markdown-hr-face ((t (:foreground "gray50" :strike-through t :height 0.1)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DAILY NOTES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defvar my-daily-notes-dir "~/Notes/daily/"
+  "Directory for daily notes.")
+
+(defun my-open-daily-note ()
+  "Open (or create) today's daily note."
+  (interactive)
+  (let ((filepath (expand-file-name
+                   (format-time-string "%Y-%m-%d.md") my-daily-notes-dir)))
+    (unless (file-directory-p my-daily-notes-dir)
+      (make-directory my-daily-notes-dir t))
+    (find-file filepath)
+    (when (= (buffer-size) 0)
+      (insert (format-time-string "# %Y-%m-%d\n\n")))))
+
+(global-set-key (kbd "C-c n d") 'my-open-daily-note)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; WINDOW MANAGEMENT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Vertical shrink window (complement to C-x ^ for enlarge)
+(global-set-key (kbd "C-x _") 'shrink-window)
