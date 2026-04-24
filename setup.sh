@@ -329,6 +329,19 @@ setup_emacs() {
         fi
     fi
 
+    # Notify about per-machine overrides. The file itself is gitignored and
+    # must be created per-machine — setup.sh intentionally does NOT create it.
+    # See "Machine-Local Overrides" section in CLAUDE.md for details.
+    local local_el="$HOME/.emacs.d/local.el"
+    echo ""
+    echo -e "${CYAN}Per-machine overrides:${ENDC} $local_el"
+    if [[ -f "$local_el" ]] && [[ ! -L "$local_el" ]]; then
+        echo -e "${GREEN}  ✓ exists (gitignored, per-machine flags active)${ENDC}"
+    else
+        echo -e "${YELLOW}  not present — create it to opt into heavy features.${ENDC}"
+        echo -e "${YELLOW}  Example: (setq my-obsidian-enabled t)${ENDC}"
+    fi
+
     echo -e "\n${GREEN}Emacs setup complete${ENDC}"
 }
 

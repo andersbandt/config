@@ -17,6 +17,13 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
+;; Load machine-local overrides (gitignored). Create ~/.emacs.d/local.el
+;; on a given machine to set per-machine flags like `my-obsidian-enabled'.
+;; Must be loaded before any code that reads those flags.
+(let ((local-file (expand-file-name "local.el" user-emacs-directory)))
+  (when (file-readable-p local-file)
+    (load local-file 'noerror 'nomessage)))
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
@@ -48,7 +55,13 @@
     company
     flycheck
     which-key
-    dap-mode))
+    dap-mode
+    ;; obsidian.el deps (package itself is vendored in .emacs.d/)
+    f
+    dash
+    s
+    elgrep
+    yaml))
 
 (defvar my--packages-refreshed nil
   "Non-nil if package archives have been refreshed this session.")
@@ -192,17 +205,14 @@
 ;;       syntax-highlights math fragments.
 (setq markdown-enable-math t)
 
-;; Use nicer unicode bullets for list items instead of plain dashes
-;; TODO: NOT WORKING as of Apr 2026 — bullets still render as dashes.
-;;       May need font support or a display-table approach instead.
+;; Use nicer unicode bullets for list items instead of plain dashes.
+;; Only takes effect when `markdown-hide-markup' is non-nil.
 (setq markdown-list-item-bullets '("●" "○" "◆" "◇"))
 
 ;; Style tweaks for markdown faces (on top of misterioso theme)
 (custom-set-faces
- ;; HR: use overline + extend to span the full window width
- ;; TODO: NOT WORKING as of Apr 2026 — HR line still does not extend across
- ;;       the whole page. The :extend t flag and :overline approach didn't help.
- ;;       May need a different approach (e.g., overlay with display property).
+ ;; HR: markdown-mode renders `---' as a full-width line via its `hr-char'
+ ;; display path when `markdown-hide-markup' is on; this face styles it.
  '(markdown-hr-face ((t (:foreground "gray50" :overline "gray50" :height 0.1 :extend t))))
  ;; ==highlight== markup (custom face, see font-lock rule below)
  '(markdown-highlight-face ((t (:background "yellow" :foreground "black"))))
@@ -222,7 +232,7 @@
  ;; Blockquotes: italic, muted gray
  '(markdown-blockquote-face ((t (:slant italic :foreground "gray70"))))
  ;; Headers: rainbow by level (H1 red → H6 purple)
- '(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "red"))))
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :foreground "tomato"))))
  '(markdown-header-face-2 ((t (:inherit markdown-header-face :foreground "orange"))))
  '(markdown-header-face-3 ((t (:inherit markdown-header-face :foreground "khaki"))))
  '(markdown-header-face-4 ((t (:inherit markdown-header-face :foreground "dark sea green"))))
@@ -241,6 +251,84 @@
 
 (add-hook 'markdown-mode-hook #'my-markdown-add-highlight-font-lock)
 
+;; Add ~~strikethrough~~ support. markdown-mode only fontifies strikethrough
+;; in gfm-mode; add a font-lock rule so it works in plain markdown-mode too.
+(defun my-markdown-add-strikethrough-font-lock ()
+  "Add font-lock rule for ~~strikethrough~~ text in markdown."
+  (font-lock-add-keywords nil
+    '(("~~\\([^~\n]+\\)~~" 0 '(face (:strike-through t)) prepend))))
+
+(add-hook 'markdown-mode-hook #'my-markdown-add-strikethrough-font-lock)
+
+;; ---------------------------------------------------------------------------
+;; Hide markup (**, ##, ~~, etc.) except on the line with point
+;; ---------------------------------------------------------------------------
+;; markdown-hide-markup hides markers two different ways:
+;;   - emphasis, ~~, links, etc. get `invisible markdown-markup'
+;;   - ATX header #s get `display ""' (replaced with empty string)
+;; We reveal the current line by removing both, and re-hide the previous
+;; line by asking font-lock to refontify (which re-applies the properties).
+(setq markdown-hide-markup t)
+
+(defvar-local my-markdown--reveal-range nil
+  "Cons (BEG . END) of the line currently revealed, or nil.")
+
+(defun my-markdown--strip-empty-display (beg end)
+  "Remove `display' property from BEG..END but only where its value is \"\".
+This preserves legitimate `display' uses (images, margin strings) while
+undoing header-marker hiding from `markdown-hide-markup'."
+  (let ((pos beg))
+    (while (< pos end)
+      (let ((next (next-single-property-change pos 'display nil end)))
+        (when (equal (get-text-property pos 'display) "")
+          (remove-text-properties pos next '(display nil)))
+        (setq pos next)))))
+
+(defun my-markdown--reveal-current-line ()
+  "Reveal markdown markup on the line at point; re-hide the previous line.
+Refontification of the old range is forced synchronously (flush + ensure)
+before the new reveal is applied. Otherwise markdown-mode's font-lock
+extend-region function can expand the dirty range out to paragraph bounds
+during redisplay and re-hide the line we just revealed — visible as
+\"reveal works scrolling down but not up\" when the previous line and the
+new line sit in the same block."
+  (when (and (derived-mode-p 'markdown-mode) markdown-hide-markup)
+    (let ((beg (line-beginning-position))
+          (end (line-end-position)))
+      (unless (and my-markdown--reveal-range
+                   (= (car my-markdown--reveal-range) beg)
+                   (= (cdr my-markdown--reveal-range) end))
+        (when my-markdown--reveal-range
+          (let ((old-beg (car my-markdown--reveal-range))
+                (old-end (cdr my-markdown--reveal-range)))
+            (font-lock-flush old-beg old-end)
+            (font-lock-ensure old-beg old-end)))
+        (with-silent-modifications
+          (remove-text-properties beg end '(invisible nil))
+          (my-markdown--strip-empty-display beg end))
+        (setq my-markdown--reveal-range (cons beg end))))))
+
+(defun my-markdown--setup-reveal ()
+  "Install the current-line reveal hook in this markdown buffer."
+  (add-hook 'post-command-hook #'my-markdown--reveal-current-line nil t))
+
+(add-hook 'markdown-mode-hook #'my-markdown--setup-reveal)
+
+(defun my-markdown-toggle-hide-markup ()
+  "Toggle markdown markup hiding in the current buffer.
+Wraps `markdown-toggle-markup-hiding' but forces a synchronous refontify
+and resets our current-line reveal state, so the change is visible
+immediately and stays consistent across on/off cycles."
+  (interactive)
+  (markdown-toggle-markup-hiding)
+  (setq my-markdown--reveal-range nil)
+  (font-lock-ensure)
+  (when markdown-hide-markup
+    (my-markdown--reveal-current-line)))
+
+(with-eval-after-load 'markdown-mode
+  (define-key markdown-mode-map (kbd "C-c m h") #'my-markdown-toggle-hide-markup))
+
 ;; ---------------------------------------------------------------------------
 ;; Ordered list: auto-convert numbers <-> letters when indenting/outdenting
 ;; ---------------------------------------------------------------------------
@@ -252,11 +340,29 @@
 ;;   Shift-Tab — on a list item: outdent (promote) + convert marker
 ;;   M-RET     — insert new list item (built-in), then convert if needed
 
+;; Regex matching a list item with either numeric (1.) or letter (a.) marker.
+;; Group 1: leading whitespace, Group 2: marker char(s), Group 3: ". "
+(defconst my-markdown--list-item-regex
+  "^\\([ \t]*\\)\\([0-9]+\\|[a-z]\\)\\(\\.[ \t]\\)"
+  "Regex for a list item with numeric or single-letter marker.")
+
+(defun my-markdown--line-marker-indent ()
+  "If the current line is a recognized list item, return its indent width (chars).
+Otherwise return nil. Unlike `markdown-cur-list-item-bounds', this recognizes
+letter markers like `a.' in addition to numeric ones.
+`save-match-data' protects callers that rely on the global match state
+(e.g., between a `looking-at' and a `replace-match')."
+  (save-match-data
+    (save-excursion
+      (beginning-of-line)
+      (when (looking-at my-markdown--list-item-regex)
+        (- (match-end 1) (match-beginning 1))))))
+
 (defun my-markdown--nesting-depth ()
   "Return the nesting depth of the list item at point (0 = top-level)."
-  (let ((bounds (markdown-cur-list-item-bounds)))
-    (if bounds
-        (/ (nth 2 bounds) markdown-list-indent-width)
+  (let ((indent (my-markdown--line-marker-indent)))
+    (if indent
+        (/ indent markdown-list-indent-width)
       0)))
 
 (defun my-markdown--number-to-letter (n)
@@ -268,50 +374,45 @@
   (1+ (- (string-to-char letter) ?a)))
 
 (defun my-markdown--count-previous-siblings ()
-  "Count how many siblings exist before the current list item at the same indent.
-Returns 0 if this is the first item at this indent level."
-  (let* ((bounds (markdown-cur-list-item-bounds))
-         (cur-indent (and bounds (nth 2 bounds)))
-         (count 0))
+  "Count list item siblings before point at the same indent level.
+Recognizes both numeric (1.) and letter (a.) markers. Returns 0 if this
+is the first item at this indent level."
+  (let ((cur-indent (my-markdown--line-marker-indent))
+        (count 0))
     (when cur-indent
       (save-excursion
         (forward-line -1)
-        (while (not (bobp))
-          (let ((b (markdown-cur-list-item-bounds)))
-            (cond
-             ;; Same indent = a sibling, count it
-             ((and b (= (nth 2 b) cur-indent))
-              (setq count (1+ count))
-              (forward-line -1))
-             ;; Less indent = parent, stop
-             ((and b (< (nth 2 b) cur-indent))
-              (goto-char (point-min)))  ; break
-             ;; More indent or blank line = child/gap, skip
-             (t (forward-line -1)))))))
+        (catch 'done
+          (while (not (bobp))
+            (let ((ind (my-markdown--line-marker-indent)))
+              (cond
+               ;; Same indent list item: sibling, count it
+               ((and ind (= ind cur-indent))
+                (setq count (1+ count))
+                (forward-line -1))
+               ;; Less indent list item: we've walked past the parent, stop
+               ((and ind (< ind cur-indent))
+                (throw 'done nil))
+               ;; Deeper nesting, blank line, or continuation: skip
+               (t (forward-line -1))))))))
     count))
 
 (defun my-markdown--convert-marker-on-line ()
-  "Convert the list marker on the current line based on nesting depth.
-Even depth -> numbers, odd depth -> letters.
-The value is determined by counting previous siblings, not by the
-existing marker number (which may be wrong after indent/outdent)."
+  "Rewrite the list marker on the current line to match nesting depth.
+Even depth -> numbers, odd depth -> letters. The value is derived from
+sibling position, so markers stay correct after indent/outdent/insert
+even when the current marker is already a letter."
   (let ((depth (my-markdown--nesting-depth)))
     (save-excursion
       (beginning-of-line)
-      (cond
-       ;; Odd depth: should be a letter — convert if currently a number
-       ((and (cl-oddp depth)
-             (looking-at "^\\([ \t]*\\)\\([0-9]+\\)\\(\\.[ \t]\\)"))
-        (let* ((pos (1+ (my-markdown--count-previous-siblings)))
-               (letter (my-markdown--number-to-letter pos)))
-          (replace-match (concat (match-string 1) letter (match-string 3)))))
-       ;; Even depth: should be a number — convert if currently a letter
-       ((and (cl-evenp depth)
-             (looking-at "^\\([ \t]*\\)\\([a-z]\\)\\(\\.[ \t]\\)"))
-        (let* ((pos (1+ (my-markdown--count-previous-siblings))))
-          (replace-match (concat (match-string 1)
-                                 (number-to-string pos)
-                                 (match-string 3)))))))))
+      (when (looking-at my-markdown--list-item-regex)
+        (let* ((indent (match-string 1))
+               (dot-space (match-string 3))
+               (pos (1+ (my-markdown--count-previous-siblings)))
+               (marker (if (cl-oddp depth)
+                           (my-markdown--number-to-letter pos)
+                         (number-to-string pos))))
+          (replace-match (concat indent marker dot-space) t t))))))
 
 ;; Advice on the low-level demote/promote functions so conversion fires
 ;; regardless of how they're invoked (Tab, C-c <right>, etc.)
@@ -357,6 +458,52 @@ existing marker number (which may be wrong after indent/outdent)."
   (define-key markdown-mode-map (kbd "<tab>") #'my-markdown-indent-list-item-or-cycle)
   (define-key markdown-mode-map (kbd "<S-tab>") #'my-markdown-unindent-list-item-or-shifttab)
   (define-key markdown-mode-map (kbd "<backtab>") #'my-markdown-unindent-list-item-or-shifttab))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; OBSIDIAN
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Vendored licht1stein/obsidian.el for Obsidian-style wikilinks: follow
+;; [[link]] under point, autocomplete note titles, backlinks, etc.
+;; Vault root is ~/Documents/Obsidian which on this user's setup is the
+;; Windows filesystem (same physical path whether edited via native Windows
+;; Emacs or from WSL). Both `pathless' and `engineering' subfolders are
+;; indexed as one vault — cross-links and autocomplete span them.
+;;
+;; This block is opt-in per machine because the initial vault scan can be
+;; slow on WSL's 9P mount. To enable, put this in ~/.emacs.d/local.el:
+;;     (setq my-obsidian-enabled t)
+
+(defvar my-obsidian-enabled nil
+  "When non-nil, load and activate obsidian.el.
+Set in local.el on machines where the vault scan cost is acceptable.")
+
+(defun my--wsl-p ()
+  "Return non-nil when running inside WSL."
+  (and (eq system-type 'gnu/linux)
+       (file-readable-p "/proc/version")
+       (with-temp-buffer
+         (insert-file-contents "/proc/version")
+         (string-match-p "\\(microsoft\\|WSL\\)" (buffer-string)))))
+
+(defconst my-obsidian-vault-root
+  (if (my--wsl-p)
+      "/mnt/c/Users/ander/Documents/Obsidian"
+    "~/Documents/Obsidian")
+  "Root directory containing the user's Obsidian vaults.")
+
+(when (and my-obsidian-enabled
+           (file-directory-p (expand-file-name my-obsidian-vault-root)))
+  (require 'obsidian)
+  (obsidian-specify-path my-obsidian-vault-root)
+  ;; global-obsidian-mode uses obsidian-enable-minor-mode as its turn-on
+  ;; function, which checks (obsidian-file-p) — so obsidian-mode only
+  ;; actually activates on markdown files under the vault.
+  (global-obsidian-mode t)
+  (with-eval-after-load 'obsidian
+    (define-key obsidian-mode-map (kbd "C-c C-o") #'obsidian-follow-link-at-point)
+    (define-key obsidian-mode-map (kbd "C-c C-l") #'obsidian-insert-link)
+    (define-key obsidian-mode-map (kbd "C-c C-b") #'obsidian-backlink-jump)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

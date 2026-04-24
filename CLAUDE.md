@@ -118,6 +118,37 @@ The Dracula Emacs theme is included as a git submodule at `emacs/.emacs.d/dracul
 
 **Note**: Machine-specific state files (`ido.last`, `elgrep-data.el`) are excluded via `.gitignore` to prevent cross-machine conflicts.
 
+## Machine-Local Overrides
+
+Shared config needs per-machine escape hatches for things like "enable heavy feature X here but not there". The repo uses a gitignored override file pattern.
+
+### Emacs: `~/.emacs.d/local.el`
+
+- Loaded near the top of `base.el` (right after `custom.el`), before any feature gate reads the flags it sets.
+- Gitignored (`.gitignore` entry: `emacs/.emacs.d/local.el`).
+- Missing file is fine — `(load ... 'noerror 'nomessage)`.
+
+Current flags (extend as needed):
+
+| Flag | Default | Purpose |
+|---|---|---|
+| `my-obsidian-enabled` | `nil` | Load and activate obsidian.el. Off by default because the initial vault scan is slow on WSL's 9P mount. |
+
+Example `~/.emacs.d/local.el`:
+
+```elisp
+(setq my-obsidian-enabled t)
+```
+
+### Bash: `~/.bash_local` (planned)
+
+The same pattern for shell config (sourced at the end of `.bashrc` if present) is listed in the Roadmap below but not yet implemented. When added, it should follow the same conventions: gitignored, guarded load, feature-flag style.
+
+### When to use local.el vs. OS detection
+
+- **OS detection** (`my--wsl-p`, `$system` in bash) → behavior that's *deterministically* different between platforms (e.g., "the vault lives at `/mnt/c/...` on WSL but `~/` on Windows"). Lives in the shared config.
+- **local.el** → behavior that varies between *same-OS* machines based on taste, hardware speed, or what's installed (e.g., "this laptop is too slow for obsidian indexing"). Lives per-machine.
+
 ## Cross-Platform Support
 
 The same configuration files work across all platforms thanks to conditional logic in `.bash_os`:
@@ -196,7 +227,7 @@ Discussed Feb 2026. Pick these up in future sessions.
 ### Quick Wins
 - **Git config** — Track `.gitconfig` and `.gitignore_global` in the repo (aliases, editor, default branch, diff tool). Add to `setup.sh` symlinks.
 - **SSH config** — Track `~/.ssh/config` (host aliases, jump hosts, key mappings). Keys stay out, config is safe to track.
-- **Machine-local overrides** — Add a `~/.bash_local` sourced at the end of `.bashrc`, gitignored, for per-machine settings that shouldn't be shared.
+- **Machine-local overrides (bash half)** — Add a `~/.bash_local` sourced at the end of `.bashrc`, gitignored, for per-machine settings that shouldn't be shared. The Emacs half of this pattern is already implemented (`~/.emacs.d/local.el`, see "Machine-Local Overrides" section above) — mirror its conventions.
 
 ### New Machine Bootstrap
 - **Package list bootstrap** — Keep a curated essentials list in the repo. Have `setup.sh` offer to install them (`apt`, `snap`, `flatpak`). Builds on the package lists already saved in `backup.sh`.
