@@ -247,7 +247,8 @@
 (defun my-markdown-add-highlight-font-lock ()
   "Add font-lock rule for ==highlighted== text in markdown."
   (font-lock-add-keywords nil
-    '(("==\\([^=\n]+\\)==" 0 'markdown-highlight-face prepend))))
+    '(("==\\([^=\n]+\\)==" 0 'markdown-highlight-face t))
+    'append))
 
 (add-hook 'markdown-mode-hook #'my-markdown-add-highlight-font-lock)
 
@@ -256,7 +257,8 @@
 (defun my-markdown-add-strikethrough-font-lock ()
   "Add font-lock rule for ~~strikethrough~~ text in markdown."
   (font-lock-add-keywords nil
-    '(("~~\\([^~\n]+\\)~~" 0 '(face (:strike-through t)) prepend))))
+    '(("~~\\([^~\n]+\\)~~" 0 '(face (:strike-through t)) t))
+    'append))
 
 (add-hook 'markdown-mode-hook #'my-markdown-add-strikethrough-font-lock)
 
@@ -460,6 +462,50 @@ even when the current marker is already a letter."
   (define-key markdown-mode-map (kbd "<backtab>") #'my-markdown-unindent-list-item-or-shifttab))
 
 
+;; ---------------------------------------------------------------------------
+;; Checklist sort: unchecked items first, checked items last
+;; ---------------------------------------------------------------------------
+(defconst my-markdown--checkbox-re
+  "^[ \t]*[-*+] \\[[ xX]\\]"
+  "Regex matching any markdown checklist item (checked or unchecked).")
+
+(defun my-markdown--checkbox-done-p (line)
+  "Return t if LINE is a checked checklist item."
+  (string-match-p "^[ \t]*[-*+] \\[[xX]\\]" line))
+
+(defun my-markdown--checklist-bounds ()
+  "Return (BEG . END) of the contiguous checklist block at point, or nil."
+  (save-excursion
+    (beginning-of-line)
+    (when (looking-at my-markdown--checkbox-re)
+      (while (and (not (bobp))
+                  (save-excursion (forward-line -1) (looking-at my-markdown--checkbox-re)))
+        (forward-line -1))
+      (let ((beg (point)))
+        (while (looking-at my-markdown--checkbox-re)
+          (forward-line 1))
+        (cons beg (point))))))
+
+(defun my-markdown-sort-checklist ()
+  "Sort the checklist block at point: unchecked items first, checked items last.
+Preserves relative order within each group (stable partition, not a sort)."
+  (interactive)
+  (let ((bounds (my-markdown--checklist-bounds)))
+    (if (not bounds)
+        (message "Not on a checklist item")
+      (let* ((beg (car bounds))
+             (end (cdr bounds))
+             (lines    (split-string (buffer-substring beg end) "\n" t))
+             (not-done (seq-filter (lambda (l) (not (my-markdown--checkbox-done-p l))) lines))
+             (done     (seq-filter #'my-markdown--checkbox-done-p lines))
+             (sorted   (concat (mapconcat #'identity (append not-done done) "\n") "\n")))
+        (unless (string= (buffer-substring beg end) sorted)
+          (delete-region beg end)
+          (insert sorted))))))
+
+(with-eval-after-load 'markdown-mode
+  (define-key markdown-mode-map (kbd "C-c m s") #'my-markdown-sort-checklist))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OBSIDIAN
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -513,7 +559,7 @@ Set in local.el on machines where the vault scan cost is acceptable.")
 (defvar my-daily-notes-dir "~/Notes/daily/"
   "Directory for daily notes.")
 
-(defun my-open-daily-note ()
+(defun my-create-daily-note ()
   "Open (or create) today's daily note."
   (interactive)
   (let ((filepath (expand-file-name
@@ -524,7 +570,7 @@ Set in local.el on machines where the vault scan cost is acceptable.")
     (when (= (buffer-size) 0)
       (insert (format-time-string "# %Y-%m-%d\n\n")))))
 
-(global-set-key (kbd "C-c n d") 'my-open-daily-note)
+(global-set-key (kbd "C-c n d") 'my-create-daily-note)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
